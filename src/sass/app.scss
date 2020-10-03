@@ -1,0 +1,35 @@
+@mixin flex-x($spread, $align: false) {
+    display: flex;
+    @if $spread {
+        justify-content: #{$spread};
+    }
+    @if $align {
+        align-items: #{$align};
+    }
+}
+@mixin flex-y($spread, $align: false) {
+    display: flex;
+    @if $spread {
+        justify-content: #{$spread};
+    }
+    @if $align {
+        align-items: #{$align};
+    }
+    flex-direction: column;
+}
+@mixin flex-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+$primary: #5aafff;
