@@ -1,0 +1,25 @@
+@mixin flex-x($spread, $align: false) {
+    display: flex;
+    @if $spread {
+        justify-content: #{$spread};
+    }
+    @if $align {
+        align-items: #{$align};
+    }
+}
+@mixin flex-y($spread, $align: false) {
+    display: flex;
+    @if $spread {
+        justify-content: #{$spread};
+    }
+    @if $align {
+        align-items: #{$align};
+    }
+    flex-direction: column;
+}
+@mixin flex-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

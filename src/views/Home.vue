@@ -3,47 +3,63 @@
         <h1>INSTALLATION</h1>
         <div id="installation">
             <div class="block">
-                <code @click="copyCode($event)">npm i vue-dk-lib<i class="fa fa-copy"></i></code>
+                <code @click="copyCode($event)">
+                    npm i vue-dk-lib
+                    <i class="fa fa-copy"></i>
+                </code>
             </div>
             <div class="block">
-                <code @click="copyCode($event)"
-                    ><span class="purple">import</span> <span class="yellow">{ </span>
-                    <span class="blue">DKButton</span> <span class="yellow">}</span>
-                    <span class="purple"> from</span> <span class="orange">'vue-dk-lib'</span>;<i
-                        class="fa fa-copy"
-                    ></i
-                ></code>
+                <code @click="copyCode($event)">
+                    <span class="purple">import</span>
+                    <span class="yellow">{</span>
+                    <span class="blue">DKButton</span>
+                    <span class="yellow">}</span>
+                    <span class="purple">from</span>
+                    <span class="orange">'vue-dk-lib'</span>
+                    ;
+                    <i class="fa fa-copy"></i>
+                </code>
                 ...
-                <code @click="copyCode($event)"
-                    ><span class="blue">components:</span> <span class="purple">{ </span>
-                    <span class="blue">DKButton</span> <span class="purple">}</span
-                    ><i class="fa fa-copy"></i
-                ></code>
+                <code @click="copyCode($event)">
+                    <span class="blue">components:</span>
+                    <span class="purple">{</span>
+                    <span class="blue">DKButton</span>
+                    <span class="purple">}</span>
+                    <i class="fa fa-copy"></i>
+                </code>
             </div>
             or
             <div class="block">
-                <code @click="copyCode($event)"
-                    ><span class="purple">import</span> <span class="dark-blue">* </span>
-                    <span class="purple">as </span>
+                <code @click="copyCode($event)">
+                    <span class="purple">import</span>
+                    <span class="dark-blue">*</span>
+                    <span class="purple">as</span>
                     <span class="blue">DKLib</span>
-                    <span class="purple"> from</span> <span class="orange">'vue-dk-lib'</span>;<i
-                        class="fa fa-copy"
-                    ></i
-                ></code>
+                    <span class="purple">from</span>
+                    <span class="orange">'vue-dk-lib'</span>
+                    ;
+                    <i class="fa fa-copy"></i>
+                </code>
                 ...
-                <code @click="copyCode($event)"
-                    ><span class="blue">components:</span> <span class="purple">{ </span>
-                    <span class="blue">DKLib.DKButton</span> <span class="purple">}</span
-                    ><i class="fa fa-copy"></i
-                ></code>
+                <code @click="copyCode($event)">
+                    <span class="blue">components:</span>
+                    <span class="purple">{</span>
+                    <span class="blue">DKButton: DKLib.DKButton</span>
+                    <span class="purple">}</span>
+                    <i class="fa fa-copy"></i>
+                </code>
             </div>
             <div class="block">
-                <code @click="copyCode($event)"
-                    ><span class="grey">&lt;</span><span class="green">DKButton</span
-                    ><span class="grey">&gt;</span>Hello!<span class="grey">&lt;/</span
-                    ><span class="green">DKButton</span><span class="grey">&gt;</span
-                    ><i class="fa fa-copy"></i
-                ></code>
+                <code @click="copyCode($event)">
+                    <span class="grey">&lt;</span>
+                    <span class="green">DKButton</span>
+                    <span class="grey">&gt;</span>
+                    Hello!
+                    <span class="grey">&lt;/</span>
+                    <span class="green">DKButton</span>
+                    <span class="grey">&gt;</span>
+                    <i class="fa fa-copy"></i>
+                </code>
             </div>
         </div>
     </div>
@@ -62,6 +78,9 @@ export default {
             app.config.globalProperties.$toast('Copied!', { duration: 3000 });
         };
 
+        document.body.removeAttribute('style');
+        document.title = 'Home | Vue DK Lib';
+
         return { copyCode };
     },
 };
@@ -69,9 +88,8 @@ export default {
 
 <style lang="scss">
 #home {
-    h1 {
-        margin: 100px 0 0;
-    }
+    @include flex-y(center, center);
+    height: 100vh;
 }
 
 #installation,
@@ -79,15 +97,11 @@ export default {
     @include flex-y(center, center);
 }
 
-#installation {
-    height: 400px;
-}
-
 .block {
     padding: 10px;
     margin: 10px;
     font-size: 18px;
-    background: #1e1e1e;
+    background: var(--code-bg);
     border-radius: 5px;
 
     code {

@@ -1,35 +1,29 @@
-@mixin flex-x($spread, $align: false) {
-    display: flex;
-    @if $spread {
-        justify-content: #{$spread};
-    }
-    @if $align {
-        align-items: #{$align};
-    }
-}
-@mixin flex-y($spread, $align: false) {
-    display: flex;
-    @if $spread {
-        justify-content: #{$spread};
-    }
-    @if $align {
-        align-items: #{$align};
-    }
-    flex-direction: column;
-}
-@mixin flex-responsive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+@import 'mixins';
+@import 'utilities';
+
+:root {
+    --primary: #5aafff;
+    --white: #fff;
+    --grey: #5a5f66;
+    --black: #3a3c42;
+    --code-bg: #1e1e1e;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
+    background: var(--grey);
 }
 
-$primary: #5aafff;
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: var(--white);
+}

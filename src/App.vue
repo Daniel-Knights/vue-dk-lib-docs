@@ -1,13 +1,13 @@
 <template>
     <DKNavbar :styles="navbarStyles">
-        <h1>Vue DK Lib | Docs</h1>
-        <div id="nav-links">
+        <router-link to="/"><h1>Vue DK Lib | Docs</h1></router-link>
+        <nav id="nav-links">
             <DKHoverbox :height="50"><router-link to="/">Home</router-link></DKHoverbox>
             |
             <DKHoverbox :height="50"><router-link to="/examples">Examples</router-link></DKHoverbox>
             |
             <DKHoverbox :height="50"><router-link to="/api">API</router-link></DKHoverbox>
-        </div>
+        </nav>
     </DKNavbar>
     <router-view />
 </template>
@@ -21,7 +21,11 @@ export default {
     components: { DKNavbar, DKHoverbox },
 
     setup() {
-        const navbarStyles = { justifyContent: 'space-between', padding: '0 20px' };
+        const navbarStyles = {
+            justifyContent: 'space-between',
+            position: 'absolute',
+            padding: '0 20px',
+        };
 
         return { navbarStyles };
     },
@@ -29,19 +33,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-    margin: 0;
-    background: #5a5f66;
-}
-
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #fff;
-}
-
 #nav-links {
     display: flex;
     justify-content: space-evenly;
@@ -52,6 +43,6 @@ body {
 a {
     padding: 10px;
     text-decoration: none;
-    color: #fff;
+    color: var(--white);
 }
 </style>
