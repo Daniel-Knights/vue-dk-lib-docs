@@ -1,17 +1,34 @@
 <template>
-    <DKTooltip text="I'm a tooltip!" :style="tooltipStyles">Hover Me!</DKTooltip>
-    <DKTooltip text="I'm a tooltip!" position="right" :style="tooltipStyles">Hover Me!</DKTooltip>
-    <DKTooltip text="I'm a tooltip!" position="left" :style="tooltipStyles">Hover Me!</DKTooltip>
-    <DKTooltip text="I'm a tooltip!" position="bottom" :style="tooltipStyles">Hover Me!</DKTooltip>
+    <div id="tooltip-container">
+        <DKTooltip text="Hello there!" :style="tooltipStyles"
+            ><code>position="top"</code></DKTooltip
+        >
+        <DKTooltip text="Hello there!" position="right" :style="tooltipStyles"
+            ><code>position="right"</code></DKTooltip
+        >
+        <DKTooltip text="Hello there!" position="left" :style="tooltipStyles"
+            ><code>position="left"</code></DKTooltip
+        >
+        <DKTooltip text="Hello there!" position="bottom" :style="tooltipStyles"
+            ><code>position="bottom"</code></DKTooltip
+        >
+        <DKTooltip text="Hello there!" position="bottom" :style="tooltipStyles" :arrow="false"
+            ><code>:arrow="false"</code></DKTooltip
+        >
+        <DKTooltip
+            text="Hello there!"
+            position="bottom"
+            :style="tooltipStyles"
+            :arrow="false"
+            :styles="{ backgroundColor: '#5aafff' }"
+            ><code>:styles="{ backgroundColor: '#5aafff' }"</code></DKTooltip
+        >
+    </div>
 </template>
 
 <script>
-import { DKTooltip } from 'vue-dk-lib';
-
 export default {
     name: 'Tooltip',
-
-    components: { DKTooltip },
 
     setup() {
         const tooltipStyles = { margin: '10px' };
@@ -21,4 +38,13 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#tooltip-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    code {
+        white-space: pre;
+    }
+}
+</style>

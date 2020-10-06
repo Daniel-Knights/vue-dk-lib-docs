@@ -6,22 +6,18 @@ h5 {
     margin: 0;
 }
 
-section {
-    @include flex-y(center, center);
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-    min-height: 100vh;
-    color: var(--black);
-    overflow: hidden;
+.code {
+    $code-colors: 'bg', 'purple', 'blue', 'orange', 'yellow', 'navy', 'green', 'grey',
+        'light-yellow', 'const';
 
-    .section-sub-title {
-        width: 100%;
-
-        h3 {
-            text-align: left;
-            color: var(--black);
+    @each $color in $code-colors {
+        &-#{$color} {
+            color: var(--code-#{$color});
         }
     }
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--white);
 }

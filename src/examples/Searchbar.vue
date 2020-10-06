@@ -3,12 +3,8 @@
 </template>
 
 <script>
-import { DKSearchbar } from 'vue-dk-lib';
-
 export default {
     name: 'Searchbar',
-
-    components: { DKSearchbar },
 };
 </script>
 

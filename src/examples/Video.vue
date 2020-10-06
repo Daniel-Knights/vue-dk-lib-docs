@@ -7,7 +7,6 @@
         :videoFocused="videoFocused"
         @video-focused="focusHandler('1')"
         @click="focusHandler('1')"
-        width="fit-content"
         :videoPoster="require('../assets/video-bg.jpg')"
         :videoSrc="require('../assets/video.mp4')"
     />
@@ -23,7 +22,6 @@
         trackColor="red"
         :thumbStyles="{ borderRadius: '5px' }"
         :containerStyles="extraStyles"
-        width="fit-content"
         :videoPoster="require('../assets/video-bg.jpg')"
         :videoSrc="require('../assets/video.mp4')"
         :timeTags="tags"
@@ -32,12 +30,8 @@
 
 <script>
 import { ref } from 'vue';
-import { DKVideo } from 'vue-dk-lib';
-
 export default {
     name: 'Video',
-
-    components: { DKVideo },
 
     setup() {
         const extraStyles = {

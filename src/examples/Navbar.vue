@@ -1,38 +1,50 @@
 <template>
-    <DKNavbar>
+    <DKNavbar
+        :position="position"
+        :slider="slider"
+        :containerStyles="{ position: 'absolute', maxHeight: '70vh' }"
+        :key="key"
+    >
         <h1>DKNavbar</h1>
-        <DKButton>Flex</DKButton>
-        <DKButton>Spread</DKButton>
+        <div class="nav-buttons">
+            <DKButton>Nav</DKButton>
+            <DKButton>Ception</DKButton>
+        </div>
     </DKNavbar>
-    <div class="bottom-nav">
-        <DKNavbar position="bottom" :style="navbarStyles">
-            <h1>DKNavbar</h1>
-            <DKButton>Flex</DKButton>
-            <DKButton>Spread</DKButton>
-        </DKNavbar>
-    </div>
+    <select v-model="position" @change="forceRender()">
+        <option value="top">top</option>
+        <option value="right">right</option>
+        <option value="bottom">bottom</option>
+        <option value="left">left</option>
+    </select>
+    <DKToggle
+        @toggle="
+            slider = !slider;
+            forceRender();
+        "
+    />
 </template>
 
 <script>
-import { DKNavbar, DKButton } from 'vue-dk-lib';
+import { ref } from 'vue';
 
 export default {
     name: 'Navbar',
 
-    components: { DKNavbar, DKButton },
-
     setup() {
-        const navbarStyles = { position: 'sticky' };
+        const position = ref('top');
+        const key = ref(0);
+        const slider = ref(false);
 
-        return { navbarStyles };
+        const forceRender = () => key.value++;
+
+        return { position, key, slider, forceRender };
     },
 };
 </script>
 
 <style lang="scss">
-.bottom-nav {
-    display: block;
-    width: 100%;
-    height: 50vh;
+.nav-buttons {
+    flex: 1;
 }
 </style>

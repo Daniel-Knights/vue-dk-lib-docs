@@ -1,12 +1,36 @@
 @import 'mixins';
 @import 'utilities';
 
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
 :root {
     --primary: #5aafff;
-    --white: #fff;
+    --white: #ffffff;
+    --lightgrey: #777e88;
     --grey: #5a5f66;
-    --black: #3a3c42;
-    --code-bg: #1e1e1e;
+    --dark-grey: #3a3c42;
+    --black: #1e1e1e;
+
+    // RGB value conversion
+    --primary-rgb: #{hexToRGB(#5aafff)};
+    --white-rgb: #{hexToRGB(#ffffff)};
+    --lightgrey-rgb: #{hexToRGB(#777e88)};
+    --grey-rgb: #{hexToRGB(#5a5f66)};
+    --dark-grey-rgb: #{hexToRGB(#3a3c42)};
+    --black-rgb: #{hexToRGB(#1e1e1e)};
+
+    // Code
+    --code-purple: #c684c1;
+    --code-blue: #9adcff;
+    --code-orange: #cf9176;
+    --code-yellow: #ffd900;
+    --code-navy: #539bd8;
+    --code-green: #47cab0;
+    --code-grey: #808080;
+    --code-light-yellow: #dcdda7;
+    --code-const: #48c0ff;
 }
 
 *,
@@ -15,8 +39,13 @@
     box-sizing: border-box;
 }
 
+html {
+    background: var(--primary);
+}
+
 body {
     margin: 0;
+    min-height: 100vh;
     background: var(--grey);
 }
 

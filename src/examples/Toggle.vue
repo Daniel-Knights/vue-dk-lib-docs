@@ -3,12 +3,8 @@
 </template>
 
 <script>
-import { DKToggle } from 'vue-dk-lib';
-
 export default {
     name: 'Toggle',
-
-    components: { DKToggle },
 };
 </script>
 
