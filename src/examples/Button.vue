@@ -1,9 +1,15 @@
 <template>
-    <div id="dk-btn-container">
-        <div id="btn-options-container">
-            <div id="btn-options">
+    <div class="component-playground">
+        <div class="options-container">
+            <div class="options">
                 <div class="option">
-                    <code>:<span class="code-blue">styles</span>="{}"</code>
+                    <VTTooltip
+                        text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
+                        position="right"
+                        :styles="{ width: '300px', minWidth: 'unset' }"
+                    >
+                        <code>:<span class="code-blue">styles</span>="{}"</code>
+                    </VTTooltip>
                 </div>
                 <div class="option">
                     <code
@@ -12,7 +18,7 @@
                         }}</span
                         >"</code
                     >
-                    <DKToggle @toggle="toggleProp('rainbow')" />
+                    <VTToggle @toggle="toggleProp('rainbow')" />
                 </div>
                 <div class="option">
                     <code
@@ -20,7 +26,7 @@
                             >{{ propObject.fill }}"</span
                         ></code
                     >
-                    <DKToggle @toggle="toggleProp('fill')" />
+                    <VTToggle @toggle="toggleProp('fill')" />
                 </div>
                 <div class="option">
                     <code
@@ -28,7 +34,7 @@
                             >{{ propObject.onlyBorder }}"</span
                         ></code
                     >
-                    <DKToggle @toggle="toggleProp('onlyBorder')" />
+                    <VTToggle @toggle="toggleProp('onlyBorder')" />
                 </div>
                 <div class="option">
                     <code
@@ -36,7 +42,7 @@
                             >{{ propObject.ripple }}"</span
                         ></code
                     >
-                    <DKToggle @toggle="toggleProp('ripple')" :initialState="true" />
+                    <VTToggle @toggle="toggleProp('ripple')" :initialState="true" />
                 </div>
                 <div class="option">
                     <code
@@ -44,7 +50,7 @@
                             >{{ propObject.shine }}"</span
                         ></code
                     >
-                    <DKToggle @toggle="toggleProp('shine')" />
+                    <VTToggle @toggle="toggleProp('shine')" />
                 </div>
                 <div class="option">
                     <code
@@ -52,7 +58,7 @@
                             >{{ propObject.hoverEnabled }}"</span
                         ></code
                     >
-                    <DKToggle @toggle="toggleProp('hoverEnabled')" :initialState="true" />
+                    <VTToggle @toggle="toggleProp('hoverEnabled')" :initialState="true" />
                 </div>
                 <div class="option column">
                     <code
@@ -62,14 +68,14 @@
                     >
                     <form @submit.prevent="forceRender()">
                         <input type="text" v-model="propObject.hoverColor" maxlength="25" />
-                        <DKButton
+                        <VTButton
                             :styles="{
                                 minWidth: '50px',
                                 height: '25px',
                                 fontSize: '14px',
                                 borderRadius: '0 5px 5px 0',
                             }"
-                            >APPLY</DKButton
+                            >APPLY</VTButton
                         >
                     </form>
                 </div>
@@ -81,38 +87,40 @@
                     >
                     <form @submit.prevent="forceRender()">
                         <input type="text" v-model="propObject.hoverBackground" maxlength="25" />
-                        <DKButton
+                        <VTButton
                             :styles="{
                                 minWidth: '50px',
                                 height: '25px',
                                 fontSize: '14px',
                                 borderRadius: '0 5px 5px 0',
                             }"
-                            >APPLY</DKButton
+                            >APPLY</VTButton
                         >
                     </form>
                 </div>
             </div>
         </div>
-        <div id="btn-container">
-            <DKButton
-                :styles="{ justifySelf: 'center', alignSelf: 'center' }"
-                :rainbow="propObject.rainbow"
-                :fill="propObject.fill"
-                :onlyBorder="propObject.onlyBorder"
-                :ripple="propObject.ripple"
-                :shine="propObject.shine"
-                :hoverEnabled="propObject.hoverEnabled"
-                :hoverColor="propObject.hoverColor"
-                :hoverBackground="propObject.hoverBackground"
-                :key="key"
-                >CLICK ME!</DKButton
-            >
+        <div class="example-container">
+            <div class="example">
+                <VTButton
+                    :rainbow="propObject.rainbow"
+                    :fill="propObject.fill"
+                    :onlyBorder="propObject.onlyBorder"
+                    :ripple="propObject.ripple"
+                    :shine="propObject.shine"
+                    :hoverEnabled="propObject.hoverEnabled"
+                    :hoverColor="propObject.hoverColor"
+                    :hoverBackground="propObject.hoverBackground"
+                    :key="key"
+                    >CLICK ME!</VTButton
+                >
+            </div>
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
                         <span class="code-grey">&lt;</span><span class="code-green">DKButton</span>
                     </div>
+                    <div><span class="code-blue">styles</span>="{}"</div>
                     <div>
                         :<span class="code-blue">rainbow</span>="<span class="code-navy">{{
                             propObject.rainbow
@@ -198,7 +206,8 @@ export default {
             forceRender();
         };
         const code = computed(() => {
-            return `<DKButton
+            return `<VTButton
+    :styles="{}"
     :rainbow="${propObject.value.rainbow}"
     :fill="${propObject.value.fill}"
     :onlyBorder="${propObject.value.onlyBorder}"
@@ -209,107 +218,14 @@ export default {
     :hoverBackground="${propObject.value.hoverBackground}"
 >
     CLICK ME!
-</DKButton>`;
+</VTButton>`;
         });
         const copyCode = () => {
             navigator.clipboard.writeText(code.value);
-            app.config.globalProperties.$toast('Copied!');
+            app.$toast('Copied!');
         };
 
-        return { key, propObject, toggleProp, forceRender, copyCode, code };
+        return { key, propObject, toggleProp, forceRender, copyCode };
     },
 };
 </script>
-
-<style lang="scss">
-#dk-btn-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 30px;
-    width: 100%;
-    height: 70vh;
-    flex: 1;
-
-    > * {
-        @include flex-y(center, center);
-    }
-
-    #btn-options-container {
-        height: 100%;
-        width: 100%;
-        background: var(--dark-grey);
-        border-radius: 10px;
-
-        #btn-options {
-            width: 100%;
-        }
-
-        .option {
-            display: flex;
-            justify-content: space-between;
-            margin: 25px;
-            font-size: 18px;
-        }
-
-        .column {
-            flex-direction: column;
-            align-items: center;
-            padding: 5px;
-            border: 1px solid;
-            border-radius: 5px;
-
-            form {
-                display: flex;
-                margin: 5px;
-
-                input {
-                    padding: 0 5px;
-                    border: none;
-                    border-radius: 5px 0 0 5px;
-                }
-            }
-        }
-    }
-
-    #btn-container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-        height: 100%;
-
-        .copy-code {
-            cursor: pointer;
-            @include flex-x(center, center);
-            height: 100%;
-            width: 100%;
-            font-size: 16px;
-            text-align: left;
-            background: var(--dark-grey);
-            border-radius: 5px;
-
-            code {
-                width: fit-content;
-                transform: translateX(20px);
-
-                .tag {
-                    transform: translateX(-30px);
-                }
-            }
-
-            i {
-                opacity: 0;
-                transform: translate(40px, 25%);
-                transition: all 0.15s;
-            }
-
-            &:hover > i {
-                opacity: 1;
-                transform: translate(40px, 0);
-            }
-        }
-    }
-}
-</style>

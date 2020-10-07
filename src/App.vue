@@ -1,24 +1,21 @@
 <template>
-    <DKNavbar :styles="navbarStyles">
+    <VTNavbar :styles="navbarStyles">
         <router-link to="/"
-            ><h1>Vue DK Lib | {{ $route.name }}</h1></router-link
+            ><h1>Vuelity | {{ $route.name }}</h1></router-link
         >
         <nav id="nav-links">
-            <DKHoverbox :height="50"><router-link to="/">Home</router-link></DKHoverbox>
+            <VTHoverbox :height="50"><router-link to="/">Home</router-link></VTHoverbox>
             |
-            <DKHoverbox :height="50"
-                ><router-link to="/docs/dk-button">Docs</router-link></DKHoverbox
+            <VTHoverbox :height="50"
+                ><router-link to="/docs/dk-button">Docs</router-link></VTHoverbox
             >
             |
-            <DKHoverbox :height="50"
-                ><a
-                    href="https://github.com/Daniel-Knights/vue-dk-lib"
-                    rel="noopener"
-                    target="_blank"
+            <VTHoverbox :height="50"
+                ><a href="https://github.com/Daniel-Knights/vuelity" rel="noopener" target="_blank"
                     >Github <i class="fa fa-github"></i></a
-            ></DKHoverbox>
+            ></VTHoverbox>
         </nav>
-    </DKNavbar>
+    </VTNavbar>
     <router-view />
 </template>
 
@@ -31,6 +28,7 @@ export default {
             justifyContent: 'space-between',
             position: 'absolute',
             padding: '0 20px',
+            background: '#47cab0',
         };
 
         return { navbarStyles };

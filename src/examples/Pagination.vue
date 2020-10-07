@@ -1,5 +1,5 @@
 <template>
-    <DKPagination><i class="fa fa-arrow-right"></i></DKPagination>
+    <VTPagination><i class="fa fa-arrow-right"></i></VTPagination>
 </template>
 
 <script>

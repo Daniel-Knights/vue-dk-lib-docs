@@ -1,5 +1,5 @@
 <template>
-    <DKSearchbar />
+    <VTSearchbar />
 </template>
 
 <script>

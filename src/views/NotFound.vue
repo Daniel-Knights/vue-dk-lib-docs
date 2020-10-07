@@ -9,7 +9,7 @@ export default {
     name: 'NotFound',
 
     setup() {
-        document.title = 'Page Not Found | Vue DK Lib';
+        document.title = 'Page Not Found | Vuelity';
     },
 };
 </script>

@@ -1,12 +1,13 @@
 @import 'mixins';
 @import 'utilities';
+@import 'playground';
 
 @function hexToRGB($hex) {
     @return red($hex), green($hex), blue($hex);
 }
 
 :root {
-    --primary: #5aafff;
+    --primary: #47cab0;
     --white: #ffffff;
     --lightgrey: #777e88;
     --grey: #5a5f66;
@@ -14,7 +15,7 @@
     --black: #1e1e1e;
 
     // RGB value conversion
-    --primary-rgb: #{hexToRGB(#5aafff)};
+    --primary-rgb: #{hexToRGB(#47cab0)};
     --white-rgb: #{hexToRGB(#ffffff)};
     --lightgrey-rgb: #{hexToRGB(#777e88)};
     --grey-rgb: #{hexToRGB(#5a5f66)};
@@ -31,6 +32,7 @@
     --code-grey: #808080;
     --code-light-yellow: #dcdda7;
     --code-const: #48c0ff;
+    --code-lightgreen: #b4cfa7;
 }
 
 *,

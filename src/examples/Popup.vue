@@ -1,5 +1,5 @@
 <template>
-    <DKPopup>DKPopup</DKPopup>
+    <VTPopup>DKPopup</VTPopup>
 </template>
 
 <script>

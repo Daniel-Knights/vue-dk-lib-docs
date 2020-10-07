@@ -1,5 +1,5 @@
 <template>
-    <DKToggle />
+    <VTToggle />
 </template>
 
 <script>

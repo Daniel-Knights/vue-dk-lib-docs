@@ -1,8 +1,5 @@
 <template>
-    <div class="section-sub-title">
-        <h3>Default</h3>
-    </div>
-    <DKVideo
+    <VTVideo
         videoId="1"
         :videoFocused="videoFocused"
         @video-focused="focusHandler('1')"
@@ -10,10 +7,10 @@
         :videoPoster="require('../assets/video-bg.jpg')"
         :videoSrc="require('../assets/video.mp4')"
     />
-    <div class="section-sub-title">
+    <!-- <div class="section-sub-title">
         <h3>With styles/time-tags</h3>
     </div>
-    <DKVideo
+    <VTVideo
         videoId="2"
         :videoFocused="videoFocused"
         @video-focused="focusHandler('2')"
@@ -25,7 +22,7 @@
         :videoPoster="require('../assets/video-bg.jpg')"
         :videoSrc="require('../assets/video.mp4')"
         :timeTags="tags"
-    />
+    /> -->
 </template>
 
 <script>

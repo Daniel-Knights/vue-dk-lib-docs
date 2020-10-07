@@ -1,27 +1,27 @@
 <template>
     <div id="tooltip-container">
-        <DKTooltip text="Hello there!" :style="tooltipStyles"
-            ><code>position="top"</code></DKTooltip
+        <VTTooltip text="Hello there!" :style="tooltipStyles"
+            ><code>position="top"</code></VTTooltip
         >
-        <DKTooltip text="Hello there!" position="right" :style="tooltipStyles"
-            ><code>position="right"</code></DKTooltip
+        <VTTooltip text="Hello there!" position="right" :style="tooltipStyles"
+            ><code>position="right"</code></VTTooltip
         >
-        <DKTooltip text="Hello there!" position="left" :style="tooltipStyles"
-            ><code>position="left"</code></DKTooltip
+        <VTTooltip text="Hello there!" position="left" :style="tooltipStyles"
+            ><code>position="left"</code></VTTooltip
         >
-        <DKTooltip text="Hello there!" position="bottom" :style="tooltipStyles"
-            ><code>position="bottom"</code></DKTooltip
+        <VTTooltip text="Hello there!" position="bottom" :style="tooltipStyles"
+            ><code>position="bottom"</code></VTTooltip
         >
-        <DKTooltip text="Hello there!" position="bottom" :style="tooltipStyles" :arrow="false"
-            ><code>:arrow="false"</code></DKTooltip
+        <VTTooltip text="Hello there!" position="bottom" :style="tooltipStyles" :arrow="false"
+            ><code>:arrow="false"</code></VTTooltip
         >
-        <DKTooltip
+        <VTTooltip
             text="Hello there!"
             position="bottom"
             :style="tooltipStyles"
             :arrow="false"
             :styles="{ backgroundColor: '#5aafff' }"
-            ><code>:styles="{ backgroundColor: '#5aafff' }"</code></DKTooltip
+            ><code>:styles="{ backgroundColor: '#5aafff' }"</code></VTTooltip
         >
     </div>
 </template>

@@ -1,0 +1,106 @@
+.component-playground {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 30px;
+    width: 100%;
+    height: 70vh;
+    flex: 1;
+
+    > * {
+        @include flex-y(center, center);
+    }
+
+    .options-container {
+        height: 100%;
+        width: 100%;
+        background: var(--dark-grey);
+        border-radius: 10px;
+
+        .options {
+            width: 100%;
+        }
+
+        .option {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px;
+            font-size: 18px;
+        }
+
+        .column {
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+        form {
+            display: flex;
+            margin: 5px;
+        }
+        input {
+            padding: 0 5px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+
+            &[type='color'] {
+                border-radius: 0 5px 5px 0;
+            }
+        }
+    }
+
+    .example-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        height: 100%;
+
+        &.single-panel {
+            grid-template-rows: 100%;
+        }
+
+        .example {
+            @include flex-x(center, center);
+            align-self: flex-start;
+            width: 100%;
+            height: calc(100% - 20px);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .contrast {
+            background: var(--primary);
+        }
+        .copy-code {
+            cursor: pointer;
+            @include flex-x(center, center);
+            height: 100%;
+            width: 100%;
+            font-size: 16px;
+            text-align: left;
+            background: var(--dark-grey);
+            border-radius: 10px;
+
+            &:hover > i {
+                opacity: 1;
+                transform: translate(40px, 0);
+            }
+        }
+        code {
+            width: fit-content;
+            transform: translateX(20px);
+            z-index: 1;
+        }
+        .tag {
+            transform: translateX(-30px);
+        }
+        i {
+            opacity: 0;
+            transform: translate(40px, 25%);
+            transition: all 0.15s;
+            z-index: 0;
+        }
+    }
+}

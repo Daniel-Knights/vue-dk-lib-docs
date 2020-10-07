@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import DKToast from 'vue-dk-toast';
-import * as DKLib from 'vue-dk-lib';
+import * as DKLib from 'vuelity';
 
 const app = createApp(App);
 
@@ -23,4 +23,4 @@ app.use(DKToast, {
 });
 app.mount('#app');
 
-export default app;
+export default app.config.globalProperties;

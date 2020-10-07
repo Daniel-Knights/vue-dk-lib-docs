@@ -1,5 +1,5 @@
 <template>
-    <DKNavbar
+    <VTNavbar
         position="left"
         :slider="true"
         :containerStyles="{ zIndex: 9 }"
@@ -9,56 +9,56 @@
             paddingTop: '100px',
             justifyContent: 'center',
         }"
-        :burgerStyles="{ top: '120px' }"
+        :burgerStyles="{ top: '120px', background: '#47cab0' }"
     >
         <nav id="components-nav">
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-button"
                     ><code>&lt;<span>DKButton</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-hoverbox"
                     ><code>&lt;<span>DKHoverbox</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-navbar"
                     ><code>&lt;<span>DKNavbar</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-pagination"
                     ><code>&lt;<span>DKPagination</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-popup"
                     ><code>&lt;<span>DKPopup</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-searchbar"
                     ><code>&lt;<span>DKSearchbar</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-toggle"
                     ><code>&lt;<span>DKToggle</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-tooltip"
                     ><code>&lt;<span>DKTooltip</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
-            <DKHoverbox :containerStyles="hoverboxStyles">
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/dk-video"
                     ><code>&lt;<span>DKVideo</span>&gt;</code></router-link
                 >
-            </DKHoverbox>
+            </VTHoverbox>
         </nav>
-    </DKNavbar>
+    </VTNavbar>
     <div id="component-container">
         <main id="component-view">
             <router-view></router-view>
@@ -78,7 +78,7 @@ export default {
         document.body.style.background = getComputedStyle(
             document.documentElement
         ).getPropertyValue('--white');
-        document.title = 'Docs | Vue DK Lib';
+        document.title = 'Docs | Vuelity';
 
         return { codeBg, hoverboxStyles };
     },
