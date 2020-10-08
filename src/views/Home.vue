@@ -97,17 +97,27 @@
                         <code
                             ><span class="code-grey">&lt;</span
                             ><span class="code-navy">script </span>
-                            <span class="code-blue">src</span>=<span class="code-orange overflow"
+                            <span class="code-blue">src</span>=<span
+                                class="code-orange overflow-mid"
                                 >"https://unpkg.com/vue@3.0.0/dist/vue.global.js"</span
-                            ><span class="code-grey">></span></code
+                            ><span class="overflow-end"
+                                ><span class="code-grey">></span><span class="code-grey">&lt;/</span
+                                ><span class="code-navy">script</span
+                                ><span class="code-grey">></span></span
+                            ></code
                         >
                         <i class="fa fa-copy"></i>
                         <code
                             ><span class="code-grey">&lt;</span
                             ><span class="code-navy">script </span
-                            ><span class="code-blue">src</span>=<span class="code-orange overflow"
+                            ><span class="code-blue">src</span>=<span
+                                class="code-orange overflow-mid"
                                 >"https://unpkg.com/vuelity/dist/vuelity.umd.min.js"</span
-                            ><span class="code-grey">></span></code
+                            ><span class="overflow-end"
+                                ><span class="code-grey">></span><span class="code-grey">&lt;/</span
+                                ><span class="code-navy">script</span
+                                ><span class="code-grey">></span></span
+                            ></code
                         >
                     </div>
                     ...
@@ -298,13 +308,19 @@ export default {
             margin-left: 30px;
         }
 
-        .overflow {
+        .overflow-mid,
+        .overflow-end {
             display: inline-block;
             vertical-align: top;
-            width: 22vw;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        .overflow-mid {
+            width: 22vw;
+        }
+        .overflow-end {
+            width: 0;
         }
 
         &:hover i {
