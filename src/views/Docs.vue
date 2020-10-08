@@ -9,52 +9,52 @@
             paddingTop: '100px',
             justifyContent: 'center',
         }"
-        :burgerStyles="{ top: '120px', background: '#47cab0' }"
+        :burgerStyles="{ top: '120px', background: '#5bd0b9' }"
     >
         <nav id="components-nav">
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-button"
-                    ><code>&lt;<span>DKButton</span>&gt;</code></router-link
+                <router-link to="/docs/vt-button"
+                    ><code>&lt;<span>VTButton</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-hoverbox"
-                    ><code>&lt;<span>DKHoverbox</span>&gt;</code></router-link
+                <router-link to="/docs/vt-hoverbox"
+                    ><code>&lt;<span>VTHoverbox</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-navbar"
-                    ><code>&lt;<span>DKNavbar</span>&gt;</code></router-link
+                <router-link to="/docs/vt-navbar"
+                    ><code>&lt;<span>VTNavbar</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-pagination"
-                    ><code>&lt;<span>DKPagination</span>&gt;</code></router-link
+                <router-link to="/docs/vt-pagination"
+                    ><code>&lt;<span>VTPagination</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-popup"
-                    ><code>&lt;<span>DKPopup</span>&gt;</code></router-link
+                <router-link to="/docs/vt-popup"
+                    ><code>&lt;<span>VTPopup</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-searchbar"
-                    ><code>&lt;<span>DKSearchbar</span>&gt;</code></router-link
+                <router-link to="/docs/vt-searchbar"
+                    ><code>&lt;<span>VTSearchbar</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-toggle"
-                    ><code>&lt;<span>DKToggle</span>&gt;</code></router-link
+                <router-link to="/docs/vt-toggle"
+                    ><code>&lt;<span>VTToggle</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-tooltip"
-                    ><code>&lt;<span>DKTooltip</span>&gt;</code></router-link
+                <router-link to="/docs/vt-tooltip"
+                    ><code>&lt;<span>VTTooltip</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/dk-video"
-                    ><code>&lt;<span>DKVideo</span>&gt;</code></router-link
+                <router-link to="/docs/vt-video"
+                    ><code>&lt;<span>VTVideo</span>&gt;</code></router-link
                 >
             </VTHoverbox>
         </nav>

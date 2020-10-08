@@ -1,12 +1,13 @@
 <template>
-    <VTVideo
+    <h1 class="coming-soon">COMING SOON</h1>
+    <!-- <VTVideo
         videoId="1"
         :videoFocused="videoFocused"
         @video-focused="focusHandler('1')"
         @click="focusHandler('1')"
         :videoPoster="require('../assets/video-bg.jpg')"
         :videoSrc="require('../assets/video.mp4')"
-    />
+    /> -->
     <!-- <div class="section-sub-title">
         <h3>With styles/time-tags</h3>
     </div>
@@ -54,4 +55,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.coming-soon {
+    color: var(--black);
+}
+</style>

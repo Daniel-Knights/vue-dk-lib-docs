@@ -7,7 +7,7 @@
             <VTHoverbox :height="50"><router-link to="/">Home</router-link></VTHoverbox>
             |
             <VTHoverbox :height="50"
-                ><router-link to="/docs/dk-button">Docs</router-link></VTHoverbox
+                ><router-link to="/docs/vt-button">Docs</router-link></VTHoverbox
             >
             |
             <VTHoverbox :height="50"
@@ -17,6 +17,29 @@
         </nav>
     </VTNavbar>
     <router-view />
+    <VTTooltip
+        text="Try a full demo on Codepen!"
+        position="left"
+        :containerStyles="{ position: 'fixed', bottom: '30px', right: '40px' }"
+    >
+        <a
+            href="https://codepen.io/daniel-knights/pen/jOrOVXX"
+            target="_blank"
+            rel="noopener"
+            class="codepen"
+        >
+            <VTButton
+                :styles="{
+                    position: 'relative',
+                    minWidth: '50px',
+                    height: '50px',
+                    borderRadius: '50%',
+                }"
+            >
+                <i class="fa fa-codepen"></i>
+            </VTButton>
+        </a>
+    </VTTooltip>
 </template>
 
 <script>
@@ -28,7 +51,7 @@ export default {
             justifyContent: 'space-between',
             position: 'absolute',
             padding: '0 20px',
-            background: '#47cab0',
+            background: '#5bd0b9',
         };
 
         return { navbarStyles };
@@ -44,7 +67,7 @@ export default {
     width: 33%;
     min-width: 300px;
 }
-a {
+a:not(.codepen) {
     padding: 10px;
     text-decoration: none;
     color: var(--white);

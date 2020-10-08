@@ -5,7 +5,7 @@
         :containerStyles="{ position: 'absolute', maxHeight: '70vh' }"
         :key="key"
     >
-        <h1>DKNavbar</h1>
+        <h1>VTNavbar</h1>
     </VTNavbar>
     <div class="component-playground">
         <div class="options-container">
@@ -56,7 +56,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">DKNavbar</span>
+                        <span class="code-grey">&lt;</span><span class="code-green">VTNavbar</span>
                     </div>
                     <div><span class="code-blue">styles</span>="{}"</div>
                     <div><span class="code-blue">containerStyles</span>="{}"</div>
@@ -74,10 +74,10 @@
                     </div>
                     <div class="tag"><span class="code-grey">&gt;</span></div>
                     <VTTooltip text="Vue slot for any valid HTML">
-                        &lt;h1>DKNavbar&lt;/h1>
+                        &lt;h1>VTNavbar&lt;/h1>
                     </VTTooltip>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span><span class="code-green">DKNavbar</span
+                        <span class="code-grey">&lt;/</span><span class="code-green">VTNavbar</span
                         ><span class="code-grey">&gt;</span>
                     </div>
                 </code>
@@ -110,7 +110,7 @@ export default {
     :position="${propObject.value.position}"
     :slider="${propObject.value.slider}"
 >
-    <h1>DKNavbar</h1>
+    <h1>VTNavbar</h1>
 </VTNavbar>`;
         });
         const copyCode = () => {

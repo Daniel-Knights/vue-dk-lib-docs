@@ -24,8 +24,7 @@
         }
 
         .option {
-            display: flex;
-            justify-content: space-between;
+            @include flex-x(space-between, center);
             margin: 25px;
             font-size: 18px;
         }
@@ -43,11 +42,18 @@
         }
         input {
             padding: 0 5px;
+            min-height: 25px;
             border: none;
             border-radius: 5px 0 0 5px;
 
             &[type='color'] {
                 border-radius: 0 5px 5px 0;
+            }
+
+            &.small-number {
+                cursor: default;
+                border-radius: 5px;
+                caret-color: transparent;
             }
         }
     }
@@ -83,24 +89,25 @@
             background: var(--dark-grey);
             border-radius: 10px;
 
+            code {
+                width: fit-content;
+                transform: translateX(20px);
+                z-index: 1;
+            }
+            .tag {
+                transform: translateX(-30px);
+            }
+            i {
+                opacity: 0;
+                transform: translate(40px, 25%);
+                transition: all 0.15s;
+                z-index: 0;
+            }
+
             &:hover > i {
                 opacity: 1;
                 transform: translate(40px, 0);
             }
-        }
-        code {
-            width: fit-content;
-            transform: translateX(20px);
-            z-index: 1;
-        }
-        .tag {
-            transform: translateX(-30px);
-        }
-        i {
-            opacity: 0;
-            transform: translate(40px, 25%);
-            transition: all 0.15s;
-            z-index: 0;
         }
     }
 }

@@ -11,7 +11,7 @@
         "vue": "^3.0.0-0",
         "vue-dk-toast": "^0.1.22",
         "vue-router": "^4.0.0-0",
-        "vuelity": "^2.0.0",
+        "vuelity": "^2.0.11",
         "vuex": "^4.0.0-0"
     },
     "devDependencies": {

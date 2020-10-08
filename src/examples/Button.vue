@@ -93,6 +93,7 @@
                                 height: '25px',
                                 fontSize: '14px',
                                 borderRadius: '0 5px 5px 0',
+                                background: '#47cab0',
                             }"
                             >APPLY</VTButton
                         >
@@ -118,7 +119,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">DKButton</span>
+                        <span class="code-grey">&lt;</span><span class="code-green">VTButton</span>
                     </div>
                     <div><span class="code-blue">styles</span>="{}"</div>
                     <div>
@@ -170,7 +171,7 @@
                     <div class="tag"><span class="code-grey">&gt;</span></div>
                     <div>CLICK ME!</div>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span><span class="code-green">DKButton</span
+                        <span class="code-grey">&lt;/</span><span class="code-green">VTButton</span
                         ><span class="code-grey">&gt;</span>
                     </div>
                 </code>
@@ -197,7 +198,7 @@ export default {
             shine: false,
             hoverEnabled: true,
             hoverColor: '#ffffff',
-            hoverBackground: '#5aafff',
+            hoverBackground: '#5bd0b9',
         });
 
         const forceRender = () => key.value++;

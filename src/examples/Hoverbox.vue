@@ -16,7 +16,7 @@
                 </div>
                 <div class="option column">
                     <VTTooltip
-                        text="DKHoverbox sets its own width but you can set it manually too."
+                        text="VTHoverbox sets its own width but you can set it manually too."
                         position="right"
                         :styles="{ minWidth: '350px' }"
                     >
@@ -42,7 +42,7 @@
                 </div>
                 <div class="option column">
                     <VTTooltip
-                        text="DKHoverbox also sets its own height but you can set it manually too."
+                        text="VTHoverbox also sets its own height but you can set it manually too."
                         position="right"
                         :styles="{ minWidth: '350px' }"
                     >
@@ -93,7 +93,7 @@
                 <code>
                     <div class="tag">
                         <span class="code-grey">&lt;</span
-                        ><span class="code-green">DKHoverbox</span>
+                        ><span class="code-green">VTHoverbox</span>
                     </div>
                     <div><span class="code-blue">styles</span>="{}"</div>
                     <div><span class="code-blue">containerStyles</span>="{}"</div>
@@ -118,7 +118,7 @@
                     <div>CLICK ME!</div>
                     <div class="tag">
                         <span class="code-grey">&lt;/</span
-                        ><span class="code-green">DKHoverbox</span
+                        ><span class="code-green">VTHoverbox</span
                         ><span class="code-grey">&gt;</span>
                     </div>
                 </code>

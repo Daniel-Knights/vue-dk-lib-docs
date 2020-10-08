@@ -3,13 +3,13 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import DKToast from 'vue-dk-toast';
-import * as DKLib from 'vuelity';
+import * as Vuelity from 'vuelity';
 
 const app = createApp(App);
 
 // Register components
-Object.keys(DKLib).forEach(el => {
-    app.component(el, DKLib[el]);
+Object.keys(Vuelity).forEach(el => {
+    app.component(el, Vuelity[el]);
 });
 
 app.use(store);
