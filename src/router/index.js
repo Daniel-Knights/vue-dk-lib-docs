@@ -68,4 +68,9 @@ const router = createRouter({
     routes,
 });
 
+router.beforeEach(to => {
+    // Update title
+    document.title = to.name + ' | Vuelity';
+});
+
 export default router;

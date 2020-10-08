@@ -45,7 +45,7 @@
                     <div class="block">
                         <code @click="copyCode($event)"
                             ><span class="code-purple">import</span>
-                            <span class="code-navy">* </span>
+                            <span class="code-navy"> * </span>
                             <span class="code-purple">as </span>
                             <span class="code-blue">Vuelity</span>
                             <span class="code-purple"> from </span>
@@ -152,7 +152,7 @@
                                 ><span class="code-yellow">)</span>.<span class="code-light-yellow"
                                     >forEach</span
                                 ><span class="code-yellow">(</span><span class="code-blue">el</span>
-                                <span class="code-navy"> =></span>
+                                <span class="code-navy"> => </span>
                                 <span class="code-purple">{</span>
                             </div>
                             <i class="fa fa-copy"></i>
@@ -204,7 +204,6 @@ export default {
         };
 
         document.body.removeAttribute('style');
-        document.title = 'Home | Vuelity';
 
         return { cli, copyCode };
     },

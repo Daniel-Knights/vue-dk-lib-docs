@@ -4,12 +4,12 @@
         :slider="true"
         :containerStyles="{ zIndex: 9 }"
         :styles="{
-            background: codeBg,
+            background: black,
             width: '250px',
             paddingTop: '100px',
             justifyContent: 'center',
         }"
-        :burgerStyles="{ top: '120px', background: '#5bd0b9' }"
+        :burgerStyles="{ top: '120px' }"
     >
         <nav id="components-nav">
             <VTHoverbox :containerStyles="hoverboxStyles">
@@ -67,20 +67,18 @@
 </template>
 
 <script>
+import app from '@/main';
+
 export default {
     name: 'Docs',
 
     setup() {
-        const codeBg = getComputedStyle(document.documentElement).getPropertyValue('--black');
-        const primary = getComputedStyle(document.documentElement).getPropertyValue('--primary');
+        const black = app.$black;
         const hoverboxStyles = { margin: '10px 0', padding: '5px 0' };
 
-        document.body.style.background = getComputedStyle(
-            document.documentElement
-        ).getPropertyValue('--white');
-        document.title = 'Docs | Vuelity';
+        document.body.style.background = app.$white;
 
-        return { codeBg, hoverboxStyles };
+        return { black, hoverboxStyles };
     },
 };
 </script>

@@ -115,7 +115,7 @@
                         >
                     </div>
                     <div class="tag"><span class="code-grey">&gt;</span></div>
-                    <div>CLICK ME!</div>
+                    <div>HOVER ME!</div>
                     <div class="tag">
                         <span class="code-grey">&lt;/</span
                         ><span class="code-green">VTHoverbox</span
@@ -150,7 +150,7 @@ export default {
     :height="${propObject.value.height}"
     :fill="${propObject.value.fill}"
 >
-    CLICK ME!
+    HOVER ME!
 </VTHoverbox>`;
         });
         const copyCode = () => {

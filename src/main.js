@@ -12,12 +12,19 @@ Object.keys(Vuelity).forEach(el => {
     app.component(el, Vuelity[el]);
 });
 
+const root = getComputedStyle(document.documentElement);
+
+app.config.globalProperties.$primary = root.getPropertyValue('--primary');
+app.config.globalProperties.$white = root.getPropertyValue('--white');
+app.config.globalProperties.$black = root.getPropertyValue('--black');
+app.config.globalProperties.$darkGrey = root.getPropertyValue('--dark-grey');
+
 app.use(store);
 app.use(router);
 app.use(DKToast, {
     duration: 3000,
     styles: {
-        color: getComputedStyle(document.documentElement).getPropertyValue('--dark-grey'),
+        color: root.getPropertyValue('--dark-grey'),
         letterSpacing: '1px',
     },
 });

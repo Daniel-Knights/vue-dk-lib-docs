@@ -155,8 +155,6 @@ export default {
             currentPage: 1,
             lastPage: 10,
         });
-        const white = getComputedStyle(document.documentElement).getPropertyValue('--white');
-        const black = getComputedStyle(document.documentElement).getPropertyValue('--black');
 
         const forceRender = () => key.value++;
         const code = computed(() => {
@@ -181,7 +179,7 @@ export default {
             console.log(e);
         };
 
-        return { key, propObject, white, black, forceRender, copyCode, logValue };
+        return { key, propObject, forceRender, copyCode, logValue };
     },
 };
 </script>
