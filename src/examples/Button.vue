@@ -22,11 +22,11 @@
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">fill</span>="<span class="code-navy"
-                            >{{ propObject.fill }}"</span
+                        >:<span class="code-blue">fillBorder</span>="<span class="code-navy"
+                            >{{ propObject.fillBorder }}"</span
                         ></code
                     >
-                    <VTToggle @toggle="toggleProp('fill')" />
+                    <VTToggle @toggle="toggleProp('fillBorder')" />
                 </div>
                 <div class="option">
                     <code
@@ -68,15 +68,7 @@
                     >
                     <form @submit.prevent="forceRender()">
                         <input type="text" v-model="propObject.hoverColor" maxlength="25" />
-                        <VTButton
-                            :styles="{
-                                minWidth: '50px',
-                                height: '25px',
-                                fontSize: '14px',
-                                borderRadius: '0 5px 5px 0',
-                            }"
-                            >APPLY</VTButton
-                        >
+                        <input type="color" v-model="propObject.hoverColor" />
                     </form>
                 </div>
                 <div class="option column">
@@ -87,16 +79,7 @@
                     >
                     <form @submit.prevent="forceRender()">
                         <input type="text" v-model="propObject.hoverBackground" maxlength="25" />
-                        <VTButton
-                            :styles="{
-                                minWidth: '50px',
-                                height: '25px',
-                                fontSize: '14px',
-                                borderRadius: '0 5px 5px 0',
-                                background: '#47cab0',
-                            }"
-                            >APPLY</VTButton
-                        >
+                        <input type="color" v-model="propObject.hoverBackground" />
                     </form>
                 </div>
             </div>
@@ -105,7 +88,7 @@
             <div class="example">
                 <VTButton
                     :rainbow="propObject.rainbow"
-                    :fill="propObject.fill"
+                    :fillBorder="propObject.fillBorder"
                     :onlyBorder="propObject.onlyBorder"
                     :ripple="propObject.ripple"
                     :shine="propObject.shine"
@@ -129,8 +112,8 @@
                         >"
                     </div>
                     <div>
-                        :<span class="code-blue">fill</span>="<span class="code-navy">{{
-                            propObject.fill
+                        :<span class="code-blue">fillBorder</span>="<span class="code-navy">{{
+                            propObject.fillBorder
                         }}</span
                         >"
                     </div>
@@ -192,7 +175,7 @@ export default {
         const key = ref(0);
         const propObject = ref({
             rainbow: false,
-            fill: false,
+            fillBorder: false,
             onlyBorder: false,
             ripple: true,
             shine: false,
@@ -210,7 +193,7 @@ export default {
             return `<VTButton
     :styles="{}"
     :rainbow="${propObject.value.rainbow}"
-    :fill="${propObject.value.fill}"
+    :fillBorder="${propObject.value.fillBorder}"
     :onlyBorder="${propObject.value.onlyBorder}"
     :ripple="${propObject.value.ripple}"
     :shine="${propObject.value.shine}"

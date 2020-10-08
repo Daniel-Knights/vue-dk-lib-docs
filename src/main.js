@@ -6,18 +6,17 @@ import DKToast from 'vue-dk-toast';
 import * as Vuelity from 'vuelity';
 
 const app = createApp(App);
-
-// Register components
-Object.keys(Vuelity).forEach(el => {
-    app.component(el, Vuelity[el]);
-});
-
 const root = getComputedStyle(document.documentElement);
 
 app.config.globalProperties.$primary = root.getPropertyValue('--primary');
 app.config.globalProperties.$white = root.getPropertyValue('--white');
 app.config.globalProperties.$black = root.getPropertyValue('--black');
 app.config.globalProperties.$darkGrey = root.getPropertyValue('--dark-grey');
+
+// Register components
+Object.keys(Vuelity).forEach(el => {
+    app.component(el, Vuelity[el]);
+});
 
 app.use(store);
 app.use(router);

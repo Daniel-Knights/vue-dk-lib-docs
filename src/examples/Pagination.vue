@@ -49,7 +49,7 @@
                         @keypress.prevent
                         min="1"
                         :max="propObject.lastPage"
-                        class="small-number"
+                        class="small-input"
                     />
                 </div>
                 <div class="option">

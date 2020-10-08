@@ -36,6 +36,10 @@
             border: 1px solid;
             border-radius: 5px;
         }
+        .restore {
+            width: fit-content;
+            margin: 0 auto;
+        }
         form {
             display: flex;
             margin: 5px;
@@ -50,10 +54,14 @@
                 border-radius: 0 5px 5px 0;
             }
 
-            &.small-number {
-                cursor: default;
+            &.small-input {
                 border-radius: 5px;
-                caret-color: transparent;
+                max-width: 40px;
+
+                &[type='number'] {
+                    cursor: default;
+                    caret-color: transparent;
+                }
             }
         }
     }
@@ -71,13 +79,19 @@
         .example {
             @include flex-x(center, center);
             align-self: flex-start;
+            position: relative;
+            padding: 30px;
             width: 100%;
             height: calc(100% - 20px);
-            padding: 30px;
             border-radius: 10px;
+            overflow: hidden;
         }
         .contrast {
             background: var(--primary);
+        }
+        .border {
+            box-shadow: inset 0 0 7px -2px var(--black);
+            border: 1px solid var(--dark-grey);
         }
         .copy-code {
             cursor: pointer;

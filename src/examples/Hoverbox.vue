@@ -146,6 +146,8 @@ export default {
         const forceRender = () => key.value++;
         const code = computed(() => {
             return `<VTHoverbox
+    :styles="{}"
+    :containerStyles="{}"
     :width="${propObject.value.width}"
     :height="${propObject.value.height}"
     :fill="${propObject.value.fill}"
