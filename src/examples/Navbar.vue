@@ -58,9 +58,9 @@
                     <div class="tag">
                         <span class="code-grey">&lt;</span><span class="code-green">VTNavbar</span>
                     </div>
-                    <div><span class="code-blue">styles</span>="{}"</div>
-                    <div><span class="code-blue">containerStyles</span>="{}"</div>
-                    <div><span class="code-blue">burgerStyles</span>="{}"</div>
+                    <div>:<span class="code-blue">styles</span>="{}"</div>
+                    <div>:<span class="code-blue">containerStyles</span>="{}"</div>
+                    <div>:<span class="code-blue">burgerStyles</span>="{}"</div>
                     <div>
                         <span class="code-blue">position</span>=<span class="code-orange"
                             >"{{ propObject.position }}"</span

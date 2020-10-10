@@ -95,8 +95,8 @@
                         <span class="code-grey">&lt;</span
                         ><span class="code-green">VTHoverbox</span>
                     </div>
-                    <div><span class="code-blue">styles</span>="{}"</div>
-                    <div><span class="code-blue">containerStyles</span>="{}"</div>
+                    <div>:<span class="code-blue">styles</span>="{}"</div>
+                    <div>:<span class="code-blue">containerStyles</span>="{}"</div>
                     <div>
                         :<span class="code-blue">width</span>="<span class="code-lightgreen">{{
                             propObject.width

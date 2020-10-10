@@ -86,7 +86,7 @@
                     <div class="tag">
                         <span class="code-grey">&lt;</span><span class="code-green">VTPopup</span>
                     </div>
-                    <div><span class="code-blue">styles</span>="{}"</div>
+                    <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
                         :<span class="code-blue">cookie</span>="<span class="code-navy">{{
                             propObject.cookie

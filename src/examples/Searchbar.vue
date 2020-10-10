@@ -50,7 +50,7 @@
                 </div>
                 <div class="option">
                     <VTTooltip
-                        text="Delay from page-load to the popup appearing."
+                        text="Swaps the primary and secondary props."
                         position="right"
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
@@ -87,7 +87,7 @@
                 </div>
                 <div class="option">
                     <VTTooltip
-                        text="Delay from page-load to the popup appearing."
+                        text="Returns the input value on keyup."
                         position="right"
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
@@ -104,7 +104,7 @@
                 </div>
                 <div class="option">
                     <VTTooltip
-                        text="Delay from page-load to the popup appearing."
+                        text="Returns the input value on submit. Normal @submit event works too for a more in-depth returned value."
                         position="right"
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
@@ -141,7 +141,7 @@
                         <span class="code-grey">&lt;</span
                         ><span class="code-green">VTSearchbar</span>
                     </div>
-                    <div><span class="code-blue">styles</span>="{}"</div>
+                    <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
                         <span class="code-blue">placeholder</span>=<span class="code-orange"
                             >"{{ propObject.placeholder }}"</span
