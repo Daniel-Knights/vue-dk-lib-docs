@@ -114,10 +114,10 @@ export default {
 #component-container {
     @include flex-x(center, center);
     position: relative;
-    top: 100px;
+    padding: 110px 0 10px;
     margin: 0 auto;
     max-width: 1200px;
-    height: calc(100vh - 100px);
+    min-height: 100vh;
     z-index: 0;
 
     #component-view {
