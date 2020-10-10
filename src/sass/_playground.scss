@@ -34,6 +34,19 @@
                 text-overflow: ellipsis;
                 white-space: pre;
             }
+
+            .trim {
+                width: calc(100% - 20px);
+
+                &-span {
+                    display: inline-block;
+                    vertical-align: bottom;
+                    white-space: pre;
+                    max-width: calc(80% - 20px);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
         }
         .column {
             flex-direction: column;
@@ -78,6 +91,11 @@
                     caret-color: transparent;
                 }
             }
+            &.large-input {
+                margin: 10px;
+                width: calc(100% - 20px);
+                border-radius: 5px;
+            }
         }
         select,
         input {
@@ -103,7 +121,10 @@
             width: 100%;
             height: calc(100% - 20px);
             border-radius: 10px;
-            overflow: hidden;
+
+            &.overflow-hidden {
+                overflow: hidden;
+            }
         }
         .contrast {
             background: var(--primary);

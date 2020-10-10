@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import app from '@/main';
 
 export default {
@@ -117,6 +117,11 @@ export default {
             navigator.clipboard.writeText(code.value);
             app.$toast('Copied!');
         };
+
+        onMounted(() => (document.getElementById('component-view').style.overflow = 'hidden'));
+        onBeforeUnmount(
+            () => (document.getElementById('component-view').style.overflow = 'visible')
+        );
 
         return { key, propObject, forceRender, copyCode };
     },

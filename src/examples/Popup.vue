@@ -67,7 +67,7 @@
             </div>
         </div>
         <div class="example-container">
-            <div class="example border">
+            <div class="example border overflow-hidden">
                 <VTPopup
                     :styles="{
                         position: 'absolute',

@@ -123,7 +123,6 @@ export default {
         border: 2px solid var(--lightgrey);
         border-radius: 5px;
         box-shadow: 0 0 10px -5px var(--black);
-        overflow: hidden;
     }
 }
 </style>
