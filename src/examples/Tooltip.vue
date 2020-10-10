@@ -47,6 +47,7 @@
                             propObject.arrow = !propObject.arrow;
                             forceRender();
                         "
+                        :initialState="true"
                     />
                 </div>
             </div>

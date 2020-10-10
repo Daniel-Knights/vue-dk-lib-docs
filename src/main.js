@@ -27,7 +27,4 @@ app.use(DKToast, {
 });
 app.mount('#app');
 
-// Build hook:
-// curl -X POST -d {} https://api.netlify.com/build_hooks/5f7f53f2eb69e520bd0d3aea
-
 export default app.config.globalProperties;
