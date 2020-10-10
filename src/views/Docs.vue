@@ -18,6 +18,11 @@
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
+                <router-link to="/docs/vt-burger"
+                    ><code>&lt;<span>VTBurger</span>&gt;</code></router-link
+                >
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-hoverbox"
                     ><code>&lt;<span>VTHoverbox</span>&gt;</code></router-link
                 >
@@ -61,7 +66,7 @@
     </VTNavbar>
     <div id="component-container">
         <main id="component-view">
-            <router-view></router-view>
+            <router-view />
         </main>
     </div>
 </template>

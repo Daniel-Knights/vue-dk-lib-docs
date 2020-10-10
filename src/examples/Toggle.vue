@@ -28,11 +28,26 @@
                         "
                     />
                 </div>
+                <div class="option column">
+                    <code
+                        ><span class="code-blue">hoverColor</span>=<span class="code-orange"
+                            >"{{ propObject.hoverColor }}"</span
+                        ></code
+                    >
+                    <form @submit.prevent="forceRender()">
+                        <input type="text" v-model="propObject.hoverColor" maxlength="25" />
+                        <input type="color" v-model="propObject.hoverColor" />
+                    </form>
+                </div>
             </div>
         </div>
         <div class="example-container">
             <div class="example contrast-black">
-                <VTToggle :initialState="propObject.initialState" :key="key" />
+                <VTToggle
+                    :initialState="propObject.initialState"
+                    :hoverColor="propObject.hoverColor"
+                    :key="key"
+                />
             </div>
             <div class="copy-code" @click="copyCode()">
                 <code>
@@ -46,6 +61,11 @@
                             propObject.initialState
                         }}</span
                         >"
+                    </div>
+                    <div>
+                        <span class="code-blue">hoverColor</span>=<span class="code-orange"
+                            >"{{ propObject.hoverColor }}"</span
+                        >
                     </div>
                     <div class="tag"><span class="code-grey">/&gt;</span></div>
                 </code>
@@ -66,6 +86,7 @@ export default {
         const key = ref(0);
         const propObject = ref({
             initialState: false,
+            hoverColor: '#ededed',
         });
 
         const forceRender = () => key.value++;
@@ -74,6 +95,7 @@ export default {
     :containerStyles="{}"
     :toggleStyles="{}"
     :initialState="${propObject.value.initialState}"
+    hoverColor="${propObject.value.hoverColor}"
 />`;
         });
         const copyCode = () => {

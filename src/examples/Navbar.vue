@@ -43,12 +43,7 @@
                         >:<span class="code-blue">slider</span>="<span class="code-navy"></span
                         >"</code
                     >
-                    <VTToggle
-                        @toggle="
-                            propObject.slider = !propObject.slider;
-                            forceRender();
-                        "
-                    />
+                    <VTToggle @toggle="toggleProp('slider')" />
                 </div>
             </div>
         </div>
@@ -102,6 +97,10 @@ export default {
         });
 
         const forceRender = () => key.value++;
+        const toggleProp = prop => {
+            propObject.value[prop] = !propObject.value[prop];
+            forceRender();
+        };
         const code = computed(() => {
             return `<VTNavbar
     :styles="{}"
@@ -123,7 +122,7 @@ export default {
             () => (document.getElementById('component-view').style.overflow = 'visible')
         );
 
-        return { key, propObject, forceRender, copyCode };
+        return { key, propObject, forceRender, toggleProp, copyCode };
     },
 };
 </script>

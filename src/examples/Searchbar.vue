@@ -98,9 +98,9 @@
                             >(<span class="code-blue">$event</span>)"</code
                         >
                     </VTTooltip>
-                    <div class="text-box">
+                    <code class="text-box">
                         {{ propObject.searchValue }}
-                    </div>
+                    </code>
                 </div>
                 <div class="option">
                     <VTTooltip
@@ -115,9 +115,9 @@
                             >(<span class="code-blue">$event</span>)"</code
                         >
                     </VTTooltip>
-                    <div class="text-box">
+                    <code class="text-box">
                         {{ propObject.searchSubmit }}
-                    </div>
+                    </code>
                 </div>
             </div>
         </div>

@@ -19,6 +19,11 @@ const routes = [
                 component: () => import('@/examples/Button'),
             },
             {
+                path: 'vt-burger',
+                name: 'VTBurger',
+                component: () => import('@/examples/Burger'),
+            },
+            {
                 path: 'vt-hoverbox',
                 name: 'VTHoverbox',
                 component: () => import('@/examples/Hoverbox'),

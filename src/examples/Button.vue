@@ -104,7 +104,7 @@
                     <div class="tag">
                         <span class="code-grey">&lt;</span><span class="code-green">VTButton</span>
                     </div>
-                    <div><span class="code-blue">styles</span>="{}"</div>
+                    <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
                         :<span class="code-blue">rainbow</span>="<span class="code-navy">{{
                             propObject.rainbow

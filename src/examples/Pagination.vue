@@ -16,24 +16,46 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">currentColor</span>=<span class="code-orange"
-                            >"{{ propObject.currentColor }}"</span
+                        ><span class="code-blue">color</span>=<span class="code-orange"
+                            >"{{ propObject.color }}"</span
                         ></code
                     >
                     <form @submit.prevent>
-                        <input type="text" v-model="propObject.currentColor" maxlength="25" />
-                        <input type="color" v-model="propObject.currentColor" />
+                        <input type="text" v-model="propObject.color" maxlength="25" />
+                        <input type="color" v-model="propObject.color" />
                     </form>
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">currentBackground</span>=<span class="code-orange"
-                            >"{{ propObject.currentBackground }}"</span
+                        ><span class="code-blue">disabledColor</span>=<span class="code-orange"
+                            >"{{ propObject.disabledColor }}"</span
                         ></code
                     >
                     <form @submit.prevent>
-                        <input type="text" v-model="propObject.currentBackground" maxlength="25" />
-                        <input type="color" v-model="propObject.currentBackground" />
+                        <input type="text" v-model="propObject.disabledColor" maxlength="25" />
+                        <input type="color" v-model="propObject.disabledColor" />
+                    </form>
+                </div>
+                <div class="option column">
+                    <code
+                        ><span class="code-blue">background</span>=<span class="code-orange"
+                            >"{{ propObject.background }}"</span
+                        ></code
+                    >
+                    <form @submit.prevent>
+                        <input type="text" v-model="propObject.background" maxlength="25" />
+                        <input type="color" v-model="propObject.background" />
+                    </form>
+                </div>
+                <div class="option column">
+                    <code
+                        ><span class="code-blue">altBackground</span>=<span class="code-orange"
+                            >"{{ propObject.altBackground }}"</span
+                        ></code
+                    >
+                    <form @submit.prevent>
+                        <input type="text" v-model="propObject.altBackground" maxlength="25" />
+                        <input type="color" v-model="propObject.altBackground" />
                     </form>
                 </div>
                 <div class="option">
@@ -66,17 +88,19 @@
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"</code
                     >
-                    <div class="log">
+                    <code>
                         <span class="code-lightgreen">{{ propObject.currentPage }}</span>
-                    </div>
+                    </code>
                 </div>
             </div>
         </div>
         <div class="example-container">
             <div class="example">
                 <VTPagination
-                    :currentColor="propObject.currentColor"
-                    :currentBackground="propObject.currentBackground"
+                    :color="propObject.color"
+                    :disabledColor="propObject.disabledColor"
+                    :background="propObject.background"
+                    :altBackground="propObject.altBackground"
                     :currentPage="propObject.currentPage"
                     :lastPage="propObject.lastPage"
                     @page-changed="logValue($event)"
@@ -92,13 +116,23 @@
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>:<span class="code-blue">blockStyles</span>="{}"</div>
                     <div>
-                        <span class="code-blue">currentColor</span>=<span class="code-orange"
-                            >"{{ propObject.currentColor }}"</span
+                        <span class="code-blue">color</span>=<span class="code-orange"
+                            >"{{ propObject.color }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">currentBackground</span>=<span class="code-orange"
-                            >"{{ propObject.currentBackground }}"</span
+                        <span class="code-blue">disabledColor</span>=<span class="code-orange"
+                            >"{{ propObject.disabledColor }}"</span
+                        >
+                    </div>
+                    <div>
+                        <span class="code-blue">background</span>=<span class="code-orange"
+                            >"{{ propObject.background }}"</span
+                        >
+                    </div>
+                    <div>
+                        <span class="code-blue">altBackground</span>=<span class="code-orange"
+                            >"{{ propObject.altBackground }}"</span
                         >
                     </div>
                     <div>
@@ -150,8 +184,10 @@ export default {
     setup() {
         const key = ref(0);
         const propObject = ref({
-            currentColor: '#f5fafd',
-            currentBackground: '#83dbca',
+            color: '#ffffff',
+            disabledColor: '#dbdbdb',
+            background: '#5bd0b9',
+            altBackground: '#83dbca',
             currentPage: 1,
             lastPage: 10,
         });
@@ -161,8 +197,10 @@ export default {
             return `<VTPagination
     :styles="{}"
     :blockStyles="{}"
-    currentColor="${propObject.value.currentColor}"
-    currentBackground="${propObject.value.currentBackground}"
+    color="${propObject.value.color}"
+    disabledColor="${propObject.value.disabledColor}"
+    background="${propObject.value.background}"
+    altBackground="${propObject.value.altBackground}"
     :currentPage="${propObject.value.currentPage}"
     :lastPage="${propObject.value.lastPage}"
 >
