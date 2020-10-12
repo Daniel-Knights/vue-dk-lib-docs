@@ -7,6 +7,8 @@
 }
 
 :root {
+    --font_primary: Avenir, Helvetica, Arial, sans-serif;
+
     --primary: #5bd0b9;
     --white: #ffffff;
     --lightgrey: #777e88;
@@ -52,7 +54,7 @@ body {
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--font_primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;

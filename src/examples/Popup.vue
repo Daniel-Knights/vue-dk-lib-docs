@@ -61,7 +61,7 @@
                         <input type="color" v-model="propObject.hoverBackground" />
                     </form>
                 </div>
-                <div class="option restore">
+                <div class="option button-center">
                     <VTButton @click="forceRender()">RESTORE</VTButton>
                 </div>
             </div>
