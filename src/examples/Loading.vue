@@ -16,7 +16,7 @@
                 </div>
                 <div class="option">
                     <VTTooltip
-                        text="When set to true, stores a cookie which prevents it from returning."
+                        text="Toggles between the default Vuelity animation and a normal spinner animation."
                         position="right"
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
@@ -36,14 +36,7 @@
         </div>
         <div class="example-container">
             <div class="example overflow-hidden">
-                <VTLoading
-                    :styles="{
-                        position: 'absolute',
-                        right: 'unset',
-                    }"
-                    :default="propObject.default"
-                    :key="key"
-                />
+                <VTLoading :default="propObject.default" :key="key" />
                 <teleport v-if="fullscreen" to="body">
                     <div id="exit-fullscreen">
                         <span>Click or press esc to exit fullscreen</span>
@@ -118,9 +111,7 @@ export default {
             forceRender();
         };
         const fullscreenListener = e => {
-            console.log(e);
             if (e.key !== 'Escape') return;
-
             fullscreen.value = false;
         };
 

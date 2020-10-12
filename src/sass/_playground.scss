@@ -167,17 +167,21 @@
                 transform: translate(40px, 0);
             }
         }
+        .example-info {
+            font-size: 20px;
+            font-weight: 500;
+        }
     }
 }
 
 #exit-fullscreen {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 25px;
+    left: 25px;
     padding: 10px;
     font: 500 18px var(--font_primary);
     color: var(--white);
-    background-color: rgba(var(--black-rgb), 0.5);
+    background-color: rgba(var(--black-rgb), 0.7);
     border-radius: 5px;
     z-index: 10001;
 }
