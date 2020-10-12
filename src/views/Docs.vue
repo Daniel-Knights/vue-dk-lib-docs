@@ -2,15 +2,20 @@
     <VTNavbar
         position="left"
         :slider="true"
-        :containerStyles="{ zIndex: 9 }"
+        :containerStyles="{
+            zIndex: 9,
+        }"
         :styles="{
-            background: black,
+            justifyContent: 'unset',
             width: '250px',
-            paddingTop: '100px',
-            justifyContent: 'center',
+            height: '200vh',
+            background: black,
         }"
         :burgerStyles="{ top: '120px' }"
     >
+        <div id="side-nav-heading">
+            <h1>Vuelity</h1>
+        </div>
         <nav id="components-nav">
             <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-button"
@@ -28,6 +33,16 @@
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
+                <router-link to="/docs/vt-loading"
+                    ><code>&lt;<span>VTLoading</span>&gt;</code></router-link
+                >
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
+                <router-link to="/docs/vt-modal"
+                    ><code>&lt;<span>VTModal</span>&gt;</code></router-link
+                >
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-navbar"
                     ><code>&lt;<span>VTNavbar</span>&gt;</code></router-link
                 >
@@ -40,6 +55,11 @@
             <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-popup"
                     ><code>&lt;<span>VTPopup</span>&gt;</code></router-link
+                >
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
+                <router-link to="/docs/vt-scrolltop"
+                    ><code>&lt;<span>VTScrolltop</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
@@ -60,6 +80,11 @@
             <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-video"
                     ><code>&lt;<span>VTVideo</span>&gt;</code></router-link
+                >
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
+                <router-link to="/docs/vt-tabber"
+                    ><code><span>vtTabber</span></code></router-link
                 >
             </VTHoverbox>
         </nav>
@@ -89,8 +114,22 @@ export default {
 </script>
 
 <style lang="scss">
+#side-nav-heading {
+    @include flex-x(center, center);
+    height: 100px;
+
+    h1 {
+        border-bottom: 3px solid var(--primary);
+    }
+}
+
 #components-nav {
-    @include flex-y(center, center);
+    @include flex-y(false, center);
+    position: relative;
+    padding: 20px 0;
+    max-height: calc(100vh - 100px);
+    width: 100%;
+    overflow: scroll;
 
     a {
         letter-spacing: 1px;

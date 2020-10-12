@@ -29,6 +29,16 @@ const routes = [
                 component: () => import('@/examples/Hoverbox'),
             },
             {
+                path: 'vt-loading',
+                name: 'VTLoading',
+                component: () => import('@/examples/Loading'),
+            },
+            {
+                path: 'vt-modal',
+                name: 'VTModal',
+                component: () => import('@/examples/Modal'),
+            },
+            {
                 path: 'vt-navbar',
                 name: 'VTNavbar',
                 component: () => import('@/examples/Navbar'),
@@ -44,6 +54,16 @@ const routes = [
                 component: () => import('@/examples/Popup'),
             },
             {
+                path: 'vt-scrolltop',
+                name: 'VTScrolltop',
+                component: () => import('@/examples/Scrolltop'),
+            },
+            {
+                path: 'vt-searchbar',
+                name: 'VTSearchbar',
+                component: () => import('@/examples/Searchbar'),
+            },
+            {
                 path: 'vt-tooltip',
                 name: 'VTTooltip',
                 component: () => import('@/examples/Tooltip'),
@@ -54,14 +74,14 @@ const routes = [
                 component: () => import('@/examples/Toggle'),
             },
             {
-                path: 'vt-searchbar',
-                name: 'VTSearchbar',
-                component: () => import('@/examples/Searchbar'),
-            },
-            {
                 path: 'vt-video',
                 name: 'VTVideo',
                 component: () => import('@/examples/Video'),
+            },
+            {
+                path: 'vt-tabber',
+                name: 'vtTabber',
+                component: () => import('@/examples/Tabber'),
             },
         ],
     },

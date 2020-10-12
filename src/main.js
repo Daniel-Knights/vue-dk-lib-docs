@@ -16,6 +16,7 @@ app.config.globalProperties.$darkGrey = root.getPropertyValue('--dark-grey');
 Object.keys(Vuelity).forEach(el => {
     app.component(el, Vuelity[el]);
 });
+Vuelity.vtTabber();
 
 app.use(router);
 app.use(DKToast, {

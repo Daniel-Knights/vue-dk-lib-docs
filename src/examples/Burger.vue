@@ -56,6 +56,24 @@
                     </form>
                 </div>
                 <div class="option">
+                    <VTTooltip
+                        text="If you need to programmatically toggle VTBurger, it will watch for this prop and update accordingly."
+                        position="right"
+                        :styles="{ width: '300px', minWidth: 'unset' }"
+                    >
+                        <code
+                            >:<span class="code-blue">toggled</span>="<span class="code-navy">{{
+                                propObject.toggled
+                            }}</span
+                            >"</code
+                        >
+                    </VTTooltip>
+                    <VTToggle
+                        @toggle="propObject.toggled = !propObject.toggled"
+                        :state="propObject.toggleToggled"
+                    />
+                </div>
+                <div class="option">
                     <code
                         >@<span class="code-blue">open</span>="<span class="code-light-yellow"
                             >logEvent</span
@@ -74,8 +92,8 @@
                     :hoverBackground="propObject.hoverBackground"
                     :stripColor="propObject.stripColor"
                     :stripHoverColor="propObject.stripHoverColor"
+                    :toggled="propObject.toggled"
                     @open="logEvent($event)"
-                    :key="key"
                 />
             </div>
             <div class="copy-code" @click="copyCode()">
@@ -105,6 +123,12 @@
                         >
                     </div>
                     <div>
+                        :<span class="code-blue">toggled</span>="<span class="code-navy">{{
+                            propObject.toggled
+                        }}</span
+                        >"
+                    </div>
+                    <div>
                         @<span class="code-blue">open</span>="<span class="code-light-yellow"
                             >logEvent</span
                         >(<span class="code-blue">$event</span>)"
@@ -125,16 +149,16 @@ export default {
     name: 'Button',
 
     setup() {
-        const key = ref(0);
         const log = ref('');
         const propObject = ref({
             background: '#47cab1',
             hoverBackground: '#6fd6c1',
             stripColor: '#ffffff',
             stripHoverColor: '#ffffff',
+            toggled: false,
+            toggleToggled: false,
         });
 
-        const forceRender = () => key.value++;
         const code = computed(() => {
             return `<VTBurger
     :styles="{}"
@@ -142,6 +166,7 @@ export default {
     hoverBackground="${propObject.value.hoverBackground}"
     stripColor="${propObject.value.stripColor}"
     stripHoverColor="${propObject.value.stripHoverColor}"
+    :toggled="${propObject.value.toggled}"
     @open="logEvent($event)"
 />`;
         });
@@ -151,10 +176,12 @@ export default {
         };
         const logEvent = e => {
             log.value = e;
+            propObject.value.toggled = !propObject.value.toggled;
+            propObject.value.toggleToggled = !propObject.value.toggleToggled;
             console.log(e);
         };
 
-        return { key, log, propObject, forceRender, copyCode, logEvent };
+        return { log, propObject, copyCode, logEvent };
     },
 };
 </script>

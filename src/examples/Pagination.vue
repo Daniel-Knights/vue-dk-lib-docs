@@ -104,7 +104,6 @@
                     :currentPage="propObject.currentPage"
                     :lastPage="propObject.lastPage"
                     @page-changed="logValue($event)"
-                    :key="key"
                 />
             </div>
             <div class="copy-code" @click="copyCode()">
@@ -182,7 +181,6 @@ export default {
     name: 'Pagination',
 
     setup() {
-        const key = ref(0);
         const propObject = ref({
             color: '#ffffff',
             disabledColor: '#dbdbdb',
@@ -192,7 +190,6 @@ export default {
             lastPage: 10,
         });
 
-        const forceRender = () => key.value++;
         const code = computed(() => {
             return `<VTPagination
     :styles="{}"
@@ -217,7 +214,7 @@ export default {
             console.log(e);
         };
 
-        return { key, propObject, forceRender, copyCode, logValue };
+        return { propObject, copyCode, logValue };
     },
 };
 </script>
