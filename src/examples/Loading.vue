@@ -30,7 +30,7 @@
                     <VTToggle @toggle="toggleDefault()" :initialState="true" />
                 </div>
                 <div class="option button-center">
-                    <VTButton @click="enterFullscreen()">FULLSCREEN</VTButton>
+                    <VTButton @click="fullscreen = true">FULLSCREEN</VTButton>
                 </div>
             </div>
         </div>
@@ -50,7 +50,6 @@
                     </div>
                     <VTLoading
                         @click="fullscreen = false"
-                        @keyup.esc="fullscreen = false"
                         :styles="{
                             position: 'absolute',
                             right: 'unset',
@@ -87,7 +86,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, onBeforeUnmount, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -118,9 +117,15 @@ export default {
             propObject.value.default = !propObject.value.default;
             forceRender();
         };
-        const enterFullscreen = () => {
-            fullscreen.value = true;
+        const fullscreenListener = e => {
+            console.log(e);
+            if (e.key !== 'Escape') return;
+
+            fullscreen.value = false;
         };
+
+        document.addEventListener('keydown', fullscreenListener);
+        onBeforeUnmount(() => document.removeEventListener('keydown', fullscreenListener));
 
         return {
             key,
@@ -129,7 +134,7 @@ export default {
             forceRender,
             copyCode,
             toggleDefault,
-            enterFullscreen,
+            fullscreenListener,
         };
     },
 };
