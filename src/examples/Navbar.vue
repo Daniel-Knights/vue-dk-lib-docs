@@ -69,7 +69,9 @@
                     </div>
                     <div class="tag"><span class="code-grey">&gt;</span></div>
                     <VTTooltip text="Vue slot for any valid HTML">
-                        &lt;h1>VTNavbar&lt;/h1>
+                        <span class="code-grey">&lt;</span><span class="code-navy">h1</span
+                        ><span class="code-grey">></span>VTNavbar<span class="code-grey">&lt;</span
+                        ><span class="code-navy">h1</span><span class="code-grey">></span>
                     </VTTooltip>
                     <div class="tag">
                         <span class="code-grey">&lt;/</span><span class="code-green">VTNavbar</span

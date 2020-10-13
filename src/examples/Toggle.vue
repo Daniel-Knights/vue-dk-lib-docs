@@ -28,6 +28,21 @@
                         "
                     />
                 </div>
+                <div class="option">
+                    <VTTooltip
+                        text="For programmatically changing the toggles value."
+                        position="right"
+                        :styles="{ width: '300px', minWidth: 'unset' }"
+                    >
+                        <code
+                            >:<span class="code-blue">state</span>="<span class="code-navy">{{
+                                propObject.state
+                            }}</span
+                            >"</code
+                        >
+                    </VTTooltip>
+                    <VTToggle @toggle="propObject.state = !propObject.state" />
+                </div>
                 <div class="option column">
                     <code
                         ><span class="code-blue">hoverColor</span>=<span class="code-orange"
@@ -39,12 +54,22 @@
                         <input type="color" v-model="propObject.hoverColor" />
                     </form>
                 </div>
+                <div class="option">
+                    <code>
+                        @<span class="code-blue">toggle</span>="<span class="code-light-yellow"
+                            >logValue</span
+                        >(<span class="code-blue">$event</span>)"
+                    </code>
+                    <code>{{ propObject.logState }}</code>
+                </div>
             </div>
         </div>
         <div class="example-container">
             <div class="example contrast-black">
                 <VTToggle
+                    @toggle="propObject.logState = !propObject.logState"
                     :initialState="propObject.initialState"
+                    :state="propObject.state"
                     :hoverColor="propObject.hoverColor"
                     :key="key"
                 />
@@ -59,6 +84,12 @@
                     <div>
                         :<span class="code-blue">initialState</span>="<span class="code-navy">{{
                             propObject.initialState
+                        }}</span
+                        >"
+                    </div>
+                    <div>
+                        :<span class="code-blue">state</span>="<span class="code-navy">{{
+                            propObject.state
                         }}</span
                         >"
                     </div>
@@ -86,6 +117,7 @@ export default {
         const key = ref(0);
         const propObject = ref({
             initialState: false,
+            state: false,
             hoverColor: '#ededed',
         });
 
@@ -95,6 +127,7 @@ export default {
     :containerStyles="{}"
     :toggleStyles="{}"
     :initialState="${propObject.value.initialState}"
+    :state="${propObject.value.state}"
     hoverColor="${propObject.value.hoverColor}"
 />`;
         });

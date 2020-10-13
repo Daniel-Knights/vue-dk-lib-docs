@@ -14,6 +14,15 @@
                 <div class="option">
                     <code>:<span class="code-blue">blockStyles</span>="{}"</code>
                 </div>
+                <div class="option">
+                    <code>
+                        :<span class="code-blue">ripple</span>="<span class="code-navy">{{
+                            propObject.ripple
+                        }}</span
+                        >"
+                    </code>
+                    <VTToggle @toggle="toggleRipple()" :initialState="true" />
+                </div>
                 <div class="option column">
                     <code
                         ><span class="code-blue">color</span>=<span class="code-orange"
@@ -97,6 +106,7 @@
         <div class="example-container">
             <div class="example">
                 <VTPagination
+                    :ripple="propObject.ripple"
                     :color="propObject.color"
                     :disabledColor="propObject.disabledColor"
                     :background="propObject.background"
@@ -104,6 +114,7 @@
                     :currentPage="propObject.currentPage"
                     :lastPage="propObject.lastPage"
                     @page-changed="logValue($event)"
+                    :key="key"
                 />
             </div>
             <div class="copy-code" @click="copyCode()">
@@ -114,6 +125,12 @@
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>:<span class="code-blue">blockStyles</span>="{}"</div>
+                    <div>
+                        :<span class="code-blue">ripple</span>="<span class="code-navy">{{
+                            propObject.ripple
+                        }}</span
+                        >"
+                    </div>
                     <div>
                         <span class="code-blue">color</span>=<span class="code-orange"
                             >"{{ propObject.color }}"</span
@@ -181,7 +198,9 @@ export default {
     name: 'Pagination',
 
     setup() {
+        const key = ref(0);
         const propObject = ref({
+            ripple: true,
             color: '#ffffff',
             disabledColor: '#dbdbdb',
             background: '#5bd0b9',
@@ -190,10 +209,12 @@ export default {
             lastPage: 10,
         });
 
+        const forceRender = () => key.value++;
         const code = computed(() => {
             return `<VTPagination
     :styles="{}"
     :blockStyles="{}"
+    :ripple="${propObject.value.ripple}"
     color="${propObject.value.color}"
     disabledColor="${propObject.value.disabledColor}"
     background="${propObject.value.background}"
@@ -213,8 +234,12 @@ export default {
             propObject.value.currentPage = e;
             console.log(e);
         };
+        const toggleRipple = () => {
+            propObject.value.ripple = !propObject.value.ripple;
+            forceRender();
+        };
 
-        return { propObject, copyCode, logValue };
+        return { key, propObject, forceRender, copyCode, logValue, toggleRipple };
     },
 };
 </script>

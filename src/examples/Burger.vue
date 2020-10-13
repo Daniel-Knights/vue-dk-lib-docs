@@ -11,6 +11,24 @@
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
                 </div>
+                <div class="option">
+                    <VTTooltip
+                        text="If you need to programmatically toggle VTBurger, it will watch for this prop and update accordingly."
+                        position="right"
+                        :styles="{ width: '300px', minWidth: 'unset' }"
+                    >
+                        <code
+                            >:<span class="code-blue">toggled</span>="<span class="code-navy">{{
+                                propObject.toggled
+                            }}</span
+                            >"</code
+                        >
+                    </VTTooltip>
+                    <VTToggle
+                        @toggle="propObject.toggled = !propObject.toggled"
+                        :state="propObject.toggleToggled"
+                    />
+                </div>
                 <div class="option column">
                     <code
                         ><span class="code-blue">background</span>=<span class="code-orange"
@@ -56,24 +74,6 @@
                     </form>
                 </div>
                 <div class="option">
-                    <VTTooltip
-                        text="If you need to programmatically toggle VTBurger, it will watch for this prop and update accordingly."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
-                    >
-                        <code
-                            >:<span class="code-blue">toggled</span>="<span class="code-navy">{{
-                                propObject.toggled
-                            }}</span
-                            >"</code
-                        >
-                    </VTTooltip>
-                    <VTToggle
-                        @toggle="propObject.toggled = !propObject.toggled"
-                        :state="propObject.toggleToggled"
-                    />
-                </div>
-                <div class="option">
                     <code
                         >@<span class="code-blue">open</span>="<span class="code-light-yellow"
                             >logEvent</span
@@ -103,6 +103,12 @@
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
+                        :<span class="code-blue">toggled</span>="<span class="code-navy">{{
+                            propObject.toggled
+                        }}</span
+                        >"
+                    </div>
+                    <div>
                         <span class="code-blue">background</span>=<span class="code-orange"
                             >"{{ propObject.background }}"</span
                         >
@@ -121,12 +127,6 @@
                         <span class="code-blue">stripHoverColor</span>=<span class="code-orange"
                             >"{{ propObject.stripHoverColor }}"</span
                         >
-                    </div>
-                    <div>
-                        :<span class="code-blue">toggled</span>="<span class="code-navy">{{
-                            propObject.toggled
-                        }}</span
-                        >"
                     </div>
                     <div>
                         @<span class="code-blue">open</span>="<span class="code-light-yellow"
@@ -162,11 +162,11 @@ export default {
         const code = computed(() => {
             return `<VTBurger
     :styles="{}"
+    :toggled="${propObject.value.toggled}"
     background="${propObject.value.background}"
     hoverBackground="${propObject.value.hoverBackground}"
     stripColor="${propObject.value.stripColor}"
     stripHoverColor="${propObject.value.stripHoverColor}"
-    :toggled="${propObject.value.toggled}"
     @open="logEvent($event)"
 />`;
         });

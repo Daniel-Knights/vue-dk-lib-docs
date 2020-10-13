@@ -108,7 +108,7 @@ export default {
     setup() {
         const key = ref(0);
         const propObject = ref({
-            text: 'Add tooltip text to the "text" attribute',
+            text: 'Add tooltip text to the "text" prop',
             position: 'top',
             arrow: true,
         });

@@ -3,10 +3,11 @@
         position="left"
         :slider="true"
         :containerStyles="{
-            zIndex: 9,
+            zIndex: 5,
         }"
         :styles="{
             justifyContent: 'unset',
+            padding: '0',
             width: '250px',
             height: '200vh',
             background: black,
@@ -153,7 +154,7 @@ export default {
 #component-container {
     @include flex-x(center, center);
     position: relative;
-    padding: 110px 0 10px;
+    padding: 130px 0 30px;
     margin: 0 auto;
     max-width: 1200px;
     min-height: 100vh;
@@ -165,8 +166,8 @@ export default {
         width: 100%;
         min-height: 70vh;
         border: 2px solid var(--lightgrey);
-        border-radius: 5px;
-        box-shadow: 0 0 10px -5px var(--black);
+        border-radius: 10px;
+        box-shadow: 0 0 6px -2px var(--black);
     }
 }
 </style>
