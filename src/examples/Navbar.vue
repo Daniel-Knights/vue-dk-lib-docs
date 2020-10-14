@@ -27,7 +27,7 @@
                 </div>
                 <div class="option">
                     <code
-                        ><span class="code-blue">position</span>=<span class="code-orange"
+                        ><span class="code-blue">position</span>=<span class="code-string"
                             >"{{ propObject.position }}"</span
                         ></code
                     >
@@ -51,13 +51,13 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTNavbar</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTNavbar</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>:<span class="code-blue">containerStyles</span>="{}"</div>
                     <div>:<span class="code-blue">burgerStyles</span>="{}"</div>
                     <div>
-                        <span class="code-blue">position</span>=<span class="code-orange"
+                        <span class="code-blue">position</span>=<span class="code-string"
                             >"{{ propObject.position }}"</span
                         >
                     </div>
@@ -67,15 +67,15 @@
                         }}</span
                         >"
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     <VTTooltip text="Vue slot for any valid HTML">
-                        <span class="code-grey">&lt;</span><span class="code-navy">h1</span
-                        ><span class="code-grey">></span>VTNavbar<span class="code-grey">&lt;</span
-                        ><span class="code-navy">h1</span><span class="code-grey">></span>
+                        <span class="code-tag">&lt;</span><span class="code-navy">h1</span
+                        ><span class="code-tag">></span>VTNavbar<span class="code-tag">&lt;</span
+                        ><span class="code-navy">h1</span><span class="code-tag">></span>
                     </VTTooltip>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span><span class="code-green">VTNavbar</span
-                        ><span class="code-grey">&gt;</span>
+                        <span class="code-tag">&lt;/</span><span class="code-green">VTNavbar</span
+                        ><span class="code-tag">&gt;</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>

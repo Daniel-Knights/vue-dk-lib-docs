@@ -35,6 +35,7 @@
                     height: '50px',
                     borderRadius: '50%',
                 }"
+                :ripple="false"
             >
                 <i class="fa fa-codepen"></i>
             </VTButton>

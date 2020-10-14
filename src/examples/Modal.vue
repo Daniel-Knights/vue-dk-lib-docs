@@ -37,7 +37,7 @@
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
                         <code>
-                            @<span class="code-blue">close</span>="<span class="code-light-yellow"
+                            @<span class="code-blue">close</span>="<span class="code-method"
                                 >closeModal</span
                             >()"
                         </code>
@@ -59,7 +59,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTModal</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTModal</span>
                     </div>
                     <div>
                         <span class="code-blue">v-if</span>="<span class="code-blue"
@@ -75,22 +75,21 @@
                         >"
                     </div>
                     <div>
-                        @<span class="code-blue">close</span>="<span class="code-light-yellow"
+                        @<span class="code-blue">close</span>="<span class="code-method"
                             >closeModal</span
                         >()"
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     <div>
                         <VTTooltip text="Vue slot for any valid HTML">
-                            <span class="code-grey">&lt;</span><span class="code-navy">h1</span
-                            ><span class="code-grey">></span>VTModal<span class="code-grey"
-                                >&lt;</span
-                            ><span class="code-navy">h1</span><span class="code-grey">></span>
+                            <span class="code-tag">&lt;</span><span class="code-navy">h1</span
+                            ><span class="code-tag">></span>VTModal<span class="code-tag">&lt;</span
+                            ><span class="code-navy">h1</span><span class="code-tag">></span>
                         </VTTooltip>
                     </div>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span><span class="code-green">VTModal</span
-                        ><span class="code-grey">&gt;</span>
+                        <span class="code-tag">&lt;/</span><span class="code-green">VTModal</span
+                        ><span class="code-tag">&gt;</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>

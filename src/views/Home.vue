@@ -31,7 +31,7 @@
                             <span class="code-blue">VTButton</span>
                             <span class="code-yellow"> } </span>
                             <span class="code-purple">from </span>
-                            <span class="code-orange">'vuelity'</span>;<i class="fa fa-copy"></i
+                            <span class="code-string">'vuelity'</span>;<i class="fa fa-copy"></i
                         ></code>
                         ...
                         <code @click="copyCode($event)"
@@ -49,17 +49,16 @@
                             <span class="code-purple">as </span>
                             <span class="code-blue">Vuelity</span>
                             <span class="code-purple"> from </span>
-                            <span class="code-orange">'vuelity'</span>;<i class="fa fa-copy"></i
+                            <span class="code-string">'vuelity'</span>;<i class="fa fa-copy"></i
                         ></code>
                         ...
                         <code @click="copyCode($event)"
                             ><div class="line-top">
-                                <span class="code-green">Object</span>.<span
-                                    class="code-light-yellow"
+                                <span class="code-green">Object</span>.<span class="code-method"
                                     >keys</span
                                 ><span class="code-yellow">(</span
                                 ><span class="code-blue">Vuelity</span
-                                ><span class="code-yellow">)</span>.<span class="code-light-yellow"
+                                ><span class="code-yellow">)</span>.<span class="code-method"
                                     >forEach</span
                                 ><span class="code-yellow">(</span><span class="code-blue">el</span>
                                 <span class="code-navy"> =></span>
@@ -67,7 +66,7 @@
                             </div>
                             <i class="fa fa-copy"></i>
                             <div class="line-mid">
-                                <span class="code-const">app</span>.<span class="code-light-yellow"
+                                <span class="code-const">app</span>.<span class="code-method"
                                     >component</span
                                 ><span class="code-purple">(</span
                                 ><span class="code-blue">el</span>,
@@ -83,40 +82,39 @@
                     then:
                     <div class="block">
                         <code @click="copyCode($event)"
-                            ><span class="code-grey">&lt;</span
+                            ><span class="code-tag">&lt;</span
                             ><span class="code-green">VTButton</span
-                            ><span class="code-grey">&gt;</span>Hello!<span class="code-grey"
+                            ><span class="code-tag">&gt;</span>Hello!<span class="code-tag"
                                 >&lt;/</span
                             ><span class="code-green">VTButton</span
-                            ><span class="code-grey">&gt;</span><i class="fa fa-copy"></i
+                            ><span class="code-tag">&gt;</span><i class="fa fa-copy"></i
                         ></code>
                     </div>
                 </div>
                 <div v-else>
                     <div class="block double" @click="copyCode($event)">
                         <code
-                            ><span class="code-grey">&lt;</span
+                            ><span class="code-tag">&lt;</span
                             ><span class="code-navy">script </span>
                             <span class="code-blue">src</span>=<span
-                                class="code-orange overflow-mid"
+                                class="code-string overflow-mid"
                                 >"https://unpkg.com/vue@3.0.0/dist/vue.global.js"</span
                             ><span class="overflow-end"
-                                ><span class="code-grey">></span><span class="code-grey">&lt;/</span
+                                ><span class="code-tag">></span><span class="code-tag">&lt;/</span
                                 ><span class="code-navy">script</span
-                                ><span class="code-grey">></span></span
+                                ><span class="code-tag">></span></span
                             ></code
                         >
                         <i class="fa fa-copy"></i>
                         <code
-                            ><span class="code-grey">&lt;</span
-                            ><span class="code-navy">script </span
+                            ><span class="code-tag">&lt;</span><span class="code-navy">script </span
                             ><span class="code-blue">src</span>=<span
-                                class="code-orange overflow-mid"
+                                class="code-string overflow-mid"
                                 >"https://unpkg.com/vuelity/dist/vuelity.umd.min.js"</span
                             ><span class="overflow-end"
-                                ><span class="code-grey">></span><span class="code-grey">&lt;/</span
+                                ><span class="code-tag">></span><span class="code-tag">&lt;/</span
                                 ><span class="code-navy">script</span
-                                ><span class="code-grey">></span></span
+                                ><span class="code-tag">></span></span
                             ></code
                         >
                     </div>
@@ -124,17 +122,17 @@
                     <div class="block">
                         <code @click="copyCode($event)"
                             ><div class="line-top">
-                                <span class="code-const">app</span>.<span class="code-light-yellow"
+                                <span class="code-const">app</span>.<span class="code-method"
                                     >component</span
                                 >
                                 <span class="code-yellow">(</span>
                             </div>
                             <i class="fa fa-copy"></i>
                             <div class="line-mid">
-                                <span class="code-orange">'vt-button'</span>,
+                                <span class="code-string">'vt-button'</span>,
                                 <span class="code-blue">Vuelity</span
                                 ><span class="code-purple">[</span
-                                ><span class="code-orange">'vt-navbar'</span
+                                ><span class="code-string">'vt-navbar'</span
                                 ><span class="code-purple">]</span>
                             </div>
                             <div class="line-bottom"><span class="code-yellow">)</span>;</div>
@@ -144,12 +142,11 @@
                     <div class="block">
                         <code @click="copyCode($event)"
                             ><div class="line-top">
-                                <span class="code-green">Object</span>.<span
-                                    class="code-light-yellow"
+                                <span class="code-green">Object</span>.<span class="code-method"
                                     >keys</span
                                 ><span class="code-yellow">(</span
                                 ><span class="code-blue">Vuelity</span
-                                ><span class="code-yellow">)</span>.<span class="code-light-yellow"
+                                ><span class="code-yellow">)</span>.<span class="code-method"
                                     >forEach</span
                                 ><span class="code-yellow">(</span><span class="code-blue">el</span>
                                 <span class="code-navy"> => </span>
@@ -157,7 +154,7 @@
                             </div>
                             <i class="fa fa-copy"></i>
                             <div class="line-mid">
-                                <span class="code-const">app</span>.<span class="code-light-yellow"
+                                <span class="code-const">app</span>.<span class="code-method"
                                     >component</span
                                 ><span class="code-purple">(</span
                                 ><span class="code-blue">el</span>,
@@ -173,12 +170,12 @@
                     then:
                     <div class="block">
                         <code @click="copyCode($event)"
-                            ><span class="code-grey">&lt;</span
+                            ><span class="code-tag">&lt;</span
                             ><span class="code-green">VTButton</span
-                            ><span class="code-grey">&gt;</span>Hello!<span class="code-grey"
+                            ><span class="code-tag">&gt;</span>Hello!<span class="code-tag"
                                 >&lt;/</span
                             ><span class="code-green">VTButton</span
-                            ><span class="code-grey">&gt;</span><i class="fa fa-copy"></i
+                            ><span class="code-tag">&gt;</span><i class="fa fa-copy"></i
                         ></code>
                     </div>
                 </div>

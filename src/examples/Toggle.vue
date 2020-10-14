@@ -45,7 +45,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">hoverColor</span>=<span class="code-orange"
+                        ><span class="code-blue">hoverColor</span>=<span class="code-string"
                             >"{{ propObject.hoverColor }}"</span
                         ></code
                     >
@@ -56,7 +56,7 @@
                 </div>
                 <div class="option">
                     <code>
-                        @<span class="code-blue">toggle</span>="<span class="code-light-yellow"
+                        @<span class="code-blue">toggle</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </code>
@@ -77,7 +77,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTToggle</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTToggle</span>
                     </div>
                     <div>:<span class="code-blue">containerStyles</span>="{}"</div>
                     <div>:<span class="code-blue">toggleStyles</span>="{}"</div>
@@ -94,11 +94,11 @@
                         >"
                     </div>
                     <div>
-                        <span class="code-blue">hoverColor</span>=<span class="code-orange"
+                        <span class="code-blue">hoverColor</span>=<span class="code-string"
                             >"{{ propObject.hoverColor }}"</span
                         >
                     </div>
-                    <div class="tag"><span class="code-grey">/&gt;</span></div>
+                    <div class="tag"><span class="code-tag">/&gt;</span></div>
                 </code>
                 <i class="fa fa-copy"></i>
             </div>

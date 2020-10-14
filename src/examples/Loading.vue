@@ -55,7 +55,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTLoading</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTLoading</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>:<span class="code-blue">containerStyles</span>="{}"</div>
@@ -65,11 +65,11 @@
                         }}</span
                         >"
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     <div>&lt;!-- Optional Slot --></div>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span><span class="code-green">VTLoading</span
-                        ><span class="code-grey">&gt;</span>
+                        <span class="code-tag">&lt;/</span><span class="code-green">VTLoading</span
+                        ><span class="code-tag">&gt;</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>

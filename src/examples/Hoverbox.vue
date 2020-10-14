@@ -21,7 +21,7 @@
                         :styles="{ minWidth: '350px' }"
                     >
                         <code
-                            ><span class="code-blue">width</span>="<span class="code-lightgreen">{{
+                            ><span class="code-blue">width</span>="<span class="code-num">{{
                                 propObject.width
                             }}</span
                             >"</code
@@ -47,7 +47,7 @@
                         :styles="{ minWidth: '350px' }"
                     >
                         <code
-                            ><span class="code-blue">height</span>="<span class="code-lightgreen">{{
+                            ><span class="code-blue">height</span>="<span class="code-num">{{
                                 propObject.height
                             }}</span
                             >"</code
@@ -68,7 +68,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">fill</span>=<span class="code-orange"
+                        ><span class="code-blue">fill</span>=<span class="code-string"
                             >"{{ propObject.fill }}"</span
                         ></code
                     >
@@ -92,34 +92,32 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span
-                        ><span class="code-green">VTHoverbox</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTHoverbox</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>:<span class="code-blue">containerStyles</span>="{}"</div>
                     <div>
-                        :<span class="code-blue">width</span>="<span class="code-lightgreen">{{
+                        :<span class="code-blue">width</span>="<span class="code-num">{{
                             propObject.width
                         }}</span
                         >"
                     </div>
                     <div>
-                        :<span class="code-blue">height</span>="<span class="code-lightgreen">{{
+                        :<span class="code-blue">height</span>="<span class="code-num">{{
                             propObject.height
                         }}</span
                         >"
                     </div>
                     <div>
-                        <span class="code-blue">fill</span>=<span class="code-orange"
+                        <span class="code-blue">fill</span>=<span class="code-string"
                             >"{{ propObject.fill }}"</span
                         >
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     <div>HOVER ME!</div>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span
-                        ><span class="code-green">VTHoverbox</span
-                        ><span class="code-grey">&gt;</span>
+                        <span class="code-tag">&lt;/</span><span class="code-green">VTHoverbox</span
+                        ><span class="code-tag">&gt;</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>

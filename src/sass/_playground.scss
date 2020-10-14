@@ -171,6 +171,23 @@
             font-size: 20px;
             font-weight: 500;
         }
+        .scroll-height-container {
+            max-height: 400px;
+            font-size: 18px;
+            color: var(--black);
+            overflow: scroll;
+
+            .hey {
+                position: absolute;
+                top: 1000px;
+            }
+        }
+        .scroll-height {
+            align-self: flex-start;
+            position: relative;
+            height: 2000px;
+            width: 100%;
+        }
     }
 }
 

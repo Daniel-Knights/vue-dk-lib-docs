@@ -25,7 +25,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">color</span>=<span class="code-orange"
+                        ><span class="code-blue">color</span>=<span class="code-string"
                             >"{{ propObject.color }}"</span
                         ></code
                     >
@@ -36,7 +36,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">disabledColor</span>=<span class="code-orange"
+                        ><span class="code-blue">disabledColor</span>=<span class="code-string"
                             >"{{ propObject.disabledColor }}"</span
                         ></code
                     >
@@ -47,7 +47,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">background</span>=<span class="code-orange"
+                        ><span class="code-blue">background</span>=<span class="code-string"
                             >"{{ propObject.background }}"</span
                         ></code
                     >
@@ -58,7 +58,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">altBackground</span>=<span class="code-orange"
+                        ><span class="code-blue">altBackground</span>=<span class="code-string"
                             >"{{ propObject.altBackground }}"</span
                         ></code
                     >
@@ -69,9 +69,9 @@
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">currentPage</span>="<span
-                            class="code-lightgreen"
-                            >{{ propObject.currentPage }}</span
+                        >:<span class="code-blue">currentPage</span>="<span class="code-num">{{
+                            propObject.currentPage
+                        }}</span
                         >"</code
                     >
                     <input
@@ -85,20 +85,18 @@
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">lastPage</span>="<span class="code-lightgreen"
-                            >10</span
+                        >:<span class="code-blue">lastPage</span>="<span class="code-num">10</span
                         >"</code
                     >
                 </div>
                 <div class="option">
                     <code
-                        >@<span class="code-blue">page-changed</span>="<span
-                            class="code-light-yellow"
+                        >@<span class="code-blue">page-changed</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"</code
                     >
                     <code>
-                        <span class="code-lightgreen">{{ propObject.currentPage }}</span>
+                        <span class="code-num">{{ propObject.currentPage }}</span>
                     </code>
                 </div>
             </div>
@@ -120,7 +118,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span
+                        <span class="code-tag">&lt;</span
                         ><span class="code-green">VTPagination</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
@@ -132,44 +130,43 @@
                         >"
                     </div>
                     <div>
-                        <span class="code-blue">color</span>=<span class="code-orange"
+                        <span class="code-blue">color</span>=<span class="code-string"
                             >"{{ propObject.color }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">disabledColor</span>=<span class="code-orange"
+                        <span class="code-blue">disabledColor</span>=<span class="code-string"
                             >"{{ propObject.disabledColor }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">background</span>=<span class="code-orange"
+                        <span class="code-blue">background</span>=<span class="code-string"
                             >"{{ propObject.background }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">altBackground</span>=<span class="code-orange"
+                        <span class="code-blue">altBackground</span>=<span class="code-string"
                             >"{{ propObject.altBackground }}"</span
                         >
                     </div>
                     <div>
-                        :<span class="code-blue">currentPage</span>="<span
-                            class="code-lightgreen"
-                            >{{ propObject.currentPage }}</span
+                        :<span class="code-blue">currentPage</span>="<span class="code-num">{{
+                            propObject.currentPage
+                        }}</span
                         >"
                     </div>
                     <div>
-                        :<span class="code-blue">lastPage</span>="<span class="code-lightgreen">{{
+                        :<span class="code-blue">lastPage</span>="<span class="code-num">{{
                             propObject.lastPage
                         }}</span
                         >"
                     </div>
                     <div>
-                        @<span class="code-blue">page-changed</span>="<span
-                            class="code-light-yellow"
+                        @<span class="code-blue">page-changed</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     <div>
                         <VTTooltip
                             text="Slot for a right-facing arrow, rotated 180deg for the left-facing arrow."
@@ -179,9 +176,9 @@
                         </VTTooltip>
                     </div>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span
+                        <span class="code-tag">&lt;/</span
                         ><span class="code-green">VTPagination</span
-                        ><span class="code-grey">&gt;</span>
+                        ><span class="code-tag">&gt;</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>

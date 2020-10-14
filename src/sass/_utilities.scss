@@ -7,8 +7,8 @@ h5 {
 }
 
 .code {
-    $code-colors: 'bg', 'purple', 'blue', 'orange', 'yellow', 'navy', 'green', 'grey',
-        'light-yellow', 'const', 'lightgreen';
+    $code-colors: 'bg', 'purple', 'blue', 'string', 'yellow', 'navy', 'green', 'tag', 'method',
+        'const', 'num';
 
     @each $color in $code-colors {
         &-#{$color} {

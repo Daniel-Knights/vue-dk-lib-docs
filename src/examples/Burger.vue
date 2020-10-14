@@ -18,20 +18,26 @@
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
                         <code
-                            >:<span class="code-blue">toggled</span>="<span class="code-navy">{{
-                                propObject.toggled
+                            >:<span class="code-blue">state</span>="<span class="code-navy">{{
+                                propObject.state
                             }}</span
                             >"</code
                         >
                     </VTTooltip>
-                    <VTToggle
-                        @toggle="propObject.toggled = !propObject.toggled"
-                        :state="propObject.toggleToggled"
-                    />
+                    <VTToggle @toggle="propObject.state = !propObject.state" />
+                </div>
+                <div class="option">
+                    <code
+                        >:<span class="code-blue">ripple</span>="<span class="code-navy">{{
+                            propObject.ripple
+                        }}</span
+                        >"</code
+                    >
+                    <VTToggle @toggle="propObject.ripple = !propObject.ripple" />
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">background</span>=<span class="code-orange"
+                        ><span class="code-blue">background</span>=<span class="code-string"
                             >"{{ propObject.background }}"</span
                         ></code
                     >
@@ -42,7 +48,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">hoverBackground</span>=<span class="code-orange"
+                        ><span class="code-blue">hoverBackground</span>=<span class="code-string"
                             >"{{ propObject.hoverBackground }}"</span
                         ></code
                     >
@@ -53,7 +59,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">stripColor</span>=<span class="code-orange"
+                        ><span class="code-blue">stripColor</span>=<span class="code-string"
                             >"{{ propObject.stripColor }}"</span
                         ></code
                     >
@@ -64,7 +70,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">stripHoverColor</span>=<span class="code-orange"
+                        ><span class="code-blue">stripHoverColor</span>=<span class="code-string"
                             >"{{ propObject.stripHoverColor }}"</span
                         ></code
                     >
@@ -75,7 +81,7 @@
                 </div>
                 <div class="option">
                     <code
-                        >@<span class="code-blue">open</span>="<span class="code-light-yellow"
+                        >@<span class="code-blue">open</span>="<span class="code-method"
                             >logEvent</span
                         >(<span class="code-blue">$event</span>)"</code
                     >
@@ -88,52 +94,59 @@
         <div class="example-container">
             <div class="example">
                 <VTBurger
+                    :state="propObject.state"
+                    :ripple="propObject.ripple"
                     :background="propObject.background"
                     :hoverBackground="propObject.hoverBackground"
                     :stripColor="propObject.stripColor"
                     :stripHoverColor="propObject.stripHoverColor"
-                    :toggled="propObject.toggled"
                     @open="logEvent($event)"
                 />
             </div>
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTBurger</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTBurger</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
-                        :<span class="code-blue">toggled</span>="<span class="code-navy">{{
-                            propObject.toggled
+                        :<span class="code-blue">state</span>="<span class="code-navy">{{
+                            propObject.state
                         }}</span
                         >"
                     </div>
                     <div>
-                        <span class="code-blue">background</span>=<span class="code-orange"
+                        :<span class="code-blue">ripple</span>="<span class="code-navy">{{
+                            propObject.ripple
+                        }}</span
+                        >"
+                    </div>
+                    <div>
+                        <span class="code-blue">background</span>=<span class="code-string"
                             >"{{ propObject.background }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">hoverBackground</span>=<span class="code-orange"
+                        <span class="code-blue">hoverBackground</span>=<span class="code-string"
                             >"{{ propObject.hoverBackground }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">stripColor</span>=<span class="code-orange"
+                        <span class="code-blue">stripColor</span>=<span class="code-string"
                             >"{{ propObject.stripColor }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">stripHoverColor</span>=<span class="code-orange"
+                        <span class="code-blue">stripHoverColor</span>=<span class="code-string"
                             >"{{ propObject.stripHoverColor }}"</span
                         >
                     </div>
                     <div>
-                        @<span class="code-blue">open</span>="<span class="code-light-yellow"
+                        @<span class="code-blue">open</span>="<span class="code-method"
                             >logEvent</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
-                    <div class="tag"><span class="code-grey">/&gt;</span></div>
+                    <div class="tag"><span class="code-tag">/&gt;</span></div>
                 </code>
                 <i class="fa fa-copy"></i>
             </div>
@@ -151,18 +164,19 @@ export default {
     setup() {
         const log = ref('');
         const propObject = ref({
+            state: false,
+            ripple: false,
             background: '#47cab1',
             hoverBackground: '#6fd6c1',
             stripColor: '#ffffff',
             stripHoverColor: '#ffffff',
-            toggled: false,
-            toggleToggled: false,
         });
 
         const code = computed(() => {
             return `<VTBurger
     :styles="{}"
-    :toggled="${propObject.value.toggled}"
+    :state="${propObject.value.state}"
+    :ripple="${propObject.value.ripple}"
     background="${propObject.value.background}"
     hoverBackground="${propObject.value.hoverBackground}"
     stripColor="${propObject.value.stripColor}"
@@ -176,8 +190,6 @@ export default {
         };
         const logEvent = e => {
             log.value = e;
-            propObject.value.toggled = !propObject.value.toggled;
-            propObject.value.toggleToggled = !propObject.value.toggleToggled;
             console.log(e);
         };
 

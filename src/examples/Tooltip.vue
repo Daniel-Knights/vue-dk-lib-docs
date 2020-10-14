@@ -16,7 +16,7 @@
                 </div>
                 <div class="option column">
                     <code class="trim"
-                        ><span class="code-blue">text</span>=<span class="code-orange trim-span"
+                        ><span class="code-blue">text</span>=<span class="code-string trim-span"
                             >"{{ propObject.text }}"</span
                         ></code
                     >
@@ -24,7 +24,7 @@
                 </div>
                 <div class="option">
                     <code
-                        ><span class="code-blue">position</span>=<span class="code-orange"
+                        ><span class="code-blue">position</span>=<span class="code-string"
                             >"{{ propObject.position }}"</span
                         ></code
                     >
@@ -65,17 +65,17 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTTooltip</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTTooltip</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>:<span class="code-blue">containerStyles</span>="{}"</div>
                     <div>
-                        <span class="code-blue">text</span>=<span class="code-orange"
+                        <span class="code-blue">text</span>=<span class="code-string"
                             >"{{ propObject.text }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">position</span>=<span class="code-orange"
+                        <span class="code-blue">position</span>=<span class="code-string"
                             >"{{ propObject.position }}"</span
                         >
                     </div>
@@ -85,11 +85,10 @@
                         }}</span
                         >""
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     Hover Me!
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span
-                        ><span class="code-green">VTTooltip</span>
+                        <span class="code-tag">&lt;/</span><span class="code-green">VTTooltip</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>

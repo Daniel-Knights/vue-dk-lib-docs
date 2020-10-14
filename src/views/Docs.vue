@@ -143,7 +143,7 @@ export default {
     }
 
     .router-link-active {
-        color: var(--code-grey);
+        color: var(--code-tag);
 
         span {
             color: var(--code-green);

@@ -13,7 +13,7 @@
                 </div>
                 <div class="option">
                     <code
-                        ><span class="code-blue">placeholder</span>=<span class="code-orange"
+                        ><span class="code-blue">placeholder</span>=<span class="code-string"
                             >"{{ propObject.placeholder }}"</span
                         ></code
                     >
@@ -65,7 +65,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">primary</span>=<span class="code-orange"
+                        ><span class="code-blue">primary</span>=<span class="code-string"
                             >"{{ propObject.primary }}"</span
                         ></code
                     >
@@ -76,7 +76,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">secondary</span>=<span class="code-orange"
+                        ><span class="code-blue">secondary</span>=<span class="code-string"
                             >"{{ propObject.secondary }}"</span
                         ></code
                     >
@@ -92,8 +92,7 @@
                         :styles="{ width: '300px', minWidth: 'unset' }"
                     >
                         <code
-                            >@<span class="code-blue">search-value</span>="<span
-                                class="code-light-yellow"
+                            >@<span class="code-blue">search-value</span>="<span class="code-method"
                                 >searchValue</span
                             >(<span class="code-blue">$event</span>)"</code
                         >
@@ -110,7 +109,7 @@
                     >
                         <code
                             >@<span class="code-blue">search-submit</span>="<span
-                                class="code-light-yellow"
+                                class="code-method"
                                 >searchSubmit</span
                             >(<span class="code-blue">$event</span>)"</code
                         >
@@ -138,12 +137,12 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span
+                        <span class="code-tag">&lt;</span
                         ><span class="code-green">VTSearchbar</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
-                        <span class="code-blue">placeholder</span>=<span class="code-orange"
+                        <span class="code-blue">placeholder</span>=<span class="code-string"
                             >"{{ propObject.placeholder }}"</span
                         >
                     </div>
@@ -166,28 +165,26 @@
                         >"
                     </div>
                     <div>
-                        <span class="code-blue">primary</span>=<span class="code-orange"
+                        <span class="code-blue">primary</span>=<span class="code-string"
                             >"{{ propObject.primary }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">secondary</span>=<span class="code-orange"
+                        <span class="code-blue">secondary</span>=<span class="code-string"
                             >"{{ propObject.secondary }}"</span
                         >
                     </div>
                     <div class="option">
-                        @<span class="code-blue">search-value</span>="<span
-                            class="code-light-yellow"
+                        @<span class="code-blue">search-value</span>="<span class="code-method"
                             >searchValue</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
                     <div class="option">
-                        @<span class="code-blue">search-submit</span>="<span
-                            class="code-light-yellow"
+                        @<span class="code-blue">search-submit</span>="<span class="code-method"
                             >searchSubmit</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
-                    <div class="tag"><span class="code-grey">/&gt;</span></div>
+                    <div class="tag"><span class="code-tag">/&gt;</span></div>
                 </code>
                 <i class="fa fa-copy"></i>
             </div>

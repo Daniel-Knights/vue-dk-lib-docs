@@ -62,7 +62,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">hoverColor</span>=<span class="code-orange"
+                        ><span class="code-blue">hoverColor</span>=<span class="code-string"
                             >"{{ propObject.hoverColor }}"</span
                         ></code
                     >
@@ -73,7 +73,7 @@
                 </div>
                 <div class="option column">
                     <code
-                        ><span class="code-blue">hoverBackground</span>=<span class="code-orange"
+                        ><span class="code-blue">hoverBackground</span>=<span class="code-string"
                             >"{{ propObject.hoverBackground }}"</span
                         ></code
                     >
@@ -102,7 +102,7 @@
             <div class="copy-code" @click="copyCode()">
                 <code>
                     <div class="tag">
-                        <span class="code-grey">&lt;</span><span class="code-green">VTButton</span>
+                        <span class="code-tag">&lt;</span><span class="code-green">VTButton</span>
                     </div>
                     <div>:<span class="code-blue">styles</span>="{}"</div>
                     <div>
@@ -142,20 +142,20 @@
                         >"
                     </div>
                     <div>
-                        <span class="code-blue">hoverColor</span>=<span class="code-orange"
+                        <span class="code-blue">hoverColor</span>=<span class="code-string"
                             >"{{ propObject.hoverColor }}"</span
                         >
                     </div>
                     <div>
-                        <span class="code-blue">hoverBackground</span>=<span class="code-orange"
+                        <span class="code-blue">hoverBackground</span>=<span class="code-string"
                             >"{{ propObject.hoverBackground }}"</span
                         >
                     </div>
-                    <div class="tag"><span class="code-grey">&gt;</span></div>
+                    <div class="tag"><span class="code-tag">&gt;</span></div>
                     <div>CLICK ME!</div>
                     <div class="tag">
-                        <span class="code-grey">&lt;/</span><span class="code-green">VTButton</span
-                        ><span class="code-grey">&gt;</span>
+                        <span class="code-tag">&lt;/</span><span class="code-green">VTButton</span
+                        ><span class="code-tag">&gt;</span>
                     </div>
                 </code>
                 <i class="fa fa-copy"></i>
