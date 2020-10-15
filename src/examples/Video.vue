@@ -165,7 +165,7 @@
         width="95%"
         :containerStyles="{ margin: '30px 0' }"
         :videoPoster="require('../assets/video-bg.jpg')"
-        :videoSrc="require('../assets/video.mp4')"
+        videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
         videoTitle="Your Video Title"
         :contextmenu="propObject.contextmenu"
         :trackColor="propObject.trackColor"
@@ -180,7 +180,7 @@
         :thumbStyles="{ borderRadius: '5px' }"
         :containerStyles="{ margin: '30px 0', borderRadius: '20px', overflow: 'hidden' }"
         :videoPoster="require('../assets/video-bg.jpg')"
-        :videoSrc="require('../assets/video.mp4')"
+        videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
         :timeTags="tags"
     />
     <div class="section-sub-title">
@@ -190,7 +190,7 @@
         width="95%"
         :containerStyles="{ margin: '30px 0' }"
         :videoPoster="require('../assets/video-bg.jpg')"
-        :videoSrc="require('../assets/video.mp4')"
+        videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
         :timeTags="dynamicTags"
         :key="key"
     />
@@ -264,7 +264,7 @@ export default {
 />`;
         });
         const asyncSrc = ref('');
-        const src = require('../assets/video.mp4');
+        const src = 'https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4';
 
         const copyCode = () => {
             navigator.clipboard.writeText(code.value);
