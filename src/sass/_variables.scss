@@ -1,0 +1,37 @@
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+    --font_primary: Avenir, Helvetica, Arial, sans-serif;
+
+    --primary: #5bd0b9;
+    --white: #ffffff;
+    --lightgrey: #777e88;
+    --grey: #5a5f66;
+    --dark-grey: #3a3c42;
+    --black: #1e1e1e;
+
+    // RGB value conversion
+    --primary-rgb: #{hexToRGB(#5bd0b9)};
+    --white-rgb: #{hexToRGB(#ffffff)};
+    --lightgrey-rgb: #{hexToRGB(#777e88)};
+    --grey-rgb: #{hexToRGB(#5a5f66)};
+    --dark-grey-rgb: #{hexToRGB(#3a3c42)};
+    --black-rgb: #{hexToRGB(#1e1e1e)};
+
+    // Code
+    --code-purple: #c684c1;
+    --code-blue: #9adcff;
+    --code-string: #cf9176;
+    --code-yellow: #ffd900;
+    --code-navy: #539bd8;
+    --code-green: #47cab0;
+    --code-tag: #808080;
+    --code-method: #dcdda7;
+    --code-const: #48c0ff;
+    --code-num: #b4cfa7;
+}
+
+$primary: #5bd0b9;
+$white: #ffffff;

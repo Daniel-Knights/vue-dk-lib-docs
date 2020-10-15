@@ -6,6 +6,19 @@ h5 {
     margin: 0;
 }
 
+.vt__tabber {
+    *:focus {
+        outline: 5px solid rgba(var(--primary-rgb), 0.7);
+    }
+
+    #nav-links *:focus,
+    #home-link *:focus {
+        outline: 5px solid rgba(var(--white-rgb), 0.7);
+    }
+
+    transition: outline 0s !important;
+}
+
 .code {
     $code-colors: 'bg', 'purple', 'blue', 'string', 'yellow', 'navy', 'green', 'tag', 'method',
         'const', 'num';
@@ -15,6 +28,11 @@ h5 {
             color: var(--code-#{$color});
         }
     }
+}
+
+.section-sub-title {
+    color: var(--black);
+    border-bottom: 3px solid var(--primary);
 }
 
 ::selection {

@@ -40,7 +40,9 @@
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">slider</span>="<span class="code-navy"></span
+                        >:<span class="code-blue">slider</span>="<span class="code-navy">{{
+                            propObject.slider
+                        }}</span
                         >"</code
                     >
                     <VTToggle @toggle="toggleProp('slider')" />

@@ -21,7 +21,7 @@
                         class="medium-input"
                         type="text"
                         v-model="propObject.placeholder"
-                        @keyup="forceRender()"
+                        @input="forceRender()"
                     />
                 </div>
                 <div class="option">

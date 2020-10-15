@@ -1,6 +1,6 @@
 <template>
     <VTNavbar :styles="navbarStyles">
-        <router-link to="/"
+        <router-link to="/" id="home-link"
             ><h1>Vuelity | {{ $route.name }}</h1></router-link
         >
         <nav id="nav-links">
