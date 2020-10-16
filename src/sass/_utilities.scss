@@ -12,7 +12,7 @@ h5 {
     }
 
     #nav-links *:focus,
-    #home-link *:focus {
+    #home-link:focus {
         outline: 5px solid rgba(var(--white-rgb), 0.7);
     }
 
@@ -21,7 +21,7 @@ h5 {
 
 .code {
     $code-colors: 'bg', 'purple', 'blue', 'string', 'yellow', 'navy', 'green', 'tag', 'method',
-        'const', 'num';
+        'const', 'num', 'css';
 
     @each $color in $code-colors {
         &-#{$color} {

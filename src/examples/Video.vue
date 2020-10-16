@@ -281,6 +281,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/sass/_variables.scss';
+
 .add-tags {
     margin-bottom: 40px;
     font-size: 15px;

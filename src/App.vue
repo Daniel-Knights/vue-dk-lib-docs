@@ -67,6 +67,7 @@ export default {
     align-items: center;
     width: 33%;
     min-width: 300px;
+    font-size: clamp(15px, 2vw, 18px);
 }
 a:not(.codepen) {
     padding: 10px;
