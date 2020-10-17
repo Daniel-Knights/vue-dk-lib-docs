@@ -1,0 +1,46 @@
+@media only screen and (max-width: $bp-xl) {
+    #app {
+        #home {
+            flex-direction: column;
+            padding: 100px 0 0;
+        }
+        #home-right {
+            width: 100%;
+            max-width: 500px;
+            height: 640px;
+        }
+    }
+}
+@media only screen and (max-width: $bp-sm) {
+    #app {
+        #home-link {
+            display: none;
+        }
+        #nav-links {
+            width: 100%;
+        }
+        #home-left {
+            margin: 75px 5px 0;
+        }
+    }
+}
+@media only screen and (max-width: $bp-xs) {
+    #app {
+        .vt__navbar-inner {
+            padding: 0 !important;
+        }
+        #nav-links {
+            min-width: 240px;
+        }
+        .block {
+            max-width: calc(100vw - 10px);
+
+            .overflow-mid {
+                display: unset;
+            }
+        }
+        .vt__tooltip-container {
+            display: none;
+        }
+    }
+}

@@ -20,7 +20,7 @@
     <VTTooltip
         text="Try a full demo on Codepen!"
         position="left"
-        :containerStyles="{ position: 'fixed', bottom: '30px', right: '40px' }"
+        :containerStyles="tooltipContainerStyles"
     >
         <a
             href="https://codepen.io/daniel-knights/pen/jOrOVXX"
@@ -28,15 +28,7 @@
             rel="noopener"
             class="codepen"
         >
-            <VTButton
-                :styles="{
-                    position: 'relative',
-                    minWidth: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                }"
-                :ripple="false"
-            >
+            <VTButton :styles="buttonStyles" :ripple="false">
                 <i class="fa fa-codepen"></i>
             </VTButton>
         </a>
@@ -44,6 +36,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
     name: 'App',
 
@@ -54,8 +48,20 @@ export default {
             padding: '0 20px',
             background: '#5bd0b9',
         };
+        const tooltipContainerStyles = {
+            position: 'fixed',
+            bottom: '30px',
+            right: '40px',
+            maxWidth: '100vw',
+        };
+        const buttonStyles = {
+            position: 'relative',
+            minWidth: '50px',
+            height: '50px',
+            borderRadius: '50%',
+        };
 
-        return { navbarStyles };
+        return { navbarStyles, tooltipContainerStyles, buttonStyles };
     },
 };
 </script>
@@ -66,8 +72,8 @@ export default {
     justify-content: space-evenly;
     align-items: center;
     width: 33%;
-    min-width: 300px;
-    font-size: clamp(15px, 2vw, 18px);
+    min-width: 280px;
+    font-size: 18px;
 }
 a:not(.codepen) {
     padding: 10px;

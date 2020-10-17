@@ -5,205 +5,17 @@
                 Vuelity is a lightweight, <i>'use-what-you-need'</i> component library for Vue.js v3
             </h1>
         </div>
-        <div id="home-right">
-            <h1>INSTALLATION</h1>
-            <div id="home-tabs">
-                <VTHoverbox>
-                    <div class="tab" @click="cli = true" :class="{ 'tab-selected': cli }">CLI</div>
-                </VTHoverbox>
-                <VTHoverbox>
-                    <div class="tab" @click="cli = false" :class="{ 'tab-selected': !cli }">
-                        CDN
-                    </div>
-                </VTHoverbox>
-            </div>
-            <transition name="installation" mode="out-in">
-                <div v-if="cli" id="installation">
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            >npm i vuelity<i class="fa fa-copy"></i
-                        ></code>
-                    </div>
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            ><span class="code-purple">import</span>
-                            <span class="code-yellow"> { </span>
-                            <span class="code-blue">VTButton</span>
-                            <span class="code-yellow"> } </span>
-                            <span class="code-purple">from </span>
-                            <span class="code-string">'vuelity'</span>;<i class="fa fa-copy"></i
-                        ></code>
-                        ...
-                        <code @click="copyCode($event)"
-                            ><span class="code-blue">components:</span>
-                            <span class="code-purple"> { </span>
-                            <span class="code-blue">VTButton</span>
-                            <span class="code-purple"> } </span><i class="fa fa-copy"></i
-                        ></code>
-                    </div>
-                    or, register all at once in main.js:
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            ><span class="code-purple">import</span>
-                            <span class="code-navy"> * </span>
-                            <span class="code-purple">as </span>
-                            <span class="code-blue">Vuelity</span>
-                            <span class="code-purple"> from </span>
-                            <span class="code-string">'vuelity'</span>;<i class="fa fa-copy"></i
-                        ></code>
-                        ...
-                        <code @click="copyCode($event)"
-                            ><div class="line-top">
-                                <span class="code-green">Object</span>.<span class="code-method"
-                                    >keys</span
-                                ><span class="code-yellow">(</span
-                                ><span class="code-blue">Vuelity</span
-                                ><span class="code-yellow">)</span>.<span class="code-method"
-                                    >forEach</span
-                                ><span class="code-yellow">(</span><span class="code-blue">el</span>
-                                <span class="code-navy"> =></span>
-                                <span class="code-purple">{</span>
-                            </div>
-                            <i class="fa fa-copy"></i>
-                            <div class="line-mid">
-                                <span class="code-const">app</span>.<span class="code-method"
-                                    >component</span
-                                ><span class="code-purple">(</span
-                                ><span class="code-blue">el</span>,
-                                <span class="code-blue">Vuelity[el]</span
-                                ><span class="code-purple">)</span>;
-                            </div>
-                            <div class="line-bottom">
-                                <span class="code-purple">}</span
-                                ><span class="code-yellow">)</span>;
-                            </div></code
-                        >
-                    </div>
-                    then:
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            ><span class="code-tag">&lt;</span
-                            ><span class="code-green">VTButton</span
-                            ><span class="code-tag">&gt;</span>Hello!<span class="code-tag"
-                                >&lt;/</span
-                            ><span class="code-green">VTButton</span
-                            ><span class="code-tag">&gt;</span><i class="fa fa-copy"></i
-                        ></code>
-                    </div>
-                </div>
-                <div v-else>
-                    <div class="block double" @click="copyCode($event)">
-                        <code
-                            ><span class="code-tag">&lt;</span
-                            ><span class="code-navy">script </span>
-                            <span class="code-blue">src</span>=<span
-                                class="code-string overflow-mid"
-                                >"https://unpkg.com/vue@3.0.0/dist/vue.global.js"</span
-                            ><span class="overflow-end"
-                                ><span class="code-tag">></span><span class="code-tag">&lt;/</span
-                                ><span class="code-navy">script</span
-                                ><span class="code-tag">></span></span
-                            ></code
-                        >
-                        <i class="fa fa-copy"></i>
-                        <code
-                            ><span class="code-tag">&lt;</span><span class="code-navy">script </span
-                            ><span class="code-blue">src</span>=<span
-                                class="code-string overflow-mid"
-                                >"https://unpkg.com/vuelity/dist/vuelity.umd.min.js"</span
-                            ><span class="overflow-end"
-                                ><span class="code-tag">></span><span class="code-tag">&lt;/</span
-                                ><span class="code-navy">script</span
-                                ><span class="code-tag">></span></span
-                            ></code
-                        >
-                    </div>
-                    ...
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            ><div class="line-top">
-                                <span class="code-const">app</span>.<span class="code-method"
-                                    >component</span
-                                >
-                                <span class="code-yellow">(</span>
-                            </div>
-                            <i class="fa fa-copy"></i>
-                            <div class="line-mid">
-                                <span class="code-string">'vt-button'</span>,
-                                <span class="code-blue">Vuelity</span
-                                ><span class="code-purple">[</span
-                                ><span class="code-string">'vt-navbar'</span
-                                ><span class="code-purple">]</span>
-                            </div>
-                            <div class="line-bottom"><span class="code-yellow">)</span>;</div>
-                        </code>
-                    </div>
-                    or, register all at once:
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            ><div class="line-top">
-                                <span class="code-green">Object</span>.<span class="code-method"
-                                    >keys</span
-                                ><span class="code-yellow">(</span
-                                ><span class="code-blue">Vuelity</span
-                                ><span class="code-yellow">)</span>.<span class="code-method"
-                                    >forEach</span
-                                ><span class="code-yellow">(</span><span class="code-blue">el</span>
-                                <span class="code-navy"> => </span>
-                                <span class="code-purple">{</span>
-                            </div>
-                            <i class="fa fa-copy"></i>
-                            <div class="line-mid">
-                                <span class="code-const">app</span>.<span class="code-method"
-                                    >component</span
-                                ><span class="code-purple">(</span
-                                ><span class="code-blue">el</span>,
-                                <span class="code-blue">Vuelity[el]</span
-                                ><span class="code-purple">)</span>;
-                            </div>
-                            <div class="line-bottom">
-                                <span class="code-purple">}</span
-                                ><span class="code-yellow">)</span>;
-                            </div></code
-                        >
-                    </div>
-                    then:
-                    <div class="block">
-                        <code @click="copyCode($event)"
-                            ><span class="code-tag">&lt;</span
-                            ><span class="code-green">VTButton</span
-                            ><span class="code-tag">&gt;</span>Hello!<span class="code-tag"
-                                >&lt;/</span
-                            ><span class="code-green">VTButton</span
-                            ><span class="code-tag">&gt;</span><i class="fa fa-copy"></i
-                        ></code>
-                    </div>
-                </div>
-            </transition>
-        </div>
+        <Installation />
     </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import app from '@/main';
+import Installation from '@/components/Installation';
 
 export default {
     name: 'Home',
 
-    setup() {
-        const cli = ref(true);
-
-        const copyCode = e => {
-            navigator.clipboard.writeText(e.target.innerText);
-
-            app.$toast('Copied!');
-        };
-
-        document.body.removeAttribute('style');
-
-        return { cli, copyCode };
-    },
+    components: { Installation },
 };
 </script>
 
@@ -222,8 +34,8 @@ export default {
 
 #home {
     @include flex-x(center, center);
-    height: 100vh;
-    padding: 0 40px;
+    min-height: 100vh;
+    padding: 100px 0;
 
     h1 {
         letter-spacing: 1px;
@@ -231,18 +43,21 @@ export default {
 }
 
 #home-left {
+    margin: 75px 0 0;
     padding: 20px;
     max-width: 550px;
     background: var(--primary);
     border-radius: 10px;
 }
 #home-right {
-    height: 540px;
+    padding: 40px 5px 0;
+    height: 560px;
     width: 40%;
 }
 
 #home-tabs {
     @include flex-x(space-around, center);
+    padding: 10px 0;
 
     .tab {
         cursor: pointer;
@@ -286,7 +101,9 @@ export default {
     code {
         cursor: pointer;
         position: relative;
-        width: 100%;
+        max-width: calc(100vw - 40px);
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         span {
             pointer-events: none;
@@ -296,9 +113,10 @@ export default {
         .line-mid,
         .line-bottom {
             pointer-events: none;
-            width: 100%;
             text-align: left;
             line-height: 25px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .line-mid {
             margin-left: 30px;
@@ -314,6 +132,7 @@ export default {
         }
         .overflow-mid {
             width: 22vw;
+            min-width: 200px;
         }
         .overflow-end {
             width: 0;
