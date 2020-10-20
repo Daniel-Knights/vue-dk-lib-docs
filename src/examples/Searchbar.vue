@@ -5,13 +5,13 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
                 </div>
-                <div class="option">
+                <div class="option column">
                     <code
                         ><span class="code-blue">placeholder</span>=<span class="code-string"
                             >"{{ propObject.placeholder }}"</span
@@ -51,8 +51,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Swaps the primary and secondary props."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >:<span class="code-blue">contrast</span>="<span class="code-navy">{{
@@ -88,8 +88,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Returns the input value on keyup."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >@<span class="code-blue">search-value</span>="<span class="code-method"
@@ -97,15 +97,15 @@
                             >(<span class="code-blue">$event</span>)"</code
                         >
                     </VTTooltip>
-                    <code class="text-box">
+                    <code class="search-results">
                         {{ propObject.searchValue }}
                     </code>
                 </div>
                 <div class="option">
                     <VTTooltip
                         text="Returns the input value on submit. Normal @submit event works too for a more in-depth returned value."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >@<span class="code-blue">search-submit</span>="<span
@@ -114,7 +114,7 @@
                             >(<span class="code-blue">$event</span>)"</code
                         >
                     </VTTooltip>
-                    <code class="text-box">
+                    <code class="search-results">
                         {{ propObject.searchSubmit }}
                     </code>
                 </div>
@@ -244,6 +244,7 @@ export default {
         };
 
         return {
+            app,
             contrast,
             key,
             propObject,

@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -17,8 +17,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Toggles between the default Vuelity animation and a normal spinner animation."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >:<span class="code-blue">default</span>="<span class="code-navy">{{
@@ -27,27 +27,48 @@
                             >"</code
                         >
                     </VTTooltip>
-                    <VTToggle @toggle="toggleDefault()" :initialState="true" />
+                    <VTToggle @toggle="toggleProp('default')" :initialState="true" />
+                </div>
+                <div class="option">
+                    <VTTooltip
+                        text="Sets the overflow property on the body tag to hidden and a fixed position to the loading container."
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
+                    >
+                        <code
+                            >:<span class="code-blue">fullscreen</span>="<span class="code-navy">{{
+                                propObject.fullscreen
+                            }}</span
+                            >"</code
+                        >
+                    </VTTooltip>
+                    <VTToggle
+                        @toggle="
+                            toggleProp('fullscreen');
+                            toggleDisplay();
+                        "
+                    />
                 </div>
                 <div class="option button-center">
-                    <VTButton @click="fullscreen = true">FULLSCREEN</VTButton>
+                    <VTButton @click="fullscreenDisplay = true">FULLSCREEN</VTButton>
                 </div>
             </div>
         </div>
         <div class="example-container">
             <div class="example overflow-hidden">
-                <VTLoading :default="propObject.default" :key="key" />
-                <teleport v-if="fullscreen" to="body">
+                <VTLoading
+                    :default="propObject.default"
+                    :key="key"
+                    :containerStyles="{ zIndex: '0' }"
+                />
+                <teleport v-if="fullscreenDisplay" to="body">
                     <div id="exit-fullscreen">
                         <span>Click or press esc to exit fullscreen</span>
                     </div>
                     <VTLoading
-                        @click="fullscreen = false"
-                        :styles="{
-                            position: 'absolute',
-                            right: 'unset',
-                        }"
+                        @click="fullscreenDisplay = false"
                         :default="propObject.default"
+                        :fullscreen="true"
                         :key="key"
                     />
                 </teleport>
@@ -89,8 +110,9 @@ export default {
         const key = ref(0);
         const propObject = ref({
             default: true,
+            fullscreen: false,
         });
-        const fullscreen = ref(false);
+        const fullscreenDisplay = ref(false);
 
         const forceRender = () => key.value++;
         const code = computed(() => {
@@ -98,6 +120,7 @@ export default {
     :styles="{}"
     :containerStyles="{}"
     :default="${propObject.value.default}"
+    :fullscreen="${propObject.value.fullscreen}"
 >
     <!-- Optional Slot -->
 </VTLoading>`;
@@ -106,13 +129,18 @@ export default {
             navigator.clipboard.writeText(code.value);
             app.$toast('Copied!');
         };
-        const toggleDefault = () => {
-            propObject.value.default = !propObject.value.default;
+        const toggleProp = property => {
+            propObject.value[property] = !propObject.value[property];
             forceRender();
+        };
+        const toggleDisplay = () => {
+            if (propObject.value.fullscreen === true) {
+                fullscreenDisplay.value = true;
+            }
         };
         const fullscreenListener = e => {
             if (e.key !== 'Escape') return;
-            fullscreen.value = false;
+            fullscreenDisplay.value = false;
         };
 
         document.addEventListener('keydown', fullscreenListener);
@@ -121,10 +149,11 @@ export default {
         return {
             key,
             propObject,
-            fullscreen,
+            fullscreenDisplay,
             forceRender,
             copyCode,
-            toggleDefault,
+            toggleProp,
+            toggleDisplay,
             fullscreenListener,
         };
     },

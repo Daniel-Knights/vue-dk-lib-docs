@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -17,7 +17,7 @@
                 <div class="option column">
                     <VTTooltip
                         text="VTHoverbox sets its own width but you can set it manually too."
-                        position="right"
+                        :position="$global.$tooltipPosition"
                         :styles="{ minWidth: '350px' }"
                     >
                         <code
@@ -29,21 +29,13 @@
                     </VTTooltip>
                     <form @submit.prevent="forceRender()">
                         <input type="number" v-model.number="propObject.width" maxlength="25" />
-                        <VTButton
-                            :styles="{
-                                minWidth: '50px',
-                                height: '25px',
-                                fontSize: '14px',
-                                borderRadius: '0 5px 5px 0',
-                            }"
-                            >APPLY</VTButton
-                        >
+                        <VTButton :styles="buttonStyles">APPLY</VTButton>
                     </form>
                 </div>
                 <div class="option column">
                     <VTTooltip
                         text="VTHoverbox also sets its own height but you can set it manually too."
-                        position="right"
+                        :position="$global.$tooltipPosition"
                         :styles="{ minWidth: '350px' }"
                     >
                         <code
@@ -55,15 +47,7 @@
                     </VTTooltip>
                     <form @submit.prevent="forceRender()">
                         <input type="number" v-model.number="propObject.height" maxlength="25" />
-                        <VTButton
-                            :styles="{
-                                minWidth: '50px',
-                                height: '25px',
-                                fontSize: '14px',
-                                borderRadius: '0 5px 5px 0',
-                            }"
-                            >APPLY</VTButton
-                        >
+                        <VTButton :styles="buttonStyles">APPLY</VTButton>
                     </form>
                 </div>
                 <div class="option column">
@@ -140,6 +124,12 @@ export default {
             height: 40,
             fill: 'rgba(255, 255, 255, 0.5)',
         });
+        const buttonStyles = {
+            minWidth: '50px',
+            height: '25px',
+            fontSize: '14px',
+            borderRadius: '0 5px 5px 0',
+        };
 
         const forceRender = () => key.value++;
         const code = computed(() => {
@@ -158,7 +148,7 @@ export default {
             app.$toast('Copied!');
         };
 
-        return { key, propObject, forceRender, copyCode };
+        return { key, propObject, buttonStyles, forceRender, copyCode };
     },
 };
 </script>

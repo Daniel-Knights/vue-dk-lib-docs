@@ -1,4 +1,6 @@
+// Container
 .component-playground {
+    flex: 1;
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
@@ -7,170 +9,171 @@
     padding: 20px 30px;
     width: 100%;
     height: 70vh;
-    flex: 1;
+    font-size: 18px;
 
     > * {
         @include flex-y(center, center);
     }
 
-    .options-container {
+    span:not(.vt__tip) {
+        white-space: nowrap;
+    }
+}
+
+// Options section
+.options-container {
+    height: 100%;
+    width: 100%;
+    background: var(--dark-grey);
+    border-radius: 10px;
+
+    .options {
+        width: 100%;
+    }
+
+    .option {
+        @include flex-x(space-between, center);
+        margin: 25px;
+        width: calc(100% - 50px);
+
+        .search-results {
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .column {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .button-center {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    form {
+        display: flex;
+        margin: 5px;
+    }
+    input {
+        padding: 0 5px;
+        min-height: 25px;
+        color: var(--black);
+        border: none;
+        border-radius: 5px 0 0 5px;
+
+        &[type='color'] {
+            border-radius: 0 5px 5px 0;
+        }
+
+        &.small-input {
+            border-radius: 5px;
+            max-width: 40px;
+
+            &[type='number'] {
+                cursor: default;
+                caret-color: transparent;
+            }
+        }
+        &.medium-input {
+            margin: 5px;
+            border-radius: 5px;
+
+            &[type='number'] {
+                cursor: default;
+                caret-color: transparent;
+            }
+        }
+        &.large-input {
+            margin: 10px;
+            width: calc(100% - 20px);
+            border-radius: 5px;
+        }
+    }
+    select,
+    input {
+        font-family: monospace;
+    }
+}
+
+// Example and copy code section
+.example-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    height: 100%;
+
+    &.single-panel {
+        grid-template-rows: 100%;
+    }
+
+    .example {
+        @include flex-x(center, center);
+        align-self: flex-start;
+        position: relative;
+        padding: 30px;
+        width: 100%;
+        height: calc(100% - 20px);
+        border-radius: 10px;
+
+        &.overflow-hidden {
+            overflow: hidden;
+        }
+    }
+    .contrast {
+        background: var(--primary);
+
+        &-black {
+            background: var(--dark-grey);
+        }
+    }
+    .border {
+        box-shadow: inset 0 0 7px -2px var(--black);
+        border: 1px solid var(--dark-grey);
+    }
+    .copy-code {
+        cursor: pointer;
+        @include flex-x(center, center);
+        padding: 0 20px;
         height: 100%;
         width: 100%;
+        text-align: left;
+        font-size: 16px;
         background: var(--dark-grey);
         border-radius: 10px;
 
-        .options {
-            width: 100%;
-        }
+        code {
+            max-width: 100%;
+            transform: translateX(5px);
+            z-index: 1;
 
-        .option {
-            @include flex-x(space-between, center);
-            margin: 25px;
-            font-size: 18px;
-
-            .text-box {
-                max-width: 100px;
+            > * {
+                width: calc(100% - 30px);
                 overflow: hidden;
                 text-overflow: ellipsis;
-                white-space: pre;
             }
-
-            .trim {
-                width: calc(100% - 20px);
-
-                &-span {
-                    display: inline-block;
-                    vertical-align: bottom;
-                    white-space: pre;
-                    max-width: calc(80% - 20px);
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+            > :not(.tag) {
+                margin-left: 30px;
             }
         }
-        .column {
-            flex-direction: column;
-            align-items: center;
-            padding: 5px;
-            border: 1px solid;
-            border-radius: 5px;
+        i {
+            opacity: 0;
+            transform: translate(40px, 25%);
+            transition: all 0.15s;
+            z-index: 0;
         }
-        .button-center {
-            width: fit-content;
-            margin: 0 auto;
-        }
-        form {
-            display: flex;
-            margin: 5px;
-        }
-        input {
-            padding: 0 5px;
-            min-height: 25px;
-            color: var(--black);
-            border: none;
-            border-radius: 5px 0 0 5px;
 
-            &[type='color'] {
-                border-radius: 0 5px 5px 0;
-            }
-
-            &.small-input {
-                border-radius: 5px;
-                max-width: 40px;
-
-                &[type='number'] {
-                    cursor: default;
-                    caret-color: transparent;
-                }
-            }
-            &.medium-input {
-                border-radius: 5px;
-
-                &[type='number'] {
-                    cursor: default;
-                    caret-color: transparent;
-                }
-            }
-            &.large-input {
-                margin: 10px;
-                width: calc(100% - 20px);
-                border-radius: 5px;
-            }
-        }
-        select,
-        input {
-            font-family: monospace;
+        &:hover > i {
+            opacity: 1;
+            transform: translate(40px, 0);
         }
     }
-
-    .example-container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-        height: 100%;
-
-        &.single-panel {
-            grid-template-rows: 100%;
-        }
-
-        .example {
-            @include flex-x(center, center);
-            align-self: flex-start;
-            position: relative;
-            padding: 30px;
-            width: 100%;
-            height: calc(100% - 20px);
-            border-radius: 10px;
-
-            &.overflow-hidden {
-                overflow: hidden;
-            }
-        }
-        .contrast {
-            background: var(--primary);
-
-            &-black {
-                background: var(--dark-grey);
-            }
-        }
-        .border {
-            box-shadow: inset 0 0 7px -2px var(--black);
-            border: 1px solid var(--dark-grey);
-        }
-        .copy-code {
-            cursor: pointer;
-            @include flex-x(center, center);
-            height: 100%;
-            width: 100%;
-            font-size: 16px;
-            text-align: left;
-            background: var(--dark-grey);
-            border-radius: 10px;
-
-            code {
-                width: fit-content;
-                transform: translateX(20px);
-                z-index: 1;
-            }
-            .tag {
-                transform: translateX(-30px);
-            }
-            i {
-                opacity: 0;
-                transform: translate(40px, 25%);
-                transition: all 0.15s;
-                z-index: 0;
-            }
-
-            &:hover > i {
-                opacity: 1;
-                transform: translate(40px, 0);
-            }
-        }
-        .example-info {
-            font-size: 20px;
-            font-weight: 500;
-        }
+    .example-info {
+        font-size: 20px;
+        font-weight: 500;
     }
 }
 

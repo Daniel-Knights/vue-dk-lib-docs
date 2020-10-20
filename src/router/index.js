@@ -14,14 +14,14 @@ const routes = [
         component: () => import('@/views/Docs'),
         children: [
             {
-                path: 'vt-button',
-                name: 'VTButton',
-                component: () => import('@/examples/Button'),
-            },
-            {
                 path: 'vt-burger',
                 name: 'VTBurger',
                 component: () => import('@/examples/Burger'),
+            },
+            {
+                path: 'vt-button',
+                name: 'VTButton',
+                component: () => import('@/examples/Button'),
             },
             {
                 path: 'vt-hoverbox',

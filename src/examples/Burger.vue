@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -14,8 +14,8 @@
                 <div class="option">
                     <VTTooltip
                         text="If you need to programmatically toggle VTBurger, it will watch for this prop and update accordingly."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >:<span class="code-blue">state</span>="<span class="code-navy">{{

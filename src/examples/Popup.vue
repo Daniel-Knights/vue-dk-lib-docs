@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -14,8 +14,8 @@
                 <div class="option">
                     <VTTooltip
                         text="When set to true, stores a cookie which prevents it from returning."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >:<span class="code-blue">cookie</span>="<span class="code-navy">{{
@@ -28,8 +28,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Delay from page-load to the popup appearing."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             ><span class="code-blue">delay</span>=<span class="code-string"
@@ -72,6 +72,7 @@
                     :styles="{
                         position: 'absolute',
                         right: 'unset',
+                        zIndex: '0',
                     }"
                     :cookie="false"
                     :delay="propObject.delay"

@@ -1,0 +1,54 @@
+@media only screen and (max-width: $bp-lg) {
+    #app {
+        #component-container #component-view {
+            max-width: 750px;
+            min-height: 550px;
+            flex-direction: column-reverse;
+        }
+        .component-playground {
+            display: flex;
+            flex-direction: column-reverse;
+            flex: unset;
+            height: unset;
+        }
+        .options-container {
+            margin: 10px 0;
+            min-height: calc(35vh - 20px);
+
+            .options {
+                padding: 10px 0;
+            }
+        }
+        .example-container {
+            display: unset;
+            width: 100%;
+
+            .example {
+                min-height: calc(35vh - 20px);
+            }
+        }
+        .copy-code {
+            display: none;
+        }
+        .mobile-nav-right {
+            width: calc(100% - 200px);
+            align-self: flex-start;
+        }
+        .mobile-nav-left {
+            width: calc(100% - 200px);
+            align-self: flex-end;
+        }
+        .add-tags code {
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+}
+@media only screen and (max-width: $bp-sm) {
+    #app {
+    }
+}
+@media only screen and (max-width: $bp-xs) {
+    #app {
+    }
+}

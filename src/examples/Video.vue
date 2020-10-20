@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -15,19 +15,13 @@
                     <code>:<span class="code-blue">containerStyles</span>="{}"</code>
                 </div>
                 <div class="option">
-                    <VTTooltip
-                        text="Styles for the time-track thumb."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
-                    >
-                        <code>:<span class="code-blue">buttonStyles</span>="{}"</code>
-                    </VTTooltip>
+                    <code>:<span class="code-blue">buttonStyles</span>="{}"</code>
                 </div>
                 <div class="option">
                     <VTTooltip
                         text="Styles for the time-track thumb."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">thumbStyles</span>="{}"</code>
                     </VTTooltip>
@@ -35,8 +29,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Async src loading is supported."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>
                             <span class="code-blue">videoSrc</span>=<span class="code-string"
@@ -48,8 +42,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is for the aria-label attribute."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>
                             <span class="code-blue">videoTitle</span>=<span class="code-string"
@@ -68,8 +62,8 @@
                 <div class="option">
                     <VTTooltip
                         text="An array of timestamps with an associated title."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">timeTags</span>="[{}]"</code>
                     </VTTooltip>
@@ -77,8 +71,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Enable/disable contextmenu on right click."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >:<span class="code-blue">contextmenu</span>="<span class="code-navy">{{
@@ -158,71 +152,79 @@
             </div>
         </div>
     </div>
-    <div class="section-sub-title">
-        <h3>Default</h3>
-    </div>
-    <VTVideo
-        width="95%"
-        :containerStyles="{ margin: '30px 0' }"
-        :videoPoster="require('../assets/video-bg.jpg')"
-        videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
-        videoTitle="Your Video Title"
-        :contextmenu="propObject.contextmenu"
-        :trackColor="propObject.trackColor"
-    />
-    <div class="section-sub-title">
-        <h3>With Styles/Time-tags</h3>
-    </div>
-    <VTVideo
-        width="95%"
-        :buttonStyles="{ backgroundColor: 'red', border: 'none', borderRadius: '1px' }"
-        trackColor="red"
-        :thumbStyles="{ borderRadius: '5px' }"
-        :containerStyles="{ margin: '30px 0', borderRadius: '20px', overflow: 'hidden' }"
-        :videoPoster="require('../assets/video-bg.jpg')"
-        videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
-        :timeTags="tags"
-    />
-    <div class="section-sub-title">
-        <h3>Add time-tags</h3>
-    </div>
-    <VTVideo
-        width="95%"
-        :containerStyles="{ margin: '30px 0' }"
-        :videoPoster="require('../assets/video-bg.jpg')"
-        videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
-        :timeTags="dynamicTags"
-        :key="key"
-    />
-    <form @submit.prevent="addTag()" class="add-tags">
-        <code>
-            timeTags: { title:
-            <input type="text" v-model="tag.title" />
-            timestamp:
-            <input type="text" v-model="tag.timestamp" /> }
-        </code>
-        <VTButton
-            :styles="{
-                display: 'inline-block',
-                marginLeft: '10px',
-                height: '30px',
-                minWidth: '50px',
-                fontSize: '15px',
-            }"
-            >ADD TAG</VTButton
-        >
-    </form>
-    <div class="section-sub-title">
-        <h3>Async Source Loading</h3>
-    </div>
-    <VTVideo
-        width="95%"
-        :containerStyles="{ margin: '30px 0' }"
-        :videoPoster="require('../assets/video-bg.jpg')"
-        :videoSrc="asyncSrc"
-    />
-    <div class="async-src">
-        <VTButton @click="asyncSrc = src" :disabled="asyncSrc === src">LOAD SOURCE</VTButton>
+    <div>
+        <div class="section-sub-title">
+            <h3>Default</h3>
+        </div>
+        <VTVideo
+            width="95%"
+            :containerStyles="{ margin: '30px 0' }"
+            :videoPoster="require('../assets/video-bg.jpg')"
+            videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
+            videoTitle="Your Video Title"
+            :contextmenu="propObject.contextmenu"
+            :trackColor="propObject.trackColor"
+        />
+        <div class="section-sub-title">
+            <h3>With Styles/Time-tags</h3>
+        </div>
+        <VTVideo
+            width="95%"
+            :buttonStyles="{ backgroundColor: 'red', border: 'none', borderRadius: '1px' }"
+            trackColor="red"
+            :thumbStyles="{ borderRadius: '5px' }"
+            :containerStyles="{ margin: '30px 0', borderRadius: '20px', overflow: 'hidden' }"
+            :videoPoster="require('../assets/video-bg.jpg')"
+            videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
+            :timeTags="tags"
+        />
+        <div class="section-sub-title">
+            <h3>Add time-tags</h3>
+        </div>
+        <VTVideo
+            width="95%"
+            :containerStyles="{ margin: '30px 0' }"
+            :videoPoster="require('../assets/video-bg.jpg')"
+            videoSrc="https://node-images-test.s3.eu-west-2.amazonaws.com/video.mp4"
+            :timeTags="dynamicTags"
+            :key="key"
+        />
+        <form @submit.prevent="addTag()" class="add-tags">
+            <code>
+                timeTags: [{ title: "<input type="text" v-model="tag.title" />" timestamp: "<input
+                    style="width: 25px"
+                    type="text"
+                    v-model="tag.timestamp"
+                />" }]
+            </code>
+            <VTButton
+                :styles="{
+                    display: 'inline-block',
+                    marginLeft: '10px',
+                    height: '30px',
+                    minWidth: '50px',
+                    fontSize: '15px',
+                }"
+                >ADD TAG</VTButton
+            >
+        </form>
+        <div class="section-sub-title">
+            <h3>Async Source Loading</h3>
+        </div>
+        <VTVideo
+            width="95%"
+            :containerStyles="{ margin: '30px 0' }"
+            :videoPoster="require('../assets/video-bg.jpg')"
+            :videoSrc="asyncSrc"
+        />
+        <div class="async-src">
+            <VTButton
+                :styles="{ margin: '0 auto' }"
+                @click="asyncSrc = src"
+                :disabled="asyncSrc === src"
+                >LOAD SOURCE</VTButton
+            >
+        </div>
     </div>
 </template>
 

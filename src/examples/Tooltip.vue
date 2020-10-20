@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -15,8 +15,8 @@
                     <code>:<span class="code-blue">containerStyles</span>="{}"</code>
                 </div>
                 <div class="option column">
-                    <code class="trim"
-                        ><span class="code-blue">text</span>=<span class="code-string trim-span"
+                    <code class="align-start"
+                        ><span class="code-blue">text</span>=<span class="code-string"
                             >"{{ propObject.text }}"</span
                         ></code
                     >
@@ -86,7 +86,7 @@
                         >""
                     </div>
                     <div class="tag"><span class="code-tag">&gt;</span></div>
-                    Hover Me!
+                    <div>Hover Me!</div>
                     <div class="tag">
                         <span class="code-tag">&lt;/</span><span class="code-green">VTTooltip</span>
                     </div>

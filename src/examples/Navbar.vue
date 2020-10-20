@@ -2,19 +2,20 @@
     <VTNavbar
         :position="propObject.position"
         :slider="propObject.slider"
-        :containerStyles="{ position: 'absolute', maxHeight: '70vh' }"
+        :containerStyles="{ position: 'absolute', height }"
+        :styles="{ height: '100%' }"
         :key="key"
     >
         <h1>VTNavbar</h1>
     </VTNavbar>
     <div class="component-playground">
-        <div class="options-container">
+        <div class="options-container" :class="responsiveNavClass()">
             <div class="options">
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -31,11 +32,11 @@
                             >"{{ propObject.position }}"</span
                         ></code
                     >
-                    <select v-model="propObject.position" @change="forceRender()">
+                    <select v-model="propObject.position" @change="navHeight()">
                         <option value="top">top</option>
-                        <option value="right">right</option>
+                        <option value="right" ref="right">right</option>
                         <option value="bottom">bottom</option>
-                        <option value="left">left</option>
+                        <option value="left" ref="left">left</option>
                     </select>
                 </div>
                 <div class="option">
@@ -94,11 +95,16 @@ export default {
     name: 'Navbar',
 
     setup() {
+        const right = ref(null);
+        const left = ref(null);
         const key = ref(0);
         const propObject = ref({
             position: 'top',
             slider: false,
         });
+        const largeMediaQuery = window.matchMedia('(max-width: 992px)');
+        const smallMediaQuery = window.matchMedia('(max-width: 576px)');
+        const height = ref('100px');
 
         const forceRender = () => key.value++;
         const toggleProp = prop => {
@@ -120,13 +126,64 @@ export default {
             navigator.clipboard.writeText(code.value);
             app.$toast('Copied!');
         };
+        // Readjust nav container height
+        const navHeight = () => {
+            const position = propObject.value.position;
 
-        onMounted(() => (document.getElementById('component-view').style.overflow = 'hidden'));
+            if (position === 'left' || position === 'right') {
+                height.value = '100%';
+            } else height.value = '100px';
+
+            forceRender();
+        };
+        const responsiveNavClass = () => {
+            if (!largeMediaQuery.matches) return;
+
+            const position = propObject.value.position;
+
+            if (position === 'left') return 'mobile-nav-left';
+            if (position === 'right') return 'mobile-nav-right';
+        };
+        // Prevent left/right positions if screensize is below 576px
+        const disableOptions = () => {
+            if (!right.value || !left.value) return;
+            if (smallMediaQuery.matches) {
+                const position = propObject.value.position;
+
+                right.value.disabled = true;
+                left.value.disabled = true;
+
+                if (position === 'top' || position === 'bottom') return;
+
+                propObject.value.position = 'top';
+                navHeight();
+            } else {
+                right.value.disabled = false;
+                left.value.disabled = false;
+            }
+        };
+
+        onMounted(() => {
+            document.getElementById('component-view').style.overflow = 'hidden';
+            window.addEventListener('resize', disableOptions);
+            disableOptions();
+        });
         onBeforeUnmount(
             () => (document.getElementById('component-view').style.overflow = 'visible')
         );
 
-        return { key, propObject, forceRender, toggleProp, copyCode };
+        return {
+            right,
+            left,
+            key,
+            propObject,
+            largeMediaQuery,
+            height,
+            toggleProp,
+            copyCode,
+            navHeight,
+            responsiveNavClass,
+        };
     },
 };
 </script>

@@ -7,7 +7,7 @@
             <VTHoverbox :height="50"><router-link to="/">Home</router-link></VTHoverbox>
             |
             <VTHoverbox :height="50"
-                ><router-link to="/docs/vt-button">Docs</router-link></VTHoverbox
+                ><router-link to="/docs/vt-burger">Docs</router-link></VTHoverbox
             >
             |
             <VTHoverbox :height="50"
@@ -21,6 +21,7 @@
         text="Try a full demo on Codepen!"
         position="left"
         :containerStyles="tooltipContainerStyles"
+        class="codepen-tooltip"
     >
         <a
             href="https://codepen.io/daniel-knights/pen/jOrOVXX"

@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -91,12 +91,12 @@
                 </div>
                 <div class="option">
                     <code
-                        >@<span class="code-blue">page-changed</span>="<span class="code-method"
+                        >@<span class="code-blue">page-change</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"</code
                     >
                     <code>
-                        <span class="code-num">{{ propObject.currentPage }}</span>
+                        <span class="code-num">{{ currentPageLog }}</span>
                     </code>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                     :altBackground="propObject.altBackground"
                     :currentPage="propObject.currentPage"
                     :lastPage="propObject.lastPage"
-                    @page-changed="logValue($event)"
+                    @page-change="logValue($event)"
                     :key="key"
                 />
             </div>
@@ -162,7 +162,7 @@
                         >"
                     </div>
                     <div>
-                        @<span class="code-blue">page-changed</span>="<span class="code-method"
+                        @<span class="code-blue">page-change</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
@@ -205,6 +205,7 @@ export default {
             currentPage: 1,
             lastPage: 10,
         });
+        const currentPageLog = ref(1);
 
         const forceRender = () => key.value++;
         const code = computed(() => {
@@ -228,7 +229,7 @@ export default {
             app.$toast('Copied!');
         };
         const logValue = e => {
-            propObject.value.currentPage = e;
+            currentPageLog.value = e;
             console.log(e);
         };
         const toggleRipple = () => {
@@ -236,7 +237,7 @@ export default {
             forceRender();
         };
 
-        return { key, propObject, forceRender, copyCode, logValue, toggleRipple };
+        return { key, propObject, currentPageLog, forceRender, copyCode, logValue, toggleRipple };
     },
 };
 </script>

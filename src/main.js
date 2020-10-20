@@ -4,13 +4,11 @@ import router from './router';
 import DKToast from 'vue-dk-toast';
 import * as Vuelity from 'vuelity';
 
-const app = createApp(App);
-const root = getComputedStyle(document.documentElement);
+import global from './global';
 
-app.config.globalProperties.$primary = root.getPropertyValue('--primary');
-app.config.globalProperties.$white = root.getPropertyValue('--white');
-app.config.globalProperties.$black = root.getPropertyValue('--black');
-app.config.globalProperties.$darkGrey = root.getPropertyValue('--dark-grey');
+const app = createApp(App);
+
+app.config.globalProperties.$global = global;
 
 // Register components
 Object.keys(Vuelity).forEach(el => {
@@ -22,7 +20,7 @@ app.use(router);
 app.use(DKToast, {
     duration: 3000,
     styles: {
-        color: root.getPropertyValue('--dark-grey'),
+        color: global.$darkGrey,
         letterSpacing: '1px',
     },
 });

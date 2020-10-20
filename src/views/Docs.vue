@@ -19,13 +19,13 @@
         </div>
         <nav id="components-nav">
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/vt-button"
-                    ><code>&lt;<span>VTButton</span>&gt;</code></router-link
+                <router-link to="/docs/vt-burger"
+                    ><code>&lt;<span>VTBurger</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
-                <router-link to="/docs/vt-burger"
-                    ><code>&lt;<span>VTBurger</span>&gt;</code></router-link
+                <router-link to="/docs/vt-button"
+                    ><code>&lt;<span>VTButton</span>&gt;</code></router-link
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
@@ -104,10 +104,10 @@ export default {
     name: 'Docs',
 
     setup() {
-        const black = app.$black;
+        const black = app.$global.$black;
         const hoverboxStyles = { margin: '10px 0', padding: '5px 0' };
 
-        document.body.style.background = app.$white;
+        document.body.style.background = app.$global.$white;
 
         return { black, hoverboxStyles };
     },
@@ -115,6 +115,7 @@ export default {
 </script>
 
 <style lang="scss">
+// Side nav
 #side-nav-heading {
     @include flex-x(center, center);
     height: 100px;
@@ -123,7 +124,6 @@ export default {
         border-bottom: 3px solid var(--primary);
     }
 }
-
 #components-nav {
     @include flex-y(false, center);
     position: relative;
@@ -134,7 +134,7 @@ export default {
 
     a {
         letter-spacing: 1px;
-        font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
         transition: color 0.1s;
 
         &:hover {
@@ -151,6 +151,7 @@ export default {
     }
 }
 
+// Component playground container
 #component-container {
     @include flex-x(center, center);
     position: relative;
@@ -163,7 +164,8 @@ export default {
     #component-view {
         @include flex-y(center, center);
         position: relative;
-        width: 100%;
+        margin: 5px;
+        width: calc(100% - 10px);
         min-height: 70vh;
         border: 2px solid var(--lightgrey);
         border-radius: 10px;

@@ -5,8 +5,8 @@
                 <div class="option">
                     <VTTooltip
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -14,8 +14,8 @@
                 <div class="option">
                     <VTTooltip
                         text="The container to scroll within. Defaults to the HTML tag."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code>
                             <span class="code-blue">target</span>=<span class="code-string"
@@ -27,8 +27,8 @@
                 <div class="option">
                     <VTTooltip
                         text="Defines the targets scroll-behavior."
-                        position="right"
-                        :styles="{ width: '300px', minWidth: 'unset' }"
+                        :position="$global.$tooltipPosition"
+                        :styles="$global.$tooltipStyles"
                     >
                         <code
                             >:<span class="code-blue">smooth</span>="<span class="code-navy">{{
@@ -107,7 +107,7 @@
                 <div class="scroll-height"></div>
             </div>
             <VTScrolltop
-                :styles="{ position: 'absolute', top: '35%', right: '5%' }"
+                :styles="scrolltopStyles"
                 target=".scroll-height-container"
                 :smooth="propObject.smooth"
                 :ripple="propObject.ripple"
@@ -192,6 +192,12 @@ export default {
             iconColor: '#ffffff',
             iconHoverColor: '#ffffff',
         });
+        const scrolltopStyles = ref({
+            position: 'absolute',
+            top: '35%',
+            right: '50px',
+        });
+        const mediaQuery = window.matchMedia('(max-width: 992px)');
 
         const code = computed(() => {
             return `<VTScrolltop
@@ -218,10 +224,17 @@ export default {
                 container.value.style.scrollBehavior = 'smooth';
             } else container.value.style.scrollBehavior = 'auto';
         };
+        const responsiveScrolltopStyles = () => {
+            if (mediaQuery.matches) scrolltopStyles.value.top = '350px';
+            else scrolltopStyles.value.top = '35%';
+        };
+
+        responsiveScrolltopStyles();
+        window.addEventListener('resize', responsiveScrolltopStyles);
 
         onMounted(() => container.value.scroll(0, 5000));
 
-        return { container, log, propObject, copyCode, toggleSmooth };
+        return { container, log, propObject, scrolltopStyles, copyCode, toggleSmooth };
     },
 };
 </script>

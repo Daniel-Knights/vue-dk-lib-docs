@@ -79,7 +79,7 @@ export default {
     margin: 20px;
     padding: 20px;
     width: calc(100% - 40px);
-    font: 500 clamp(15px, 2vw, 22px) var(--font_primary);
+    font: 500 20px var(--font_primary);
     background: var(--primary);
     border-radius: 10px;
 
@@ -89,7 +89,7 @@ export default {
         padding: 20px clamp(10px, 2.5vw, 30px);
         border-radius: 10px;
         background: var(--lightgrey);
-        line-height: clamp(25px, 2.5vw, 50px);
+        line-height: clamp(30px, 2.5vw, 40px);
 
         code {
             padding: 5px;
@@ -117,7 +117,7 @@ export default {
             position: relative;
             margin: 0 auto;
             padding: 10px 15px;
-            width: 340px;
+            width: 330px;
             text-align: left;
             background: var(--dark-grey);
             border-radius: 10px;
