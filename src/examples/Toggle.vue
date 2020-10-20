@@ -60,14 +60,14 @@
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </code>
-                    <code>{{ propObject.logState }}</code>
+                    <code>{{ logState }}</code>
                 </div>
             </div>
         </div>
         <div class="example-container">
             <div class="example contrast-black">
                 <VTToggle
-                    @toggle="propObject.logState = !propObject.logState"
+                    @toggle="logEvent($event)"
                     :initialState="propObject.initialState"
                     :state="propObject.state"
                     :hoverColor="propObject.hoverColor"
@@ -120,6 +120,7 @@ export default {
             state: false,
             hoverColor: '#ededed',
         });
+        const logState = ref(false);
 
         const forceRender = () => key.value++;
         const code = computed(() => {
@@ -135,8 +136,12 @@ export default {
             navigator.clipboard.writeText(code.value);
             app.$toast('Copied!');
         };
+        const logEvent = e => {
+            logState.value = e;
+            console.log(e);
+        };
 
-        return { key, propObject, forceRender, copyCode };
+        return { key, propObject, logState, forceRender, copyCode, logEvent };
     },
 };
 </script>
