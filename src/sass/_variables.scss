@@ -7,7 +7,7 @@
 
     --primary: #5bd0b9;
     --white: #ffffff;
-    --lightgrey: #777e88;
+    --light-grey: #777e88;
     --grey: #5a5f66;
     --dark-grey: #3a3c42;
     --black: #1e1e1e;
@@ -15,7 +15,7 @@
     // RGB value conversion
     --primary-rgb: #{hexToRGB(#5bd0b9)};
     --white-rgb: #{hexToRGB(#ffffff)};
-    --lightgrey-rgb: #{hexToRGB(#777e88)};
+    --light-grey-rgb: #{hexToRGB(#777e88)};
     --grey-rgb: #{hexToRGB(#5a5f66)};
     --dark-grey-rgb: #{hexToRGB(#3a3c42)};
     --black-rgb: #{hexToRGB(#1e1e1e)};

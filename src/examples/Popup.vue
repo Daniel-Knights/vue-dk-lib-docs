@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -16,6 +17,7 @@
                         text="When set to true, stores a cookie which prevents it from returning."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">cookie</span>="<span class="code-navy">{{
@@ -30,6 +32,7 @@
                         text="Delay from page-load to the popup appearing."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             ><span class="code-blue">delay</span>=<span class="code-string"

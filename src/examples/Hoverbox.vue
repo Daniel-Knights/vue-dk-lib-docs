@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -18,7 +19,8 @@
                     <VTTooltip
                         text="VTHoverbox sets its own width but you can set it manually too."
                         :position="$global.$tooltipPosition"
-                        :styles="{ minWidth: '350px' }"
+                        :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             ><span class="code-blue">width</span>="<span class="code-num">{{
@@ -36,7 +38,8 @@
                     <VTTooltip
                         text="VTHoverbox also sets its own height but you can set it manually too."
                         :position="$global.$tooltipPosition"
-                        :styles="{ minWidth: '350px' }"
+                        :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             ><span class="code-blue">height</span>="<span class="code-num">{{

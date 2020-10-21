@@ -13,7 +13,6 @@
         }
         .options-container {
             margin: 10px 0;
-            min-height: calc(35vh - 20px);
 
             .options {
                 padding: 10px 0;
@@ -24,7 +23,7 @@
             width: 100%;
 
             .example {
-                min-height: calc(35vh - 20px);
+                min-height: 200px;
             }
         }
         .copy-code {
@@ -46,9 +45,50 @@
 }
 @media only screen and (max-width: $bp-sm) {
     #app {
+        .options {
+            .emit-overflow {
+                max-width: 52vw;
+            }
+            .prop-overflow {
+                max-width: 70vw;
+            }
+            .method-sm {
+                color: var(--code-blue);
+            }
+            .hide-sm {
+                display: none;
+            }
+        }
     }
 }
 @media only screen and (max-width: $bp-xs) {
     #app {
+        #component-container #component-view {
+            border: none;
+            box-shadow: none;
+        }
+        .component-playground {
+            padding: 0;
+        }
+        .option {
+            margin: 25px 15px;
+            width: calc(100% - 30px);
+        }
+        #tabber {
+            margin: 0;
+            padding: 0;
+            width: unset;
+            font-size: 18px;
+
+            .css-code {
+                padding: 10px 5px;
+                max-width: 91vw;
+                width: 270px;
+
+                code {
+                    line-height: 22px;
+                }
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -16,6 +17,7 @@
                         text="The container to scroll within. Defaults to the HTML tag."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>
                             <span class="code-blue">target</span>=<span class="code-string"
@@ -29,6 +31,7 @@
                         text="Defines the targets scroll-behavior."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">smooth</span>="<span class="code-navy">{{
@@ -197,7 +200,8 @@ export default {
             top: '35%',
             right: '50px',
         });
-        const mediaQuery = window.matchMedia('(max-width: 992px)');
+        const smallMediaQuery = window.matchMedia('(max-width: 461px)');
+        const largeMediaQuery = window.matchMedia('(max-width: 992px)');
 
         const code = computed(() => {
             return `<VTScrolltop
@@ -225,8 +229,16 @@ export default {
             } else container.value.style.scrollBehavior = 'auto';
         };
         const responsiveScrolltopStyles = () => {
-            if (mediaQuery.matches) scrolltopStyles.value.top = '350px';
-            else scrolltopStyles.value.top = '35%';
+            if (smallMediaQuery.matches) {
+                scrolltopStyles.value.top = '330px';
+                scrolltopStyles.value.right = '30px';
+            } else if (largeMediaQuery.matches) {
+                scrolltopStyles.value.top = '350px';
+                scrolltopStyles.value.right = '50px';
+            } else {
+                scrolltopStyles.value.top = '35%';
+                scrolltopStyles.value.right = '50px';
+            }
         };
 
         responsiveScrolltopStyles();

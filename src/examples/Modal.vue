@@ -8,6 +8,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -20,6 +21,7 @@
                         text="Determines whether to display an exit-fullscreen notification."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">notify</span>="<span class="code-navy">{{
@@ -35,6 +37,7 @@
                         text="Emits an event when clicking outside the inner-content."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>
                             @<span class="code-blue">close</span>="<span class="code-method"
@@ -44,7 +47,9 @@
                     </VTTooltip>
                 </div>
                 <div class="option button-center">
-                    <VTButton @click="fullscreen = true">OPEN MODAL</VTButton>
+                    <VTButton :styles="{ margin: '0 0 10px' }" @click="fullscreen = true"
+                        >OPEN MODAL</VTButton
+                    >
                 </div>
             </div>
         </div>

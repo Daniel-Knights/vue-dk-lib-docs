@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -22,6 +23,7 @@
                         text="Styles for the time-track thumb."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">thumbStyles</span>="{}"</code>
                     </VTTooltip>
@@ -31,6 +33,7 @@
                         text="Async src loading is supported."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>
                             <span class="code-blue">videoSrc</span>=<span class="code-string"
@@ -44,6 +47,7 @@
                         text="This is for the aria-label attribute."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>
                             <span class="code-blue">videoTitle</span>=<span class="code-string"
@@ -64,6 +68,7 @@
                         text="An array of timestamps with an associated title."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">timeTags</span>="[{}]"</code>
                     </VTTooltip>
@@ -73,8 +78,9 @@
                         text="Enable/disable contextmenu on right click."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
-                        <code
+                        <code class="prop-overflow"
                             >:<span class="code-blue">contextmenu</span>="<span class="code-navy">{{
                                 propObject.contextmenu
                             }}</span

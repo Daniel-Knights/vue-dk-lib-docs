@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -16,6 +17,7 @@
                         text="If you need to programmatically toggle VTBurger, it will watch for this prop and update accordingly."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">state</span>="<span class="code-navy">{{
@@ -81,9 +83,9 @@
                 </div>
                 <div class="option">
                     <code
-                        >@<span class="code-blue">open</span>="<span class="code-method"
-                            >logEvent</span
-                        >(<span class="code-blue">$event</span>)"</code
+                        >@<span class="code-blue">open</span>="<span class="code-method method-sm"
+                            >logValue</span
+                        ><span class="hide-sm">(<span class="code-blue">$event</span>)</span>"</code
                     >
                     <code>
                         {{ log }}
@@ -100,7 +102,7 @@
                     :hoverBackground="propObject.hoverBackground"
                     :stripColor="propObject.stripColor"
                     :stripHoverColor="propObject.stripHoverColor"
-                    @open="logEvent($event)"
+                    @open="logValue($event)"
                 />
             </div>
             <div class="copy-code" @click="copyCode()">
@@ -143,7 +145,7 @@
                     </div>
                     <div>
                         @<span class="code-blue">open</span>="<span class="code-method"
-                            >logEvent</span
+                            >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
                     <div class="tag"><span class="code-tag">/&gt;</span></div>
@@ -181,19 +183,19 @@ export default {
     hoverBackground="${propObject.value.hoverBackground}"
     stripColor="${propObject.value.stripColor}"
     stripHoverColor="${propObject.value.stripHoverColor}"
-    @open="logEvent($event)"
+    @open="logValue($event)"
 />`;
         });
         const copyCode = () => {
             navigator.clipboard.writeText(code.value);
             app.$toast('Copied!');
         };
-        const logEvent = e => {
+        const logValue = e => {
             log.value = e;
             console.log(e);
         };
 
-        return { log, propObject, copyCode, logEvent };
+        return { log, propObject, copyCode, logValue };
     },
 };
 </script>

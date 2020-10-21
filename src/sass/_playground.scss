@@ -51,8 +51,8 @@
         border-radius: 5px;
     }
     .button-center {
-        width: fit-content;
-        margin: 0 auto;
+        width: fit-content !important;
+        margin: 0 auto !important;
     }
     form {
         display: flex;
@@ -92,6 +92,12 @@
             width: calc(100% - 20px);
             border-radius: 5px;
         }
+    }
+    code {
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     select,
     input {

@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -15,7 +16,7 @@
                     <code>:<span class="code-blue">containerStyles</span>="{}"</code>
                 </div>
                 <div class="option column">
-                    <code class="align-start"
+                    <code
                         ><span class="code-blue">text</span>=<span class="code-string"
                             >"{{ propObject.text }}"</span
                         ></code

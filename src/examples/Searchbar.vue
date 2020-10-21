@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -53,6 +54,7 @@
                         text="Swaps the primary and secondary props."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">contrast</span>="<span class="code-navy">{{
@@ -90,15 +92,17 @@
                         text="Returns the input value on keyup."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
-                        <code
-                            >@<span class="code-blue">search-value</span>="<span class="code-method"
-                                >searchValue</span
-                            >(<span class="code-blue">$event</span>)"</code
+                        <code :class="{ 'emit-overflow': propObject.value !== '' }"
+                            >@<span class="code-blue">search-value</span>="<span class="code-method method-sm"
+                                >logValue</span
+                            ><span class="hide-sm">(<span class="code-blue">$event</span>)</span
+                            >"</code
                         >
                     </VTTooltip>
                     <code class="search-results">
-                        {{ propObject.searchValue }}
+                        {{ propObject.value }}
                     </code>
                 </div>
                 <div class="option">
@@ -106,16 +110,18 @@
                         text="Returns the input value on submit. Normal @submit event works too for a more in-depth returned value."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
-                        <code
+                        <code :class="{ 'emit-overflow': propObject.submit !== '' }"
                             >@<span class="code-blue">search-submit</span>="<span
-                                class="code-method"
-                                >searchSubmit</span
-                            >(<span class="code-blue">$event</span>)"</code
+                                class="code-method method-sm"
+                                >logSubmit</span
+                            ><span class="hide-sm">(<span class="code-blue">$event</span>)</span
+                            >"</code
                         >
                     </VTTooltip>
                     <code class="search-results">
-                        {{ propObject.searchSubmit }}
+                        {{ propObject.submit }}
                     </code>
                 </div>
             </div>
@@ -129,8 +135,8 @@
                     :contrast="propObject.contrast"
                     :primary="propObject.primary"
                     :secondary="propObject.secondary"
-                    @search-value="searchValue($event)"
-                    @search-submit="searchSubmit($event)"
+                    @search-value="logValue($event)"
+                    @search-submit="logSubmit($event)"
                     :key="key"
                 />
             </div>
@@ -176,12 +182,12 @@
                     </div>
                     <div class="option">
                         @<span class="code-blue">search-value</span>="<span class="code-method"
-                            >searchValue</span
+                            >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
                     <div class="option">
                         @<span class="code-blue">search-submit</span>="<span class="code-method"
-                            >searchSubmit</span
+                            >logSubmit</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
                     <div class="tag"><span class="code-tag">/&gt;</span></div>
@@ -209,8 +215,8 @@ export default {
             contrast: false,
             primary: '#ffffff',
             secondary: '#5bd0b9',
-            searchValue: '',
-            searchSubmit: '',
+            value: '',
+            submit: '',
         });
 
         const forceRender = () => key.value++;
@@ -223,8 +229,8 @@ export default {
     :contrast="${propObject.value.contrast}"
     primary="${propObject.value.primary}"
     secondary="${propObject.value.secondary}"
-    @search-value="searchValue($event)"
-    @search-submit="searchSubmit($event)"
+    @search-value="logValue($event)"
+    @search-submit="logSubmit($event)"
 />`;
         });
         const copyCode = () => {
@@ -236,11 +242,11 @@ export default {
             contrast.value.classList.toggle('contrast');
             forceRender();
         };
-        const searchValue = e => {
-            propObject.value.searchValue = e;
+        const logValue = e => {
+            propObject.value.value = e;
         };
-        const searchSubmit = e => {
-            propObject.value.searchSubmit = e;
+        const logSubmit = e => {
+            propObject.value.submit = e;
         };
 
         return {
@@ -251,8 +257,8 @@ export default {
             forceRender,
             copyCode,
             toggleContrast,
-            searchValue,
-            searchSubmit,
+            logValue,
+            logSubmit,
         };
     },
 };

@@ -7,8 +7,10 @@ const global = reactive({
     $primary: root.getPropertyValue('--primary'),
     $white: root.getPropertyValue('--white'),
     $black: root.getPropertyValue('--black'),
+    $lightGrey: root.getPropertyValue('--light-grey'),
     $darkGrey: root.getPropertyValue('--dark-grey'),
     $tooltipStyles: { width: '300px', minWidth: 'unset' },
+    $tooltipContainerStyles: { maxWidth: '100%' },
     $tooltipPosition: 'right',
 });
 
@@ -35,7 +37,7 @@ const tooltipResponsive = () => {
 };
 
 window.addEventListener('load', tooltipResponsive);
-router.afterEach(() => setTimeout(() => tooltipResponsive(), 0));
 window.addEventListener('resize', tooltipResponsive);
+router.afterEach(() => setTimeout(() => tooltipResponsive(), 0));
 
 export default global;

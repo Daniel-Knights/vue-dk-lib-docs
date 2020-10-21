@@ -16,6 +16,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -104,6 +105,7 @@ export default {
         });
         const largeMediaQuery = window.matchMedia('(max-width: 992px)');
         const smallMediaQuery = window.matchMedia('(max-width: 576px)');
+        const tinyMediaQuery = window.matchMedia('(max-width: 461px)');
         const height = ref('100px');
 
         const forceRender = () => key.value++;
@@ -164,20 +166,25 @@ export default {
         };
 
         onMounted(() => {
-            document.getElementById('component-view').style.overflow = 'hidden';
+            const view = document.getElementById('component-view');
+
+            view.style.overflow = 'hidden';
+            view.classList.add('nav-xs');
             window.addEventListener('resize', disableOptions);
             disableOptions();
         });
-        onBeforeUnmount(
-            () => (document.getElementById('component-view').style.overflow = 'visible')
-        );
+        onBeforeUnmount(() => {
+            const view = document.getElementById('component-view');
+
+            view.classList.remove('nav-xs');
+            view.style.overflow = 'visible';
+        });
 
         return {
             right,
             left,
             key,
             propObject,
-            largeMediaQuery,
             height,
             toggleProp,
             copyCode,
@@ -187,9 +194,3 @@ export default {
     },
 };
 </script>
-
-<style lang="scss">
-.nav-buttons {
-    flex: 1;
-}
-</style>

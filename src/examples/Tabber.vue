@@ -88,7 +88,7 @@ export default {
         margin: 0 auto;
         padding: 20px clamp(10px, 2.5vw, 30px);
         border-radius: 10px;
-        background: var(--lightgrey);
+        background: var(--light-grey);
         line-height: clamp(30px, 2.5vw, 40px);
 
         code {
@@ -125,7 +125,7 @@ export default {
             code {
                 pointer-events: none;
                 padding: 0;
-                line-height: 28px;
+                line-height: 25px;
 
                 &:nth-of-type(2) {
                     line-height: 25px;

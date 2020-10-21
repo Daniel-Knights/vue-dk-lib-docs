@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -91,9 +92,10 @@
                 </div>
                 <div class="option">
                     <code
-                        >@<span class="code-blue">page-change</span>="<span class="code-method"
+                        >@<span class="code-blue">page-change</span>="<span
+                            class="code-method method-sm"
                             >logValue</span
-                        >(<span class="code-blue">$event</span>)"</code
+                        ><span class="hide-sm">(<span class="code-blue">$event</span>)</span>"</code
                     >
                     <code>
                         <span class="code-num">{{ currentPageLog }}</span>
@@ -205,7 +207,7 @@ export default {
             currentPage: 1,
             lastPage: 10,
         });
-        const currentPageLog = ref(1);
+        const currentPageLog = ref('');
 
         const forceRender = () => key.value++;
         const code = computed(() => {

@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">containerStyles</span>="{}"</code>
                     </VTTooltip>
@@ -33,6 +34,7 @@
                         text="For programmatically changing the toggles value."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">state</span>="<span class="code-navy">{{
@@ -56,9 +58,9 @@
                 </div>
                 <div class="option">
                     <code>
-                        @<span class="code-blue">toggle</span>="<span class="code-method"
+                        @<span class="code-blue">toggle</span>="<span class="code-method method-sm"
                             >logValue</span
-                        >(<span class="code-blue">$event</span>)"
+                        ><span class="hide-sm">(<span class="code-blue">$event</span>)</span>"
                     </code>
                     <code>{{ logState }}</code>
                 </div>
@@ -67,7 +69,7 @@
         <div class="example-container">
             <div class="example contrast-black">
                 <VTToggle
-                    @toggle="logEvent($event)"
+                    @toggle="logValue($event)"
                     :initialState="propObject.initialState"
                     :state="propObject.state"
                     :hoverColor="propObject.hoverColor"
@@ -98,6 +100,11 @@
                             >"{{ propObject.hoverColor }}"</span
                         >
                     </div>
+                    <div class="option">
+                        @<span class="code-blue">toggle</span>="<span class="code-method"
+                            >logValue</span
+                        >(<span class="code-blue">$event</span>)"
+                    </div>
                     <div class="tag"><span class="code-tag">/&gt;</span></div>
                 </code>
                 <i class="fa fa-copy"></i>
@@ -120,7 +127,7 @@ export default {
             state: false,
             hoverColor: '#ededed',
         });
-        const logState = ref(false);
+        const logState = ref('');
 
         const forceRender = () => key.value++;
         const code = computed(() => {
@@ -130,18 +137,19 @@ export default {
     :initialState="${propObject.value.initialState}"
     :state="${propObject.value.state}"
     hoverColor="${propObject.value.hoverColor}"
+    @toggle="logValue($event)"
 />`;
         });
         const copyCode = () => {
             navigator.clipboard.writeText(code.value);
             app.$toast('Copied!');
         };
-        const logEvent = e => {
+        const logValue = e => {
             logState.value = e;
             console.log(e);
         };
 
-        return { key, propObject, logState, forceRender, copyCode, logEvent };
+        return { key, propObject, logState, forceRender, copyCode, logValue };
     },
 };
 </script>

@@ -85,7 +85,7 @@
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-tabber"
-                    ><code><span>vtTabber</span></code></router-link
+                    ><code><span>vtTabber()</span></code></router-link
                 >
             </VTHoverbox>
         </nav>
@@ -167,9 +167,17 @@ export default {
         margin: 5px;
         width: calc(100% - 10px);
         min-height: 70vh;
-        border: 2px solid var(--lightgrey);
+        border: 2px solid var(--light-grey);
         border-radius: 10px;
         box-shadow: 0 0 6px -2px var(--black);
+
+        .vt__navbar-inner {
+            padding: 10px !important;
+        }
+        &.nav-xs {
+            border: 2px solid var(--light-grey) !important;
+            padding: 5px;
+        }
     }
 }
 </style>

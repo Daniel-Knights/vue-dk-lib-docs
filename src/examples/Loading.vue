@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -19,6 +20,7 @@
                         text="Toggles between the default Vuelity animation and a normal spinner animation."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code
                             >:<span class="code-blue">default</span>="<span class="code-navy">{{
@@ -34,8 +36,9 @@
                         text="Sets the overflow property on the body tag to hidden and a fixed position to the loading container."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
-                        <code
+                        <code class="prop-overflow"
                             >:<span class="code-blue">fullscreen</span>="<span class="code-navy">{{
                                 propObject.fullscreen
                             }}</span
@@ -50,7 +53,9 @@
                     />
                 </div>
                 <div class="option button-center">
-                    <VTButton @click="fullscreenDisplay = true">FULLSCREEN</VTButton>
+                    <VTButton :styles="{ margin: '0 0 10px' }" @click="fullscreenDisplay = true"
+                        >FULLSCREEN</VTButton
+                    >
                 </div>
             </div>
         </div>

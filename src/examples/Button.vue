@@ -7,6 +7,7 @@
                         text="This is eqiuvalent to ordinary Vue :style bindings but targets specific elements within the component."
                         :position="$global.$tooltipPosition"
                         :styles="$global.$tooltipStyles"
+                        :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code>:<span class="code-blue">styles</span>="{}"</code>
                     </VTTooltip>
@@ -22,41 +23,46 @@
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">fillBorder</span>="<span class="code-navy"
-                            >{{ propObject.fillBorder }}"</span
-                        ></code
+                        >:<span class="code-blue">fillBorder</span>="<span class="code-navy">{{
+                            propObject.fillBorder
+                        }}</span
+                        >"</code
                     >
                     <VTToggle @toggle="toggleProp('fillBorder')" />
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">onlyBorder</span>="<span class="code-navy"
-                            >{{ propObject.onlyBorder }}"</span
-                        ></code
+                        >:<span class="code-blue">onlyBorder</span>="<span class="code-navy">{{
+                            propObject.onlyBorder
+                        }}</span
+                        >"</code
                     >
                     <VTToggle @toggle="toggleProp('onlyBorder')" />
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">ripple</span>="<span class="code-navy"
-                            >{{ propObject.ripple }}"</span
-                        ></code
+                        >:<span class="code-blue">ripple</span>="<span class="code-navy">{{
+                            propObject.ripple
+                        }}</span
+                        >"</code
                     >
                     <VTToggle @toggle="toggleProp('ripple')" :initialState="true" />
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">shine</span>="<span class="code-navy"
-                            >{{ propObject.shine }}"</span
-                        ></code
+                        >:<span class="code-blue">shine</span>="<span class="code-navy">{{
+                            propObject.shine
+                        }}</span
+                        >"</code
                     >
                     <VTToggle @toggle="toggleProp('shine')" />
                 </div>
                 <div class="option">
                     <code
-                        >:<span class="code-blue">hoverEnabled</span>="<span class="code-navy"
-                            >{{ propObject.hoverEnabled }}"</span
-                        ></code
+                        >:<span class="code-blue">hoverEnabled</span>="<span class="code-navy">{{
+                            propObject.hoverEnabled
+                        }}</span
+                        >"</code
                     >
                     <VTToggle @toggle="toggleProp('hoverEnabled')" :initialState="true" />
                 </div>
@@ -209,7 +215,7 @@ export default {
             app.$toast('Copied!');
         };
 
-        return { key, propObject, toggleProp, forceRender, copyCode };
+        return { app, key, propObject, toggleProp, forceRender, copyCode };
     },
 };
 </script>
