@@ -79,6 +79,11 @@ const routes = [
                 component: () => import('@/examples/Video'),
             },
             {
+                path: 'vt-toast',
+                name: 'VTToast',
+                component: () => import('@/examples/Toast'),
+            },
+            {
                 path: 'vt-tabber',
                 name: 'vtTabber',
                 component: () => import('@/examples/Tabber'),

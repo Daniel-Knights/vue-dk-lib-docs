@@ -84,6 +84,11 @@
                 >
             </VTHoverbox>
             <VTHoverbox :containerStyles="hoverboxStyles">
+                <router-link to="/docs/vt-toast"
+                    ><code><span>VTToast</span></code></router-link
+                >
+            </VTHoverbox>
+            <VTHoverbox :containerStyles="hoverboxStyles">
                 <router-link to="/docs/vt-tabber"
                     ><code><span>vtTabber()</span></code></router-link
                 >
