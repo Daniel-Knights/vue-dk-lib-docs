@@ -110,7 +110,7 @@ export default {
 
     setup() {
         const black = app.$global.$black;
-        const hoverboxStyles = { margin: '10px 0', padding: '5px 0' };
+        const hoverboxStyles = { display: 'flex', margin: '10px auto', padding: '5px 0' };
 
         document.body.style.background = app.$global.$white;
 
@@ -130,7 +130,7 @@ export default {
     }
 }
 #components-nav {
-    @include flex-y(false, center);
+    display: grid;
     position: relative;
     padding: 20px 0;
     max-height: calc(100vh - 100px);

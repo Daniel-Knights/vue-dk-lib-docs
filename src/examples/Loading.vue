@@ -64,7 +64,7 @@
                 <VTLoading
                     :default="propObject.default"
                     :key="key"
-                    :containerStyles="{ zIndex: '0' }"
+                    :containerStyles="{ borderRadius: '10px', zIndex: '0' }"
                 />
                 <teleport v-if="fullscreenDisplay" to="body">
                     <div id="exit-fullscreen">

@@ -10,9 +10,8 @@
         "core-js": "^3.6.5",
         "netlify-plugin-prerender-spa": "^1.0.2",
         "vue": "^3.0.0-0",
-        "vue-dk-toast": "^0.1.22",
         "vue-router": "^4.0.0-0",
-        "vuelity": "^2.0.60"
+        "vuelity": "^2.0.64"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.6",

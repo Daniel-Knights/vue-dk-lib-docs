@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import DKToast from 'vue-dk-toast';
 import * as Vuelity from 'vuelity';
 
 import global from './global';
@@ -17,12 +16,9 @@ Object.keys(Vuelity).forEach(el => {
 Vuelity.vtTabber();
 
 app.use(router);
-app.use(DKToast, {
-    duration: 3000,
-    styles: {
-        color: global.$darkGrey,
-        letterSpacing: '1px',
-    },
+app.use(Vuelity.VTToast, {
+    duration: 30000,
+    styles: { letterSpacing: '1px' },
 });
 app.mount('#app');
 
