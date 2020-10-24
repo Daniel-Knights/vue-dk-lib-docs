@@ -17,7 +17,7 @@ Vuelity.vtTabber();
 
 app.use(router);
 app.use(Vuelity.VTToast, {
-    duration: 30000,
+    duration: 3000,
     styles: { letterSpacing: '1px' },
 });
 app.mount('#app');
