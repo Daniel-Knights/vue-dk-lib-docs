@@ -95,7 +95,8 @@
                         :containerStyles="$global.$tooltipContainerStyles"
                     >
                         <code :class="{ 'emit-overflow': propObject.value !== '' }"
-                            >@<span class="code-blue">search-value</span>="<span class="code-method method-sm"
+                            >@<span class="code-blue">search-value</span>="<span
+                                class="code-method method-sm"
                                 >logValue</span
                             ><span class="hide-sm">(<span class="code-blue">$event</span>)</span
                             >"</code
@@ -180,12 +181,12 @@
                             >"{{ propObject.secondary }}"</span
                         >
                     </div>
-                    <div class="option">
+                    <div>
                         @<span class="code-blue">search-value</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"
                     </div>
-                    <div class="option">
+                    <div>
                         @<span class="code-blue">search-submit</span>="<span class="code-method"
                             >logSubmit</span
                         >(<span class="code-blue">$event</span>)"

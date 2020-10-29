@@ -53,7 +53,7 @@
                     />
                 </div>
                 <div class="option button-center">
-                    <VTButton :styles="{ margin: '0 0 10px' }" @click="fullscreenDisplay = true"
+                    <VTButton :styles="{ marginBottom: '10px' }" @click="fullscreenDisplay = true"
                         >FULLSCREEN</VTButton
                     >
                 </div>

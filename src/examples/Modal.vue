@@ -47,7 +47,7 @@
                     </VTTooltip>
                 </div>
                 <div class="option button-center">
-                    <VTButton :styles="{ margin: '0 0 10px' }" @click="fullscreen = true"
+                    <VTButton :styles="{ marginBottom: '10px' }" @click="fullscreen = true"
                         >OPEN MODAL</VTButton
                     >
                 </div>

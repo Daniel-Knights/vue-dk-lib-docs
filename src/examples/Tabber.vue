@@ -16,7 +16,7 @@
             </p>
             <p>
                 All you need to do is call
-                <code @click="copyCode($event)" class="copy-code"
+                <code @click="copyCode($event)" class="copy-code-small"
                     ><span class="code-blue">Vuelity</span>.<span class="code-method">vtTabber</span
                     ><span class="code-yellow">()</span></code
                 >, and this handles everything for you.

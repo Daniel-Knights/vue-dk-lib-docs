@@ -1,0 +1,91 @@
+// Options section
+.options-container {
+    height: 100%;
+    width: 100%;
+    background: var(--dark-grey);
+    border-radius: 10px;
+
+    .options {
+        width: 100%;
+    }
+
+    .option {
+        @include flex-x(space-between, center);
+        margin: 25px;
+        width: calc(100% - 50px);
+
+        .search-results {
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .column {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        border: 1px solid;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .button-center {
+        width: fit-content !important;
+        margin: 0 auto !important;
+    }
+    form {
+        @include flex-x(false, center);
+        margin: 5px;
+    }
+    input,
+    textarea {
+        margin: 0;
+        padding: 0 5px;
+        min-height: 25px;
+        color: var(--black);
+        border: none;
+        border-radius: 5px 0 0 5px;
+
+        &[type='color'] {
+            border-radius: 0 5px 5px 0;
+        }
+
+        &.small-input {
+            border-radius: 5px;
+            max-width: 40px;
+
+            &[type='number'] {
+                cursor: default;
+                caret-color: transparent;
+            }
+        }
+        &.medium-input {
+            margin: 5px;
+            border-radius: 5px;
+
+            &[type='number'] {
+                cursor: default;
+                caret-color: transparent;
+            }
+        }
+        &.large-input {
+            margin: 10px;
+            width: calc(100% - 20px);
+            border-radius: 5px;
+        }
+    }
+    textarea {
+        padding: 5px;
+        border: 1px solid transparent;
+        resize: vertical;
+    }
+    code {
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    select,
+    input {
+        font-family: monospace;
+    }
+}

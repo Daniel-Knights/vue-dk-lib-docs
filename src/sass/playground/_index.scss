@@ -1,0 +1,25 @@
+@import 'options';
+@import 'example';
+
+// Container
+.component-playground {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 30px;
+    width: 100%;
+    min-height: 70vh;
+    font-size: 18px;
+
+    > * {
+        @include flex-y(center, center);
+    }
+
+    span:not(.vt__tip) {
+        white-space: nowrap;
+    }
+}

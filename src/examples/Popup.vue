@@ -65,7 +65,9 @@
                     </form>
                 </div>
                 <div class="option button-center">
-                    <VTButton @click="forceRender()">RESTORE</VTButton>
+                    <VTButton :styles="{ marginBottom: '10px' }" @click="forceRender()"
+                        >RESTORE</VTButton
+                    >
                 </div>
             </div>
         </div>

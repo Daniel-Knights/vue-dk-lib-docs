@@ -23,10 +23,19 @@
 
             .example {
                 min-height: 200px;
+                margin: 30px 0;
             }
         }
+        .swap-hide {
+            display: grid;
+            gap: 15px;
+        }
         .copy-code {
-            display: none;
+            padding: 40px 10px;
+
+            i {
+                display: none;
+            }
         }
         .mobile-nav-right {
             width: calc(100% - 200px);

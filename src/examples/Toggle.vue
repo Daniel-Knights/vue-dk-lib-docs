@@ -100,7 +100,7 @@
                             >"{{ propObject.hoverColor }}"</span
                         >
                     </div>
-                    <div class="option">
+                    <div>
                         @<span class="code-blue">toggle</span>="<span class="code-method"
                             >logValue</span
                         >(<span class="code-blue">$event</span>)"

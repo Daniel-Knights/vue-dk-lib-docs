@@ -197,7 +197,7 @@ export default {
         });
         const scrolltopStyles = ref({
             position: 'absolute',
-            top: '35%',
+            top: '39%',
             right: '50px',
         });
         const smallMediaQuery = window.matchMedia('(max-width: 461px)');
@@ -230,13 +230,13 @@ export default {
         };
         const responsiveScrolltopStyles = () => {
             if (smallMediaQuery.matches) {
-                scrolltopStyles.value.top = '330px';
-                scrolltopStyles.value.right = '30px';
+                scrolltopStyles.value.top = '360px';
+                scrolltopStyles.value.right = '20px';
             } else if (largeMediaQuery.matches) {
-                scrolltopStyles.value.top = '350px';
-                scrolltopStyles.value.right = '50px';
+                scrolltopStyles.value.top = '380px';
+                scrolltopStyles.value.right = '60px';
             } else {
-                scrolltopStyles.value.top = '35%';
+                scrolltopStyles.value.top = '39%';
                 scrolltopStyles.value.right = '50px';
             }
         };
