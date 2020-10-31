@@ -87,8 +87,8 @@
             </div>
         </div>
         <div class="example-container swap-hide">
-            <div class="copy-code">
-                <code class="toast-copy-code" @click="copyCode('global')">
+            <div class="copy-code" @click="copyCode('global')">
+                <code class="toast-copy-code">
                     <div>
                         <span class="code-const">app</span>.<span class="code-method">use</span
                         ><span class="code-yellow">(</span
