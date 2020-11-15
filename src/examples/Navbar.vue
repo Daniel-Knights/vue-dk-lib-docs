@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount, reactive } from 'vue';
 import app from '@/main';
 
 export default {
@@ -99,7 +99,7 @@ export default {
         const right = ref(null);
         const left = ref(null);
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             position: 'top',
             slider: false,
         });
@@ -110,7 +110,7 @@ export default {
 
         const forceRender = () => key.value++;
         const toggleProp = prop => {
-            propObject.value[prop] = !propObject.value[prop];
+            propObject[prop] = !propObject[prop];
             forceRender();
         };
         const code = computed(() => {
@@ -118,8 +118,8 @@ export default {
     :styles="{}"
     :containerStyles="{}"
     :burgerStyles="{}"
-    :position="${propObject.value.position}"
-    :slider="${propObject.value.slider}"
+    :position="${propObject.position}"
+    :slider="${propObject.slider}"
 >
     <h1>VTNavbar</h1>
 </VTNavbar>`;
@@ -130,7 +130,7 @@ export default {
         };
         // Readjust nav container height
         const navHeight = () => {
-            const position = propObject.value.position;
+            const position = propObject.position;
 
             if (position === 'left' || position === 'right') {
                 height.value = '100%';
@@ -141,7 +141,7 @@ export default {
         const responsiveNavClass = () => {
             if (!largeMediaQuery.matches) return;
 
-            const position = propObject.value.position;
+            const position = propObject.position;
 
             if (position === 'left') return 'mobile-nav-left';
             if (position === 'right') return 'mobile-nav-right';
@@ -150,14 +150,14 @@ export default {
         const disableOptions = () => {
             if (!right.value || !left.value) return;
             if (smallMediaQuery.matches) {
-                const position = propObject.value.position;
+                const position = propObject.position;
 
                 right.value.disabled = true;
                 left.value.disabled = true;
 
                 if (position === 'top' || position === 'bottom') return;
 
-                propObject.value.position = 'top';
+                propObject.position = 'top';
                 navHeight();
             } else {
                 right.value.disabled = false;

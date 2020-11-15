@@ -200,7 +200,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -209,7 +209,7 @@ export default {
     setup() {
         const contrast = ref(null);
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             placeholder: 'Search...',
             crossEnabled: true,
             iconEnabled: true,
@@ -224,12 +224,12 @@ export default {
         const code = computed(() => {
             return `<VTSearchbar
     :styles="{}"
-    placeholder="${propObject.value.placeholder}"
-    :crossEnabled="${propObject.value.crossEnabled}"
-    :iconEnabled="${propObject.value.iconEnabled}"
-    :contrast="${propObject.value.contrast}"
-    primary="${propObject.value.primary}"
-    secondary="${propObject.value.secondary}"
+    placeholder="${propObject.placeholder}"
+    :crossEnabled="${propObject.crossEnabled}"
+    :iconEnabled="${propObject.iconEnabled}"
+    :contrast="${propObject.contrast}"
+    primary="${propObject.primary}"
+    secondary="${propObject.secondary}"
     @search-value="logValue($event)"
     @search-submit="logSubmit($event)"
 />`;
@@ -239,16 +239,12 @@ export default {
             app.$toast('Copied!');
         };
         const toggleContrast = () => {
-            propObject.value.contrast = !propObject.value.contrast;
+            propObject.contrast = !propObject.contrast;
             contrast.value.classList.toggle('contrast');
             forceRender();
         };
-        const logValue = e => {
-            propObject.value.value = e;
-        };
-        const logSubmit = e => {
-            propObject.value.submit = e;
-        };
+        const logValue = e => (propObject.value = e);
+        const logSubmit = e => (propObject.submit = e);
 
         return {
             app,

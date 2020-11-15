@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -122,7 +122,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             width: 110,
             height: 40,
             fill: 'rgba(255, 255, 255, 0.5)',
@@ -139,9 +139,9 @@ export default {
             return `<VTHoverbox
     :styles="{}"
     :containerStyles="{}"
-    :width="${propObject.value.width}"
-    :height="${propObject.value.height}"
-    :fill="${propObject.value.fill}"
+    :width="${propObject.width}"
+    :height="${propObject.height}"
+    :fill="${propObject.fill}"
 >
     HOVER ME!
 </VTHoverbox>`;

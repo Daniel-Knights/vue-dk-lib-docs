@@ -190,7 +190,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -198,7 +198,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             ripple: true,
             color: '#ffffff',
             disabledColor: '#dbdbdb',
@@ -214,13 +214,13 @@ export default {
             return `<VTPagination
     :styles="{}"
     :blockStyles="{}"
-    :ripple="${propObject.value.ripple}"
-    color="${propObject.value.color}"
-    disabledColor="${propObject.value.disabledColor}"
-    background="${propObject.value.background}"
-    altBackground="${propObject.value.altBackground}"
-    :currentPage="${propObject.value.currentPage}"
-    :lastPage="${propObject.value.lastPage}"
+    :ripple="${propObject.ripple}"
+    color="${propObject.color}"
+    disabledColor="${propObject.disabledColor}"
+    background="${propObject.background}"
+    altBackground="${propObject.altBackground}"
+    :currentPage="${propObject.currentPage}"
+    :lastPage="${propObject.lastPage}"
 >
     <!-- Optional Arrow Slot -->
 </VTPagination>
@@ -235,7 +235,7 @@ export default {
             console.log(e);
         };
         const toggleRipple = () => {
-            propObject.value.ripple = !propObject.value.ripple;
+            propObject.ripple = !propObject.ripple;
             forceRender();
         };
 

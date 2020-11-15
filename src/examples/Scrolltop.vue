@@ -178,7 +178,7 @@
 </template>
 
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -187,7 +187,7 @@ export default {
     setup() {
         const container = ref(null);
         const log = ref('');
-        const propObject = ref({
+        const propObject = reactive({
             smooth: true,
             ripple: true,
             background: '#47cab1',
@@ -195,7 +195,7 @@ export default {
             iconColor: '#ffffff',
             iconHoverColor: '#ffffff',
         });
-        const scrolltopStyles = ref({
+        const scrolltopStyles = reactive({
             position: 'absolute',
             top: '39%',
             right: '50px',
@@ -207,12 +207,12 @@ export default {
             return `<VTScrolltop
     :styles="{}"
     target=".scroll-height-container"
-    :smooth="${propObject.value.smooth}"
-    :ripple="${propObject.value.ripple}"
-    background="${propObject.value.background}"
-    hoverBackground="${propObject.value.hoverBackground}"
-    iconColor="${propObject.value.iconColor}"
-    iconHoverColor="${propObject.value.iconHoverColor}"
+    :smooth="${propObject.smooth}"
+    :ripple="${propObject.ripple}"
+    background="${propObject.background}"
+    hoverBackground="${propObject.hoverBackground}"
+    iconColor="${propObject.iconColor}"
+    iconHoverColor="${propObject.iconHoverColor}"
 >
     <!-- Optional Slot -->
 </VTScrolltop>`;
@@ -222,22 +222,22 @@ export default {
             app.$toast('Copied!');
         };
         const toggleSmooth = () => {
-            propObject.value.smooth = !propObject.value.smooth;
+            propObject.smooth = !propObject.smooth;
 
-            if (propObject.value.smooth) {
+            if (propObject.smooth) {
                 container.value.style.scrollBehavior = 'smooth';
             } else container.value.style.scrollBehavior = 'auto';
         };
         const responsiveScrolltopStyles = () => {
             if (smallMediaQuery.matches) {
-                scrolltopStyles.value.top = '360px';
-                scrolltopStyles.value.right = '20px';
+                scrolltopStyles.top = '360px';
+                scrolltopStyles.right = '20px';
             } else if (largeMediaQuery.matches) {
-                scrolltopStyles.value.top = '380px';
-                scrolltopStyles.value.right = '60px';
+                scrolltopStyles.top = '380px';
+                scrolltopStyles.right = '60px';
             } else {
-                scrolltopStyles.value.top = '39%';
-                scrolltopStyles.value.right = '50px';
+                scrolltopStyles.top = '39%';
+                scrolltopStyles.right = '50px';
             }
         };
 

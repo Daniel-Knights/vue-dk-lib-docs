@@ -157,7 +157,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -165,7 +165,7 @@ export default {
 
     setup() {
         const log = ref('');
-        const propObject = ref({
+        const propObject = reactive({
             state: false,
             ripple: false,
             background: '#47cab1',
@@ -177,12 +177,12 @@ export default {
         const code = computed(() => {
             return `<VTBurger
     :styles="{}"
-    :state="${propObject.value.state}"
-    :ripple="${propObject.value.ripple}"
-    background="${propObject.value.background}"
-    hoverBackground="${propObject.value.hoverBackground}"
-    stripColor="${propObject.value.stripColor}"
-    stripHoverColor="${propObject.value.stripHoverColor}"
+    :state="${propObject.state}"
+    :ripple="${propObject.ripple}"
+    background="${propObject.background}"
+    hoverBackground="${propObject.hoverBackground}"
+    stripColor="${propObject.stripColor}"
+    stripHoverColor="${propObject.stripHoverColor}"
     @open="logValue($event)"
 />`;
         });

@@ -171,7 +171,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -179,7 +179,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             rainbow: false,
             fillBorder: false,
             onlyBorder: false,
@@ -192,20 +192,20 @@ export default {
 
         const forceRender = () => key.value++;
         const toggleProp = prop => {
-            propObject.value[prop] = !propObject.value[prop];
+            propObject[prop] = !propObject[prop];
             forceRender();
         };
         const code = computed(() => {
             return `<VTButton
     :styles="{}"
-    :rainbow="${propObject.value.rainbow}"
-    :fillBorder="${propObject.value.fillBorder}"
-    :onlyBorder="${propObject.value.onlyBorder}"
-    :ripple="${propObject.value.ripple}"
-    :shine="${propObject.value.shine}"
-    :hoverEnabled="${propObject.value.hoverEnabled}"
-    :hoverColor="${propObject.value.hoverColor}"
-    :hoverBackground="${propObject.value.hoverBackground}"
+    :rainbow="${propObject.rainbow}"
+    :fillBorder="${propObject.fillBorder}"
+    :onlyBorder="${propObject.onlyBorder}"
+    :ripple="${propObject.ripple}"
+    :shine="${propObject.shine}"
+    :hoverEnabled="${propObject.hoverEnabled}"
+    :hoverColor="${propObject.hoverColor}"
+    :hoverBackground="${propObject.hoverBackground}"
 >
     CLICK ME!
 </VTButton>`;

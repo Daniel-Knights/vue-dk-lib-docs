@@ -99,7 +99,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -107,7 +107,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             text: 'Add tooltip text to the "text" prop',
             position: 'top',
             arrow: true,
@@ -118,9 +118,9 @@ export default {
             return `<VTTooltip
     :styles="{}"
     :containerStyles="{}"
-    text="${propObject.value.text}"
-    position="${propObject.value.position}"
-    :arrow="${propObject.value.arrow}"
+    text="${propObject.text}"
+    position="${propObject.position}"
+    :arrow="${propObject.arrow}"
 >
     Hover Me!
 </VTTooltip>`;

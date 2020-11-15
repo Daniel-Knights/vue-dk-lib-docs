@@ -162,14 +162,14 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
     name: 'App',
 
     setup() {
-        const propObject = ref({
+        const propObject = reactive({
             duration: 3000,
             text: '',
             slotLeft: '',
@@ -181,11 +181,11 @@ export default {
 
         const code = computed(() => {
             return {
-                local: `this.$toast('${propObject.value.text}', {
+                local: `this.$toast('${propObject.text}', {
     styles: {},
-    duration: ${propObject.value.duration},
-    slotLeft: \`${propObject.value.slotLeft}\`,
-    slotRight: \`${propObject.value.slotRight}\`
+    duration: ${propObject.duration},
+    slotLeft: \`${propObject.slotLeft}\`,
+    slotRight: \`${propObject.slotRight}\`
 });
 `,
                 global: `app.use(Vuelity.VTToast, {
@@ -202,19 +202,19 @@ export default {
             app.$toast('Copied!');
         };
         const toast = () => {
-            if (!propObject.value.text && !propObject.value.slotLeft && !propObject.value.slotRight)
+            if (!propObject.text && !propObject.slotLeft && !propObject.slotRight)
                 invalid.value = true;
             else invalid.value = false;
 
-            app.$toast(propObject.value.text, {
-                duration: propObject.value.duration,
-                styles: propObject.value.styles,
-                slotLeft: propObject.value.slotLeft,
-                slotRight: propObject.value.slotRight,
+            app.$toast(propObject.text, {
+                duration: propObject.duration,
+                styles: propObject.styles,
+                slotLeft: propObject.slotLeft,
+                slotRight: propObject.slotRight,
             });
         };
         const fillIcon = (library, pos) => {
-            propObject.value[pos] =
+            propObject[pos] =
                 library === 0
                     ? '<i class="fa fa-thumbs-up"></i>'
                     : '<span class="material-icons">thumb_up</span>';

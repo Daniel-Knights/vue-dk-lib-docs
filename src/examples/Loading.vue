@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { computed, onBeforeUnmount, ref } from 'vue';
+import { computed, onBeforeUnmount, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -113,7 +113,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             default: true,
             fullscreen: false,
         });
@@ -124,8 +124,8 @@ export default {
             return `<VTLoading
     :styles="{}"
     :containerStyles="{}"
-    :default="${propObject.value.default}"
-    :fullscreen="${propObject.value.fullscreen}"
+    :default="${propObject.default}"
+    :fullscreen="${propObject.fullscreen}"
 >
     <!-- Optional Slot -->
 </VTLoading>`;
@@ -135,11 +135,11 @@ export default {
             app.$toast('Copied!');
         };
         const toggleProp = property => {
-            propObject.value[property] = !propObject.value[property];
+            propObject[property] = !propObject[property];
             forceRender();
         };
         const toggleDisplay = () => {
-            if (propObject.value.fullscreen === true) {
+            if (propObject.fullscreen === true) {
                 fullscreenDisplay.value = true;
             }
         };

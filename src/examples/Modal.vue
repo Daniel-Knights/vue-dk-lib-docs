@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { computed, onBeforeUnmount, ref } from 'vue';
+import { computed, onBeforeUnmount, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -113,7 +113,7 @@ export default {
     setup() {
         const key = ref(0);
         const fullscreen = ref(false);
-        const propObject = ref({
+        const propObject = reactive({
             notify: true,
         });
 
@@ -123,7 +123,7 @@ export default {
     v-if="yourCondition"
     :styles="{}"
     :containerStyles="{}"
-    :notify="${propObject.value.notify}"
+    :notify="${propObject.notify}"
 >
     <!-- Optional Slot -->
 </VTModal>`;
@@ -133,7 +133,7 @@ export default {
             app.$toast('Copied!');
         };
         const toggleNotify = () => {
-            propObject.value.notify = !propObject.value.notify;
+            propObject.notify = !propObject.notify;
             forceRender();
         };
         const fullscreenListener = e => {

@@ -128,7 +128,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -136,7 +136,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({
+        const propObject = reactive({
             cookie: false,
             delay: '2s',
             hoverColor: '#ffffff',
@@ -147,10 +147,10 @@ export default {
         const code = computed(() => {
             return `<VTPopup
     :styles="{}"
-    :cookie="${propObject.value.cookie}"
-    delay="${propObject.value.delay}"
-    hoverColor="${propObject.value.hoverColor}"
-    hoverBackground="${propObject.value.hoverBackground}"
+    :cookie="${propObject.cookie}"
+    delay="${propObject.delay}"
+    hoverColor="${propObject.hoverColor}"
+    hoverBackground="${propObject.hoverBackground}"
 >
     Hello, I am a popup! Click me!
 </VTPopup>`;

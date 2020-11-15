@@ -235,7 +235,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import app from '@/main';
 
 export default {
@@ -243,7 +243,7 @@ export default {
 
     setup() {
         const key = ref(0);
-        const propObject = ref({ contextmenu: true, trackColor: '#5bd0b9' });
+        const propObject = reactive({ contextmenu: true, trackColor: '#5bd0b9' });
         const tags = [
             { title: 'A time tag!', timestamp: '10' },
             { title: 'A time tag!', timestamp: '20' },
@@ -252,7 +252,7 @@ export default {
             { title: 'A time tag!', timestamp: '45' },
         ];
         const dynamicTags = ref([]);
-        const tag = ref({
+        const tag = reactive({
             title: 'A time tag!',
             timestamp: '10',
         });
@@ -266,9 +266,9 @@ export default {
     videoTitle="Your Video Title"
     videoPoster="./your/videoPoster.jpg"
     :timeTags="[]"
-    :contextmenu="${propObject.value.contextmenu}"
+    :contextmenu="${propObject.contextmenu}"
     width="100%"
-    trackColor="${propObject.value.trackColor}"
+    trackColor="${propObject.trackColor}"
 />`;
         });
         const asyncSrc = ref('');
@@ -279,7 +279,7 @@ export default {
             app.$toast('Copied!');
         };
         const addTag = () => {
-            dynamicTags.value.push({ ...tag.value });
+            dynamicTags.value.push({ ...tag });
             key.value++;
         };
 
