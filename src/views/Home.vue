@@ -102,7 +102,6 @@ export default {
         cursor: pointer;
         position: relative;
         max-width: calc(100vw - 40px);
-        overflow: hidden;
         text-overflow: ellipsis;
 
         span {

@@ -35,6 +35,10 @@
         .block {
             max-width: calc(100vw - 10px);
 
+            code {
+                overflow: hidden;
+            }
+
             .overflow-mid {
                 display: unset;
             }
